@@ -13,7 +13,7 @@ const Navbar = () => {
         <h1 className="header lowercase text-gray-100 text-5xl tracking-tight mt-2">Neural</h1>
         <h2 className="subheader lowercase font-subheader text-blue-200 text-xl font-extrabold tracking-wider">Smart Technologies</h2>
       </div>
-      {browserWidth > 800 ? (
+      { browserWidth > 800 ? (
         <div>
 
         </div>
