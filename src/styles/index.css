@@ -37,3 +37,13 @@ h1,h2,h3,h4,h5,.font-headers {
 .font-subheader{
     font-family: Rajdhani;
 }
+
+/* --- Navbar --- */
+
+.navbar{
+    width: calc(100% - 10px);
+}
+
+.header, .subHeader{
+    line-height:0.5;
+}

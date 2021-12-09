@@ -1,4 +1,6 @@
+import React from 'react'
 import './src/styles/index.css'
+import Layout from './src/components/layout'
 
 const onServiceWorkerUpdateReady = () => {
     const answer = window.confirm(
@@ -10,4 +12,9 @@ const onServiceWorkerUpdateReady = () => {
     }
   }
 
-  export { onServiceWorkerUpdateReady }
+  const wrapPageElement = ({ element, props }) => {
+    return <Layout {...props}>{element}</Layout>;
+}
+
+
+export { wrapPageElement, onServiceWorkerUpdateReady }
