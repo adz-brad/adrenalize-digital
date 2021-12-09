@@ -27,14 +27,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-         workboxConfig: {
-            globPatterns: ['*.html']
-         }
-      }
-   },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
