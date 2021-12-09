@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    @font-face {
+        font-family: Montserrat;
+        src: url('../assets/fonts/Montserrat-Regular.ttf');
+    }
+
+    @font-face {
+        font-family: Vezla;
+        src: url('../assets/fonts/Vezla.ttf');
+    }
+
+    @font-face {
+        font-family: Rajdhani;
+        src: url('../assets/fonts/Rajdhani-Regular.ttf');
+    }
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Montserrat; 
+}
+
+h1,h2,h3,h4,h5,.font-headers {
+    font-family: Vezla;
+}
+
+.font-subheader{
+    font-family: Rajdhani;
+}
