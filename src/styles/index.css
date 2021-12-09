@@ -30,11 +30,11 @@ body{
     font-family: Montserrat; 
 }
 
-h1,h2,h3,h4,h5,.font-headers {
+h1,h2,.font-headers {
     font-family: Vezla;
 }
 
-.font-subheader{
+h3,h4,h5,.font-subheader{
     font-family: Rajdhani;
 }
 
@@ -54,14 +54,13 @@ h1,h2,h3,h4,h5,.font-headers {
     width: calc(100% - 10px);
     max-width: 400px;
     transition: ease-in-out 0.3s;
+    z-index:999;
 }
 
 @media only screen and (min-width: 768px) {
-
- .navbar{
-    height: 80px ;
- }
-
+    .navbar{
+        height: 80px ;
+    }
 }
 
 .mobileNavOpen{
@@ -72,6 +71,11 @@ h1,h2,h3,h4,h5,.font-headers {
     left: calc(-100% - 10px);
 }
 
-.header, .subHeader{
+.header{
+    @apply lowercase text-gray-100 tracking-tight mt-2 text-4xl md:text-5xl;
     line-height:0.5;
+}
+
+.subHeader{
+    @apply lowercase font-subheader text-blue-200 text-sm md:text-xl font-extrabold tracking-wider;
 }

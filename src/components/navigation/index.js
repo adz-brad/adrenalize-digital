@@ -7,12 +7,12 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="navbar flex flex-row items-center bg-blue-800 h-16 md:h-20 rounded-br-xl shadow-md">
+    <div className="navbar">
       <div className="flex flex-col ml-4 mr-auto">
-        <h1 className="header lowercase text-gray-100 text-5xl tracking-tight mt-2">
+        <h1 className="header">
           Neural
         </h1>
-        <h2 className="subheader lowercase font-subheader text-blue-200 text-xl font-extrabold tracking-wider">
+        <h2 className="subHeader">
           Smart Technologies
         </h2>
       </div>
@@ -22,7 +22,7 @@ const Navbar = () => {
         <>
         <button
           onClick={() => setMenuOpen(menuOpen === true ? false : true)}
-          className="relative flex flex-col h-12 w-12 ml-auto mr-4 cursor-pointer"
+          className={`relative flex flex-col h-12 w-12 ml-auto cursor-pointer ${menuOpen === true? 'mr-2' : 'mr-4'}`}
         >
           <div
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-1 rounded-lg shadow-md transform transition duration-150 ease-in-out ${
