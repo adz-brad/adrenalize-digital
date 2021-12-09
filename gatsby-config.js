@@ -33,7 +33,7 @@ module.exports = {
             globPatterns: ['*.html']
          }
       }
-   }
+   },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
