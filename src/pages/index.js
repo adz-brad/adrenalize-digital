@@ -141,6 +141,8 @@ const Index = () => {
           </ul>
         </div>
       </div>
+
+      {/*2/3 width photo with overlay: Our products are: Flexible, Scalable, Something*/}
     </div>
   )
 }

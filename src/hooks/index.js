@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from 'react'
-import { document } from 'browser-monads'
+import { window, document } from 'browser-monads'
 
 const isBrowser = typeof window !== "undefined"
 
