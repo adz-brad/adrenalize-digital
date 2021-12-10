@@ -111,3 +111,7 @@ h3,h4,h5,.font-subheader{
         clip-path: ellipse(80% 100% at 60% 0%);
     }
 }
+
+.featureImage1{
+    max-height:480px;
+}
