@@ -1,18 +1,26 @@
 import React, { useState } from "react"
-import { useWindowWidth } from "../../hooks"
+import { disableScroll, enableScroll, useWindowWidth } from "../../hooks"
 
 const Navbar = () => {
   let browserWidth = useWindowWidth()
 
   const [menuOpen, setMenuOpen] = useState(false)
 
+  if(menuOpen === true){
+    disableScroll();
+  }
+  else{
+    enableScroll();
+  }
+
   return (
-    <div className="navbar">
+    <div className="navbar bg-gray-900">
+      <div className="navbarBg "/>
       <div className="flex flex-col ml-4 mr-auto">
-        <h1 className="header">
+        <h1 className="header text-gray-100">
           Neural
         </h1>
-        <h2 className="subHeader">
+        <h2 className="subHeader text-blue-500">
           Smart Technologies
         </h2>
       </div>
@@ -27,7 +35,7 @@ const Navbar = () => {
           <div
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-1 rounded-lg shadow-md transform transition duration-150 ease-in-out ${
               menuOpen === true
-                ? "-translate-y-1/2 rotate-45 bg-blue-200 w-8"
+                ? "-translate-y-1/2 rotate-45 bg-blue-500 w-8"
                 : "-translate-y-3 bg-gray-100 w-12"
             }`}
           />
@@ -39,7 +47,7 @@ const Navbar = () => {
           <div
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-1 rounded-lg shadow-md transform transition duration-150 ease-in-out ${
               menuOpen === true
-                ? "-translate-y-1/2 -rotate-45 bg-blue-200 w-8"
+                ? "-translate-y-1/2 -rotate-45 bg-blue-500 w-8"
                 : "translate-y-2 bg-gray-100 w-12"
             }`}
           />
