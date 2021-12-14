@@ -9,10 +9,12 @@ import {
   MdCode,
 } from "react-icons/md"
 import { IoIosRocket } from "react-icons/io"
-import { IoGlobeOutline } from "react-icons/io5"
-import { useWindowHeight, useWindowWidth } from "../hooks"
+import { IoTelescope } from'react-icons/io5'
+import { enableScroll, disableScroll, useWindowHeight, useWindowWidth } from "../hooks"
+import { Popover } from '../components/ui'
 
 const Index = () => {
+
   let windowWidth = useWindowWidth()
   let windowHeight = useWindowHeight()
 
@@ -30,8 +32,36 @@ const Index = () => {
     }
   }, [windowWidth, windowHeight])
 
+  const [ popoverActive, setPopoverActive ] = useState(false)
+  const [ popoverContent, setPopoverContent ] = useState(null)
+  console.log(popoverContent)
+
+  const openPopover = (props) => {
+    setPopoverActive(true);
+    setPopoverContent(props);
+  }
+
+  const closePopover = () => {
+    setPopoverActive(false);
+    setPopoverContent(null)
+  }
+
+  if(popoverActive === true){
+    disableScroll();
+  }
+  else{
+    enableScroll();
+  }
+
   return (
     <div id="indexWrapper">
+      {popoverActive === true ?
+        <Popover close={()=> closePopover()}>
+          
+        </Popover>
+      :
+        null
+      }
       <div
         id="hero"
         className="relative flex flex-col md:flex-row max-w-screen-xl mx-auto py-3"
@@ -47,7 +77,7 @@ const Index = () => {
           src="../assets/images/nstHeroImage.jpg"
           alt="Visually stunning, highly performant web, mobile and desktop applications"
           placeholder="blurred"
-          className="md:w-1/2 mr-4 rounded-r-xl xl:rounded-xl shadow-md my-4"
+          className="featuredImage md:w-1/2 mr-4 rounded-r-xl xl:rounded-xl shadow-md my-4"
         />
         <div className="flex flex-col w-full md:w-1/3 p-4 mx-auto">
           <h1 className="font-subheader text-4xl md:text-5xl font-bold text-gray-900 mt-auto">
@@ -78,7 +108,7 @@ const Index = () => {
             </h1>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 py-2 px-1 max-w-screen-xl mx-auto">
-            <div className="flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
+            <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdWeb className="text-4xl text-gray-900" />
                 <h2 className="text-3xl font-subheader font-semibold text-gray-900 ml-2">
@@ -90,12 +120,14 @@ const Index = () => {
                 and progressive web applications to help you extend your
                 business capabilities beyond average.
               </p>
-              <button className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
+              <button 
+              onClick={()=> openPopover('test')}
+              className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </button>
             </div>
-            <div className="flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
+            <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdPhoneAndroid className="text-4xl text-gray-900 -ml-1" />
                 <h2 className="text-3xl font-subheader font-semibold text-gray-900 ml-2">
@@ -107,12 +139,14 @@ const Index = () => {
                 powering Spotify, Airbnb, Pinterest, Uber Eats and other
                 enterprise grade applications.
               </p>
-              <button className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
+              <button 
+                onClick={()=> openPopover('test')}
+                className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </button>
             </div>
-            <div className="flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
+            <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdLaptopMac className="text-4xl text-gray-900" />
                 <h2 className="text-3xl font-subheader font-semibold text-gray-900 ml-2">
@@ -128,7 +162,7 @@ const Index = () => {
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </button>
             </div>
-            <div className="flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
+            <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <BiCodeBlock className="text-4xl text-gray-900" />
                 <h2 className="text-3xl font-subheader font-semibold text-gray-900 ml-2">
@@ -140,7 +174,9 @@ const Index = () => {
                 unify multiple devices, platforms and operations to boost
                 organizational productivity.
               </p>
-              <button className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
+              <button 
+              onClick={()=> openPopover('test')}
+              className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </button>
@@ -151,12 +187,12 @@ const Index = () => {
           src="../assets/images/featureImage1.jpg"
           alt="Build with the best - we build a full range of applications from web to mobile and desktop."
           placeholder="blurred"
-          className="featureImage1 ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4"
+          className="featureImage1 featuredImage ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4"
         />
       </div>
       <div className="flex flex-col md:flex-row items-center max-w-screen-xl mx-auto p-4 mt-4">
         <div className="md:w-2/3">
-          <h2 className="font-subheader font-semibold text-2xl md:text-3xl mb-4">
+          <h2 className="font-subheader font-semibold text-3xl md:text-3xl mb-4">
             From design to launch, we've got your back.
           </h2>
           <p className="text-base text-gray-900">
@@ -170,21 +206,29 @@ const Index = () => {
         </div>
         <div className="flex flex-col items-center md:w-1/3 my-6 md:my-auto">
           <ul className="text-base text-gray-900 ">
-            <li className="flex flex-row items-center mt-1 transform hover:scale-105 cursor-pointer">
-              <IoGlobeOutline className="mr-3 text-5xl text-blue-600" />
+            <li 
+            onClick={()=> openPopover('test')}
+            className="flex flex-row items-center mt-1 transform hover:scale-105 cursor-pointer">
+              <IoTelescope className="mr-3 text-5xl transform scale-90 text-blue-600" />
               <h3 className="text-2xl font-semibold">Project Discovery</h3>
             </li>
-            <li className="flex flex-row items-center mt-1 transform hover:scale-105 cursor-pointer">
+            <li 
+            onClick={()=> openPopover('test')}
+            className="flex flex-row items-center mt-1 transform hover:scale-105 cursor-pointer">
               <MdOutlineDraw className="mr-3 text-5xl text-blue-600" />
               <h3 className="text-2xl font-semibold">Agile Prototyping</h3>
             </li>
-            <li className="flex flex-row items-center mt-1 transform hover:scale-105 cursor-pointer">
+            <li 
+            onClick={()=> openPopover('test')}
+            className="flex flex-row items-center mt-1 transform hover:scale-105 cursor-pointer">
               <MdCode className="mr-3 text-5xl text-blue-600" />
               <h3 className="text-2xl font-semibold">Integrated Dev Ops</h3>
             </li>
-            <li className="flex flex-row items-center mt-1 transform hover:scale-105 cursor-pointer">
+            <li 
+            onClick={()=> openPopover('test')}
+              className="flex flex-row items-center mt-1 transform hover:scale-105 cursor-pointer">
               <IoIosRocket className="mr-3 text-5xl text-blue-600" />
-              <h3 className="text-2xl font-semibold">Product Launch</h3>
+            <h3 className="text-2xl font-semibold">Product Launch</h3>
             </li>
           </ul>
         </div>

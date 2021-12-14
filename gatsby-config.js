@@ -13,9 +13,9 @@ module.exports = {
       options: {
         name: "Neural Smart Technologies",
         short_name: `neuralSmart`,
-        background_color: `#111`,
+        background_color: `#0F172A`,
         lang: `en`,
-        theme_color: `#111`,
+        theme_color: `#0F172A`,
         start_url: `/`,
         display: `standalone`,
         cache_busting_mode: "none",
@@ -38,6 +38,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-preact`
+    //`gatsby-plugin-preact`
   ],
 }

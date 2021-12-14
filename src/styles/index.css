@@ -112,6 +112,35 @@ h3,h4,h5,.font-subheader{
     }
 }
 
+div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > picture > img{
+    transition: ease 0.5s;
+}
+
+.featuredImage:hover > picture > img{
+    transform: scale(1.025);
+    transition: ease 0.5s;
+}
+
 .featureImage1{
     max-height:480px;
 }
+
+#indexWrapper > div > div > div > div:hover > button {
+    transform: scale(1.025);
+    transition: linear 0.1s;
+}
+
+#indexWrapper > div > div > div > div > button {
+    transition: linear 0.1s;
+}
+
+.popover{
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg z-30 bg-gray-100;
+    height:calc(100vh - 10px);
+    width:calc(100vw - 10px);
+    max-width: 992px;
+    margin: auto;
+    overflow:auto;
+}
+
+
