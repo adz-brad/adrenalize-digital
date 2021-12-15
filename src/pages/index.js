@@ -11,7 +11,7 @@ import {
 import { IoIosRocket } from "react-icons/io"
 import { IoTelescope } from'react-icons/io5'
 import { enableScroll, disableScroll, useWindowHeight, useWindowWidth } from "../hooks"
-import { Popover } from '../components/ui'
+import { Popover, SelectCountry } from '../components/ui'
 
 const Index = () => {
 
@@ -53,8 +53,11 @@ const Index = () => {
     enableScroll();
   }
 
+  const [ activeTab, setActiveTab ] = useState('Intuitive')
+
   return (
     <div id="indexWrapper">
+
       {popoverActive === true ?
         <Popover close={()=> closePopover()}>
           
@@ -62,6 +65,7 @@ const Index = () => {
       :
         null
       }
+
       <div
         id="hero"
         className="relative flex flex-col md:flex-row max-w-screen-xl mx-auto py-3"
@@ -190,6 +194,59 @@ const Index = () => {
           className="featureImage1 featuredImage ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4"
         />
       </div>
+        <div className="flex flex-col max-w-screen-xl mx-auto shadow-lg rounded-md my-6">
+      <div className="flex flex-col md:flex-row items-center p-4 C bg-gray-900 rounded-t-md">
+          <h2 className="text-gray-100 font-subheader font-bold text-3xl">Our Products are</h2>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mx-auto my-2">
+          <button 
+            onClick={()=> setActiveTab('Intuitive')}
+            className={`tab ${activeTab === 'Intuitive' ? 'tabActive' : 'tabInactive'}`}
+          >
+              <h1>
+                Intuitive
+              </h1>
+          </button>
+          <button 
+            onClick={()=> setActiveTab('Secure')}
+            className={`tab ${activeTab === 'Secure' ? 'tabActive' : 'tabInactive'}`}
+          >
+              <h1>
+                Secure
+              </h1>
+          </button>
+          <button 
+            onClick={()=> setActiveTab('Scalable')}
+            className={`tab ${activeTab === 'Scalable' ? 'tabActive' : 'tabInactive'}`}
+          >
+              <h1>
+                Scalable
+              </h1>
+          </button>
+          <button 
+            onClick={()=> setActiveTab('Flexible')}
+            className={`tab ${activeTab === 'Flexible' ? 'tabActive' : 'tabInactive'}`}
+          >
+              <h1>
+                Flexible
+              </h1>
+          </button>
+        </div>
+      </div>
+
+      <div className="flex flex-col bg-gray-200 rounded-b-md">
+        {activeTab === 'Intuitive' ?
+        <div className="p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+      : activeTab === 'Secure' ?
+      <div className="p-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</div>
+    : activeTab === 'Scalable' ?
+    <div className="p-5">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</div>
+  : activeTab === 'Flexible' ?
+<div className="p-5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc</div>
+: null}
+      </div>
+      </div>
+
       <div className="flex flex-col md:flex-row items-center max-w-screen-xl mx-auto p-4 mt-4">
         <div className="md:w-2/3">
           <h2 className="font-subheader font-semibold text-3xl md:text-3xl mb-4">
@@ -234,7 +291,89 @@ const Index = () => {
         </div>
       </div>
 
-      {/*2/3 width photo with overlay: Our products are: Flexible, Scalable, Something*/}
+      <div
+        id="footer"
+        className="relative flex flex-col md:flex-row max-w-screen-xl mx-auto"
+      >
+        <div className="flex flex-col md:flex-row items-center w-full md:p-3">
+          <div className="contactCopy w-full md:w-1/3 flex flex-col justify-center bg-gray-100 md:my-5 rounded-t-lg md:rounded-l-lg p-5">
+            <h1 className="font-subheader text-gray-900 font-semibold text-3xl md:text-4xl mx-auto mt-3 md:mt-1">
+              Ready to make waves?
+            </h1>
+            <div className="py-4 font-medium text-base lg:text-lg leading-snug my-auto">
+            <p className="my-2">
+              We make development easy for our clients, but if it were as simple as shopping on Amazon you wouldn't be here. There is always plenty of learning to do when it comes to building the best product for our clients and we're sure you have more questions.
+              </p>
+              <p className="my-2">
+              That's why we've created some handy project discovery tools for potential clients to play with prior to reaching out. You can check them out by following the link below, or if you're a little bit more sure of your project needs, go ahead drop us a line to get the ball rolling on your next project!
+            </p>
+            </div>
+            <button className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mb-3 md:mb-1 mt-auto mx-auto">
+            Project Discovery
+            <BiCaretRightCircle className="ml-3 text-2xl" />
+          </button>
+          </div>
+          <div id="contact" className="w-full md:w-2/3 flex flex-col justify-center items-center bg-gray-900 text-gray-100 rounded-b-lg rounded-lg p-5">
+           <h1 className="font-subheader text-4xl font-semibold my-6 leading-none">
+              Let's get in touch!
+            </h1>
+            <div className="flex flex-col w-full md:w-3/4">
+              <h3 className="text-lg font-semibold">Your Name</h3>
+              <input className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900" type="text" />
+            </div>
+            <div className="flex flex-col w-full md:w-3/4">
+              <h3 className="text-lg font-semibold">Email Address</h3>
+              <input className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900" type="text" />
+            </div>
+            <div className="flex flex-col w-full md:w-3/4">
+              <h3 className="text-lg font-semibold">Where are you located?</h3>
+              <SelectCountry 
+                className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900"
+                onChange={(e)=> console.log(e.target.value)}
+              />
+            </div>
+            <div className="flex flex-col w-full md:w-3/4">
+              <h3 className="text-lg font-semibold">How can we help?</h3>
+              <select className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900">
+                <option value="" selected disabled hidden>
+                  Choose an option...
+                </option>
+                <option>
+                  Schedule a new project consultation
+                </option>
+                <option>
+                  Updating an existing external project
+                </option>
+                <option>
+                    Services for an existing Neural project
+                  </option>
+                  <option>
+                    General inquiry
+                  </option>
+              </select>
+            </div>
+            <div className="flex flex-col w-full md:w-3/4">
+            <h3 className="text-lg font-semibold">Message</h3>
+              <textarea 
+                rows="5"
+                className="contactMessage focus:outline-blue w-full p-1 mb-3 shadow-md rounded-md text-gray-900"
+
+              />
+            </div>
+            <button className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-subheader rounded-lg shadow-md my-5 mx-auto">
+            Submit
+            <BiCaretRightCircle className="ml-3 text-2xl" />
+          </button>
+          </div>
+        </div>
+        <div
+          className="contactBg"
+          style={{
+            height: heroBgDimensions.height - 170,
+            width: heroBgDimensions.width,
+          }}
+        />
+      </div>
     </div>
   )
 }

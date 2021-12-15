@@ -32,7 +32,8 @@ module.exports = {
     extend: {
       outline: {
         gray: '2px solid #0F172A',
-        red: '3px solid #FF0000'
+        red: '2px solid #FF0000',
+        blue: ['2px solid #0ea5e9', '1px']
       }
     },
   },

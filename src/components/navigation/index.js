@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { disableScroll, enableScroll, useWindowWidth } from "../../hooks"
+import { BiCaretUpCircle } from 'react-icons/bi'
+import NeuralLogo from '../../assets/images/neuralLogo.png'
 
 const Navbar = () => {
   let browserWidth = useWindowWidth()
@@ -14,7 +16,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="navbar bg-gray-900">
+    <div className="navbar">
       <div className="navbarBg "/>
       <div className="flex flex-col ml-4 mr-auto">
         <h1 className="header text-gray-100">
@@ -62,4 +64,31 @@ const Navbar = () => {
   )
 }
 
-export { Navbar }
+const Footer = () => {
+
+  const [ footerMenuOpen, setFooterMenuOpen ] = useState(false)
+
+  return(
+    <footer className="footer relative h-20">
+      <div className={`footerNav ${footerMenuOpen === true ? 'footerNavOpen' : 'footerNavClosed'}`}>
+
+      </div>
+      <img 
+        src={NeuralLogo}
+        alt="Neural Smart Technolgies - It's All Connected."
+        className="absolute left-2 h-16 bottom-2"
+      />
+      <p className="absolute bottom-2 left-1/2 transform -translate-x-1/2 ml-2 text-xs md:text-md font-subheader font-semibold">© 2021 Neural Smart Technologies</p>
+      <button 
+        onClick={footerMenuOpen === true ? () => setFooterMenuOpen(false) : () => setFooterMenuOpen(true)}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2"
+      >
+      <BiCaretUpCircle 
+        className={`text-4xl text-gray-900 hover:text-gray-800 transition-all duration-300 ${footerMenuOpen === true ? 'transform rotate-180': ''}`}
+      />
+      </button>
+    </footer>
+  )
+}
+
+export { Navbar, Footer }
