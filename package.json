@@ -25,12 +25,14 @@
     "gatsby-source-filesystem": "^4.3.0",
     "gatsby-transformer-sharp": "^4.3.0",
     "gbimage-bridge": "^0.1.4",
+    "immutability-helper": "^3.1.1",
     "preact": "^10.6.4",
     "preact-render-to-string": "^5.1.19",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-toastify": "^8.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",

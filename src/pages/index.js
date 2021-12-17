@@ -7,18 +7,19 @@ import {
   MdLaptopMac,
   MdOutlineDraw,
   MdCode,
-  MdSpeed
+  MdSpeed,
+  MdOutlineThumbUp
 } from "react-icons/md"
 import { RiLightbulbFlashLine, RiShieldStarLine, RiFlowChart, RiBuildingLine } from 'react-icons/ri'
 import { IoIosRocket } from "react-icons/io"
 import { IoTelescope } from "react-icons/io5"
 import {
-  enableScroll,
-  disableScroll,
   useWindowHeight,
   useWindowWidth,
 } from "../hooks"
 import { SelectCountry } from "../components/ui"
+import update from 'immutability-helper';
+import { toast } from 'react-toastify';
 
 const Index = () => {
   let windowWidth = useWindowWidth()
@@ -39,6 +40,56 @@ const Index = () => {
   }, [windowWidth, windowHeight])
 
   const [ activeTab, setActiveTab ] = useState("Intuitive")
+
+  const [ contactData, setContactData ] = useState({
+    name: null,
+    email: null,
+    location: null,
+    requires: null,
+    message: null
+  })
+
+  console.log(contactData)
+
+  const messageSent = () => {
+    toast("Message Sent!", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        draggable: false,
+        progress: undefined,
+        className: "custom-toast green-toast",
+      });
+  };
+
+  const messageFailed = () => {
+    toast("Somethings missing ...", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        draggable: false,
+        progress: undefined,
+        className: "custom-toast red-toast",
+      });
+  };
+  const submitContact = async () => {
+    if(contactData.name === null || contactData.email === null || contactData.location === null || contactData.requires === null || contactData.message === null){
+      messageFailed()
+    }
+    else{
+      await setContactData(update(contactData, { 
+        name: { $set: null },
+        email: { $set: null },
+        location: { $set: null },
+        requires: { $set: null },
+        message: { $set: null },
+      }));
+      messageSent()
+    }
+  }
+
 
   return (
     <div id="indexWrapper">
@@ -463,6 +514,8 @@ const Index = () => {
               <input
                 className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900"
                 type="text"
+                value={contactData.name || ''}
+                onChange={(e) => setContactData(update(contactData, { name: { $set: e.target.value }}))}
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
@@ -470,18 +523,23 @@ const Index = () => {
               <input
                 className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900"
                 type="text"
+                value={contactData.email || ''}
+                onChange={(e) => setContactData(update(contactData, { email: { $set: e.target.value }}))}
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
               <h3 className="text-lg font-semibold">Where are you located?</h3>
               <SelectCountry
                 className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900"
-                onChange={e => console.log(e.target.value)}
+                value={contactData.location || ''}
+                onChange={(e) => setContactData(update(contactData, { location: { $set: e.target.value }}))}
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
               <h3 className="text-lg font-semibold">How can we help?</h3>
-              <select className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900">
+              <select className="w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900"
+              value={contactData.requires || ''}
+              onChange={(e) => setContactData(update(contactData, { requires: { $set: e.target.value }}))}>
                 <option value="" selected disabled hidden>
                   Choose an option...
                 </option>
@@ -496,9 +554,12 @@ const Index = () => {
               <textarea
                 rows="5"
                 className="contactMessage focus:outline-blue w-full p-1 mb-3 shadow-md rounded-md text-gray-900"
+                value={contactData.message || ''}
+                onChange={(e) => setContactData(update(contactData, { message: { $set: e.target.value }}))}
               />
             </div>
-            <button className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-subheader rounded-lg shadow-md my-5 mx-auto">
+            <button className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-subheader rounded-lg shadow-md my-5 mx-auto"
+            onClick={() => submitContact()}>
               Submit
               <BiCaretRightCircle className="ml-3 text-2xl" />
             </button>

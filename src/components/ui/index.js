@@ -17,10 +17,11 @@ const Popover = ({ children, close }) => {
   )
 }
 
-const SelectCountry = ({ onChange, className }) => {
+const SelectCountry = ({ onChange, className, value }) => {
   return(
     <select 
       className={className}
+      value={value}
       onChange={onChange} 
       id="country" 
       name="country"
