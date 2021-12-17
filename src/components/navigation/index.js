@@ -1,14 +1,15 @@
 import React, { useState } from "react"
-import { disableScroll, enableScroll, useWindowWidth } from "../../hooks"
+import { Link } from 'gatsby'
+import { disableScroll, enableScroll } from "../../hooks"
 import { BiCaretUpCircle } from 'react-icons/bi'
-import NeuralLogo from '../../assets/images/neuralLogo.png'
+import { RiFacebookCircleFill, RiInstagramFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri'
+import { MdOutlineHomeWork, MdOutlineAppRegistration, MdOutlineInsights, MdCode, MdOutlinePerson, MdOutlineMessage } from 'react-icons/md'
 
 const Navbar = () => {
-  let browserWidth = useWindowWidth()
 
   const [menuOpen, setMenuOpen] = useState(false)
 
-  if(menuOpen === true){
+  if(menuOpen === true ){
     disableScroll();
   }
   else{
@@ -26,10 +27,7 @@ const Navbar = () => {
           Smart Technologies
         </h2>
       </div>
-      {browserWidth > 800 ? (
-        <div></div>
-      ) : (
-        <>
+
         <button
           onClick={() => setMenuOpen(menuOpen === true ? false : true)}
           className={`relative flex flex-col h-12 w-12 ml-auto cursor-pointer ${menuOpen === true? 'mr-2' : 'mr-4'}`}
@@ -56,10 +54,58 @@ const Navbar = () => {
         </button>
 
         <div className={`mobileNav flex flex-col ${menuOpen === true ? 'mobileNavOpen' : 'mobileNavClosed'}`}>
-
+          <div className="flex flex-col ml-4 mt-4">
+            <Link 
+              onClick={() => setMenuOpen(false)}
+              to="/"
+              className="menuLink"
+            >
+              <MdOutlineHomeWork className="mr-4" />Home
+            </Link>
+            <Link 
+            onClick={() => setMenuOpen(false)}
+              to="/"
+              className="menuLink"
+            >
+              <MdCode className="mr-4"/>Services
+            </Link>
+            <Link 
+            onClick={() => setMenuOpen(false)}
+              to="/"
+              className="menuLink"
+            >
+              <MdOutlineAppRegistration className="mr-4"/>Our Work
+            </Link>
+            <Link 
+            onClick={() => setMenuOpen(false)}
+              to="/"
+              className="menuLink"
+            >
+              <MdOutlineInsights className="mr-4" />Insights
+            </Link>
+            <Link 
+            onClick={() => setMenuOpen(false)}
+              to="/"
+              className="menuLink"
+            >
+              <MdOutlinePerson className="mr-4" />About Us
+            </Link>
+            <Link 
+            onClick={() => setMenuOpen(false)}
+              to="/"
+              className="menuLink"
+            >
+              <MdOutlineMessage className="mr-4" />Contact
+            </Link>
+          </div>
+          <div className="flex flex-row items-center mt-auto mb-4 ml-4">
+          <RiFacebookCircleFill className="socialIcon socialMenuIcon" />
+          <RiInstagramFill className="socialIcon socialMenuIcon" />
+          <RiTwitterFill className="socialIcon socialMenuIcon" />
+          <RiLinkedinFill className="socialIcon socialMenuIcon" />
         </div>
-        </>
-      )}
+        </div>
+
     </div>
   )
 }
@@ -68,26 +114,79 @@ const Footer = () => {
 
   const [ footerMenuOpen, setFooterMenuOpen ] = useState(false)
 
-  return(
-    <footer className="footer relative h-20">
-      <div className={`footerNav ${footerMenuOpen === true ? 'footerNavOpen' : 'footerNavClosed'}`}>
+  if(footerMenuOpen === true ){
+    disableScroll();
+  }
+  else{
+    enableScroll();
+  }
 
+  return(
+    <>
+    <footer className="footer relative h-20 bg-gray-100">
+      <div className="flex flex-row items-center ml-4 z-30 bg-gray-100">
+        <RiFacebookCircleFill className="socialIcon" />
+        <RiInstagramFill className="socialIcon" />
+        <RiTwitterFill className="socialIcon" />
+        <RiLinkedinFill className="socialIcon" />
       </div>
-      <img 
-        src={NeuralLogo}
-        alt="Neural Smart Technolgies - It's All Connected."
-        className="absolute left-2 h-16 bottom-2"
-      />
-      <p className="absolute bottom-2 left-1/2 transform -translate-x-1/2 ml-2 text-xs md:text-md font-subheader font-semibold">© 2021 Neural Smart Technologies</p>
+      <p className="absolute bottom-1 ml-5 text-sm md:text-md font-subheader font-semibold">© 2021 Neural Smart Technologies</p>
       <button 
         onClick={footerMenuOpen === true ? () => setFooterMenuOpen(false) : () => setFooterMenuOpen(true)}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-gray-100"
       >
       <BiCaretUpCircle 
         className={`text-4xl text-gray-900 hover:text-gray-800 transition-all duration-300 ${footerMenuOpen === true ? 'transform rotate-180': ''}`}
       />
       </button>
     </footer>
+    <div className={`footerNav ${footerMenuOpen === true ? 'footerNavOpen' : 'footerNavClosed'}`}>
+      <div className="flex flex-col ml-4 mt-4 md:flex-row md:items-center">
+            <Link 
+              onClick={() => setFooterMenuOpen(false)}
+              to="/"
+              className="menuLink footerLink"
+            >
+              <MdOutlineHomeWork className="mr-4" />Home
+            </Link>
+            <Link 
+            onClick={() => setFooterMenuOpen(false)}
+              to="/"
+              className="menuLink footerLink"
+            >
+              <MdCode className="mr-4"/>Services
+            </Link>
+            <Link 
+            onClick={() => setFooterMenuOpen(false)}
+              to="/"
+              className="menuLink footerLink"
+            >
+              <MdOutlineAppRegistration className="mr-4"/>Our Work
+            </Link>
+            <Link 
+            onClick={() => setFooterMenuOpen(false)}
+              to="/"
+              className="menuLink footerLink"
+            >
+              <MdOutlineInsights className="mr-4" />Insights
+            </Link>
+            <Link 
+            onClick={() => setFooterMenuOpen(false)}
+              to="/"
+              className="menuLink footerLink"
+            >
+              <MdOutlinePerson className="mr-4" />About Us
+            </Link>
+            <Link 
+            onClick={() => setFooterMenuOpen(false)}
+              to="/"
+              className="menuLink footerLink"
+            >
+              <MdOutlineMessage className="mr-4" />Contact
+            </Link>
+          </div>
+      </div>
+      </>
   )
 }
 

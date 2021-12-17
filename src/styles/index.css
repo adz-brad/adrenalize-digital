@@ -57,7 +57,7 @@ h3,h4,h5,.font-subheader{
 }
 
 .mobileNav{
-    @apply bg-gray-900 bg-opacity-90 rounded-r-xl shadow-md;
+    @apply bg-gray-900 bg-opacity-95 rounded-r-xl shadow-md;
     position:fixed;
     height: calc(100% - 80px);
     top: 70px;
@@ -71,6 +71,13 @@ h3,h4,h5,.font-subheader{
     .navbar, .navbarBg{
         height: 80px ;
     }
+
+    .mobileNav{
+        @apply bg-opacity-100;
+        height: calc(100% - 100px);
+        top: 90px;
+        max-width: 300px;
+    }
 }
 
 .mobileNavOpen{
@@ -79,6 +86,26 @@ h3,h4,h5,.font-subheader{
 
 .mobileNavClosed{
     left: calc(-100% - 10px);
+}
+
+.menuLink{
+    @apply flex flex-row items-center text-gray-100 font-subheader text-3xl font-bold my-2;
+}
+
+.menuLink svg{
+    @apply transition-all duration-100 text-4xl;
+}
+
+.menuLink:hover svg{
+    @apply text-blue-500 transform scale-105;
+}
+
+.footerLink{
+    @apply text-gray-900 text-xl md:mx-auto;
+}
+
+.menuLink.footerLink svg{
+    @apply md:mr-2;
 }
 
 .header{
@@ -118,7 +145,7 @@ div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > p
 }
 
 .featureImage1{
-    max-height:480px;
+    max-height:500px;
 }
 
 #indexWrapper > div > div > div > div:hover > button {
@@ -133,7 +160,9 @@ div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > p
 /* --- Product Tabs --- */
 
 .tab{
-    @apply mx-auto py-2 px-4 rounded-md;
+    @apply flex flex-row items-center mx-auto py-2 pl-3 pr-4 rounded-l-full;
+    border-top-right-radius: 2000px;
+    border-bottom-right-radius: 2000px;
 }
 
 .tab h1{
@@ -158,6 +187,21 @@ div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > p
 
 .tabInactive h1{
     @apply text-gray-100;
+}
+
+.tabNumber{
+    @apply flex flex-row items-center justify-center rounded-full h-8 w-8 font-bold font-subheader text-xl mr-4 shadow-inner;
+}
+
+.tabNumberActive{
+    @apply bg-gray-900 text-gray-100;
+}
+
+.tabNumberInactive{
+    @apply bg-gray-100 text-gray-900;
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 1);
+	transform: scale(1);
+	animation: pulse 1.5s infinite;
 }
 
 
@@ -198,13 +242,20 @@ textarea.contactMessage{
 
 .footer{
     @apply flex flex-row items-center;
-    background-color: #e9e9e9;
+    z-index:2;
 }
 
 .footerNav{
     @apply fixed w-full bg-gray-100 rounded-t-lg;
     height: 400px;
     transition: ease-in-out 0.3s;
+    z-index:1;
+}
+
+@media only screen and (min-width: 768px) {
+    .footerNav{
+        height:150px;
+    }
 }
 
 .footerNavOpen{
@@ -213,6 +264,23 @@ textarea.contactMessage{
 
 .footerNavClosed{
     bottom: -400px;
+}
+
+@media only screen and (min-width: 768px) {
+    
+    .footerNavClosed{
+        bottom: -150px;
+    }
+}
+
+/* --- Social --- */
+
+.socialIcon{
+    @apply text-3xl mr-1 hover:text-blue-500 cursor-pointer;
+}
+
+.socialMenuIcon{
+    @apply text-4xl mr-2 text-gray-100;
 }
 
 /* --- Scrollbars --- */
@@ -244,5 +312,24 @@ textarea.contactMessage{
     max-width: 992px;
     margin: auto;
     overflow:auto;
+}
+
+/* --- Effects --- */
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(14, 165, 233, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+	}
 }
 
