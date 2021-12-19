@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { disableScroll, enableScroll } from "../../hooks"
 import { BiCaretUpCircle } from 'react-icons/bi'
 import { RiFacebookCircleFill, RiInstagramFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri'
-import { MdOutlineHomeWork, MdOutlineAppRegistration, MdOutlineInsights, MdCode, MdOutlinePerson, MdOutlineMessage } from 'react-icons/md'
+import { MdOutlineHomeWork, MdOutlineAppRegistration, MdOutlineInsights, MdCode, MdOutlinePerson, MdOutlineMessage,  MdOutlineLogin, } from 'react-icons/md'
 
 const Navbar = () => {
 
@@ -97,6 +97,9 @@ const Navbar = () => {
             >
               <MdOutlineMessage className="mr-4" />Contact
             </Link>
+          </div>
+          <div className="flex flex-row items-center hidden">
+            <MdOutlineLogin className="mr-4" />User Portal
           </div>
           <div className="flex flex-row items-center mt-auto mb-4 ml-4">
           <RiFacebookCircleFill className="socialIcon socialMenuIcon" />

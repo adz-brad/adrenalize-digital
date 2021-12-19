@@ -323,11 +323,11 @@ textarea.contactMessage{
 
 .Toastify__toast-container {
     @apply fixed bottom-2 right-2 p-0 ml-auto !important;
-    max-width: 300px;
+    max-width: 280px;
   }
   
   .custom-toast {
-    @apply font-subheader font-bold shadow-lg rounded-md text-white text-xl min-h-0 pl-2 pr-4 cursor-pointer !important;
+    @apply font-subheader font-bold shadow-lg rounded-md text-white text-lg min-h-0 pl-2 pr-4 cursor-pointer !important;
   }
   
   .red-toast {

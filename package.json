@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "browser-monads": "^1.0.0",
+    "emailjs-com": "^3.2.0",
     "gatsby": "^4.3.0",
     "gatsby-background-image": "^1.5.3",
     "gatsby-plugin-image": "^2.3.0",
