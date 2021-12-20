@@ -19,14 +19,16 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbarBg "/>
-      <div className="flex flex-col ml-4 mr-auto">
+      <Link 
+        to="/"
+        className="flex flex-col ml-4 mr-auto">
         <h1 className="header text-gray-100">
           Neural
         </h1>
         <h2 className="subHeader text-blue-500">
           Smart Technologies
         </h2>
-      </div>
+      </Link>
 
         <button
           onClick={() => setMenuOpen(menuOpen === true ? false : true)}
@@ -64,35 +66,35 @@ const Navbar = () => {
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="/"
+              to="/services"
               className="menuLink"
             >
               <MdCode className="mr-4"/>Services
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="/"
+              to="/our-work"
               className="menuLink"
             >
               <MdOutlineAppRegistration className="mr-4"/>Our Work
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="/"
+              to="/insights-blog"
               className="menuLink"
             >
               <MdOutlineInsights className="mr-4" />Insights
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="/"
+              to="/about-us"
               className="menuLink"
             >
               <MdOutlinePerson className="mr-4" />About Us
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="/"
+              to="/#contact"
               className="menuLink"
             >
               <MdOutlineMessage className="mr-4" />Contact
@@ -161,28 +163,28 @@ const Footer = () => {
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/"
+              to="/services"
               className="menuLink footerLink"
             >
               <MdOutlineAppRegistration className="mr-4"/>Our Work
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/"
+              to="/about-us"
               className="menuLink footerLink"
             >
               <MdOutlineInsights className="mr-4" />Insights
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/"
+              to="/insights-blog"
               className="menuLink footerLink"
             >
               <MdOutlinePerson className="mr-4" />About Us
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/"
+              to="/#contact"
               className="menuLink footerLink"
             >
               <MdOutlineMessage className="mr-4" />Contact

@@ -53,8 +53,10 @@ module.exports = {
           cookieName: 'gatsby-gdpr-facebook-pixel', 
         },
         hotjar: {
-          hjid: '2754540',
-          hjsv: '6',
+          hjid: '',
+          // hjid: '2754540',
+          hjsv: '',
+          // hjsv: '6',
           cookieName: 'gatsby-gdpr-hotjar',
         },
         environments: ['production', 'development']

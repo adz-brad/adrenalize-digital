@@ -103,7 +103,7 @@ const Tabs = () => {
                 </p>
                 <div className="flex flex-row items-center mt-4 ml-2">
                 <StaticImage
-          src="../assets/images/uxImage.jpg"
+          src="../../assets/images/uxImage.jpg"
           alt="The ultimate in user experience."
           placeholder="blurred"
           className="h-28 w-28 rounded-lg shadow-md mr-4"
@@ -133,7 +133,7 @@ const Tabs = () => {
                 </p>
                 <div className="flex flex-row items-center mt-4 ml-2">
                 <StaticImage
-          src="../assets/images/secureImage.jpg"
+          src="../../assets/images/secureImage.jpg"
           alt="The ultimate in user experience."
           placeholder="blurred"
           className="h-28 w-28 rounded-lg shadow-md mr-4"
@@ -163,7 +163,7 @@ const Tabs = () => {
                 </p>
                 <div className="flex flex-row items-center mt-4 ml-2">
                 <StaticImage
-          src="../assets/images/scaleImage.jpg"
+          src="../../assets/images/scaleImage.jpg"
           alt="The ultimate in user experience."
           placeholder="blurred"
           className="h-28 w-28 rounded-lg shadow-md mr-4"
@@ -193,7 +193,7 @@ const Tabs = () => {
                 </p>
                 <div className="flex flex-row items-center mt-4 ml-2">
                 <StaticImage
-          src="../assets/images/devImage.jpg"
+          src="../../assets/images/devImage.jpg"
           alt="The ultimate in user experience."
           placeholder="blurred"
           className="h-28 w-28 rounded-lg shadow-md mr-4"
