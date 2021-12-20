@@ -34,10 +34,36 @@ module.exports = {
         ignore: [`**/\.*`],
       },
     },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: '', 
+          cookieName: 'gatsby-gdpr-google-analytics', 
+          anonymize: true, 
+          allowAdFeatures: false 
+        },
+        googleTagManager: {
+          trackingId: '', 
+          cookieName: 'gatsby-gdpr-google-tagmanager', 
+          dataLayerName: 'dataLayer', 
+        },
+        facebookPixel: {
+          pixelId: '', 
+          cookieName: 'gatsby-gdpr-facebook-pixel', 
+        },
+        hotjar: {
+          hjid: '2754540',
+          hjsv: '6',
+          cookieName: 'gatsby-gdpr-hotjar',
+        },
+        environments: ['production', 'development']
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
-    //`gatsby-plugin-preact`
+    `gatsby-plugin-preact`
   ],
 }
