@@ -9,7 +9,7 @@ const Tabs = () => {
     const [ activeTab, setActiveTab ] = useState("Intuitive")
 
     return(
-        <div className="flex flex-col max-w-screen-xl mx-auto shadow-lg rounded-md my-8">
+        <div className="flex flex-col max-w-screen-xl mx-auto my-8">
         <div className="flex flex-col md:flex-row items-center p-2 bg-gray-900 rounded-t-md">
           <h2 className="text-gray-100 font-subheader font-bold text-3xl md:text-4xl mx-auto my-2">
             Our Products are
@@ -213,8 +213,7 @@ const Tabs = () => {
             </div>
           ) : null}
         </div>
-        <div className="flex flex-col md:flex-row md:items-center my-5">
-          <div className="flex flex-col bg-gray-900 shadow-lg rounded-lg m-1 p-3">
+          <div className="flex flex-col bg-gray-900 shadow-lg rounded-md my-5 p-3">
             <div className="flex flex-row items-center justify-center md:justify-start mx-1 mt-2">
             <MdBolt className="text-gray-100 text-4xl md:text-5xl mr-1" />
             <h2 className="text-gray-100 text-2xl md:text-3xl font-subheader font-bold">
@@ -235,7 +234,6 @@ const Tabs = () => {
               </button>
               </div>
           </div>
-        </div>
       </div>
     )
 }
