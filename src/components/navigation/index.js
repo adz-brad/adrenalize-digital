@@ -38,19 +38,19 @@ const Navbar = () => {
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-1 rounded-lg shadow-md transform transition duration-150 ease-in-out ${
               menuOpen === true
                 ? "-translate-y-1/2 rotate-45 bg-blue-500 w-8"
-                : "-translate-y-3 bg-gray-100 w-12"
+                : "-translate-y-3 bg-gray-100 w-10 md:w-12"
             }`}
           />
           <div
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-1 rounded-lg shadow-md transform transition duration-75 ease-in-out ${
-              menuOpen === true ? "scale-0" : "bg-gray-100 w-12"
+              menuOpen === true ? "scale-0" : "bg-gray-100 w-10 md:w-12"
             }`}
           />
           <div
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-1 rounded-lg shadow-md transform transition duration-150 ease-in-out ${
               menuOpen === true
                 ? "-translate-y-1/2 -rotate-45 bg-blue-500 w-8"
-                : "translate-y-2 bg-gray-100 w-12"
+                : "translate-y-2 bg-gray-100 w-10 md:w-12"
             }`}
           />
         </button>
@@ -66,10 +66,10 @@ const Navbar = () => {
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="/services"
+              to="/products"
               className="menuLink"
             >
-              <MdCode className="mr-4"/>Services
+              <MdCode className="mr-4"/>Products
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
@@ -159,11 +159,11 @@ const Footer = () => {
               to="/"
               className="menuLink footerLink"
             >
-              <MdCode className="mr-4"/>Services
+              <MdCode className="mr-4"/>Products
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/services"
+              to="/products"
               className="menuLink footerLink"
             >
               <MdOutlineAppRegistration className="mr-4"/>Our Work

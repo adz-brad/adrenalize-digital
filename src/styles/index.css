@@ -306,7 +306,57 @@ textarea.contactMessage{
 #contact ::-webkit-scrollbar {
     width: 5px;
 }
-    
+
+
+/* --- Services Page --- */
+
+.servicesTab{
+    @apply flex flex-col my-2 shadow-md;
+}
+
+.servicesTabButton{
+    @apply flex flex-row items-center bg-gray-900 p-2 transition-all duration-100 z-10;
+}
+
+.servicesTabHeader{
+    @apply font-medium text-lg text-gray-100;
+}
+
+.servicesTabIcon{
+    @apply text-2xl mr-2 text-gray-100 transform;
+}
+
+.servicesTabIconActive{
+    @apply -rotate-90 text-blue-500;
+}
+
+.servicesTabBody{
+    @apply flex flex-col shadow-md bg-gray-100 w-full;
+}
+
+.servicesTabBodyActive{
+    @apply relative rounded-b-md;
+    transition: ease 0.2s;
+}
+
+.servicesTabBodyInactive{
+    @apply rounded-md h-0;
+    transition: ease 0.2s;
+}
+
+.servicesTabContent{
+    @apply p-1;
+}
+
+.servicesTabBodyInactive .servicesTabContent{
+    display: none;
+}
+
+.servicesTabBodyActive .servicesTabContent{
+    @apply flex-col md:flex-row;
+    display: flex;
+}
+
 
   /* --- Components --- */
 

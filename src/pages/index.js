@@ -7,7 +7,6 @@ import {
   MdLaptopMac,
   MdOutlineDraw,
   MdCode,
-  MdSpeed,
 } from "react-icons/md"
 import { IoIosRocket } from "react-icons/io"
 import { IoTelescope } from "react-icons/io5"
@@ -15,7 +14,7 @@ import {
   useWindowHeight,
   useWindowWidth,
 } from "../hooks"
-import { SEO } from '../components/seo'
+import { Seo } from '../components/seo'
 import { Tabs } from '../components/tabs'
 import { ContactForm } from '../components/contact'
 
@@ -42,7 +41,7 @@ const Index = () => {
   return (
     <div id="indexWrapper">
 
-      <SEO
+      <Seo
         pageTitle="Home"
         pageDescription="Neural Smart Technologies - Creating intelligent digital products for intelligent businesses."
         pageKeywords="Neural, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
