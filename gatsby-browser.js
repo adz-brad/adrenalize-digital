@@ -16,6 +16,7 @@ const onServiceWorkerUpdateReady = () => {
   }
 
   const wrapPageElement = ({ element, props }) => {
+    
     return (
       <Layout {...props}>
         <Helmet>

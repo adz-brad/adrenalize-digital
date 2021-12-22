@@ -6,7 +6,7 @@ import update from 'immutability-helper';
 import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
 
-const ContactForm = () => {
+const ContactForm = ({ className }) => {
 
   const [ contactData, setContactData ] = useState({
     name: null,
@@ -119,7 +119,7 @@ const ContactForm = () => {
     return(
         <div
             id="contact"
-            className="w-full md:w-2/3 flex flex-col justify-center items-center bg-gray-900 text-gray-100 rounded-b-lg rounded-lg p-5"
+            className={`w-full md:w-2/3 flex flex-col justify-center items-center bg-gray-900 text-gray-100 rounded-b-lg rounded-lg p-5 ${className}`}
           >
             <h1 className="font-subheader text-4xl font-semibold my-6 leading-none">
               Let's get in touch!

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
 import { BiCaretRightCircle, BiCodeBlock, BiCaretRight } from "react-icons/bi"
 import {
@@ -17,8 +18,16 @@ import {
 import { Seo } from '../components/seo'
 import { Tabs } from '../components/tabs'
 import { ContactForm } from '../components/contact'
+import { animateScroll as scroll } from "react-scroll";
 
 const Index = () => {
+
+  useEffect(() => {
+    scroll.scrollToTop({
+        duration: 0,
+    });
+}, [])
+
   let windowWidth = useWindowWidth()
   let windowHeight = useWindowHeight()
 
@@ -106,12 +115,13 @@ const Index = () => {
                 and progressive web applications to help you extend your
                 business capabilities beyond average.
               </p>
-              <button
+              <Link 
+                to="/products#websites-web-applications"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
-              </button>
+              </Link>
             </div>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
@@ -125,12 +135,13 @@ const Index = () => {
                 powering Spotify, Airbnb, Pinterest, Uber Eats and other
                 enterprise grade applications.
               </p>
-              <button
+              <Link 
+                to="/products#mobile-apps"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
-              </button>
+              </Link>
             </div>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
@@ -143,10 +154,12 @@ const Index = () => {
                 Designed and built to be distributed across all modern macOS,
                 Windows and Linux operating systems, our desktop applications
               </p>
-              <button className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
+              <Link 
+                to="/products#desktop-apps"
+                className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
-              </button>
+              </Link>
             </div>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
@@ -160,12 +173,13 @@ const Index = () => {
                 unify multiple devices, platforms and operations to boost
                 organizational productivity.
               </p>
-              <button
+              <Link 
+                to="/products#hybrid-app-suites"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

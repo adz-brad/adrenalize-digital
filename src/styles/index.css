@@ -26,7 +26,7 @@
     padding: 0;
 }
 
-body{
+body, .font-content{
     font-family: Montserrat; 
 }
 
@@ -315,15 +315,20 @@ textarea.contactMessage{
 }
 
 .servicesTabButton{
-    @apply flex flex-row items-center bg-gray-900 p-2 transition-all duration-100 z-10;
+    @apply flex flex-row items-center bg-gray-900 p-2 transition-all duration-100 z-10 md:py-3 md:pl-3 cursor-pointer;
 }
 
 .servicesTabHeader{
-    @apply font-medium text-lg text-gray-100;
+    @apply font-medium font-subheader text-xl md:text-3xl font-semibold text-gray-100;
 }
 
 .servicesTabIcon{
-    @apply text-2xl mr-2 text-gray-100 transform;
+    @apply text-2xl md:text-3xl mr-2 text-gray-100 transform;
+}
+
+.servicesTabButton:hover .servicesTabIcon{
+    @apply text-blue-500;
+
 }
 
 .servicesTabIconActive{
@@ -353,10 +358,45 @@ textarea.contactMessage{
 }
 
 .servicesTabBodyActive .servicesTabContent{
-    @apply flex-col md:flex-row;
+    @apply flex-col;
     display: flex;
 }
 
+.productFitListItem{
+    @apply flex flex-row items-center mt-2 mb-4;
+}
+
+.productFitListItemNumber{
+    @apply relative bg-gray-900 rounded-full w-6 h-6 shadow-md px-3 pb-1 pt-3;
+}
+
+.productFitListItemNumber span{
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-100 font-semibold font-subheader;
+}
+
+.productFitListItemText{
+    @apply text-sm md:text-base ml-2 leading-tight font-semibold;
+}
+
+.ecommerceIcon{
+    @apply mx-auto my-4 text-6xl md:text-7xl cursor-pointer filter drop-shadow-md transform hover:scale-105;
+}
+
+.shopifyIcon:hover{
+    color: rgb(150,191,71);
+}
+
+.wooCommerceIcon:hover{
+    color: rgb(127,84,179);
+}
+
+.bigCommerceIcon:hover{
+    color: rgb(51,49,61);
+}
+
+.magentoIcon:hover{
+    color: rgb( (244, 111, 37));
+}
 
   /* --- Components --- */
 
@@ -397,17 +437,24 @@ textarea.contactMessage{
 @keyframes pulse {
 	0% {
 		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
+		box-shadow: 0 0 0 0 rgb(96, 205, 255);
 	}
 
 	70% {
 		transform: scale(1);
-		box-shadow: 0 0 0 10px rgba(14, 165, 233, 0);
+		box-shadow: 0 0 0 10px rgba(104, 207, 255, 0);
 	}
 
 	100% {
 		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+		box-shadow: 0 0 0 0 rgba(29, 173, 240, 0);
 	}
+}
+
+.anchor {
+    display: block;
+    position: relative;
+    top: 250px;
+    visibility: hidden;
 }
 
