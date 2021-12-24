@@ -32,8 +32,10 @@ const Navbar = () => {
 
         <button
           onClick={() => setMenuOpen(menuOpen === true ? false : true)}
-          className={`relative flex flex-col h-12 w-12 ml-auto cursor-pointer ${menuOpen === true? 'mr-2' : 'mr-4'}`}
+          className={`relative flex flex-row items-center ml-auto cursor-pointer ${menuOpen === true? 'mr-2' : 'mr-4'}`}
         >
+          <h2 className="opacity-0 md:opacity-100 text-2xl text-gray-100 mr-4">Menu</h2>
+          <div className="relative flex flex-col h-12 w-12">
           <div
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-1 rounded-lg shadow-md transform transition duration-150 ease-in-out ${
               menuOpen === true
@@ -53,6 +55,7 @@ const Navbar = () => {
                 : "translate-y-2 bg-gray-100 w-10 md:w-12"
             }`}
           />
+          </div>
         </button>
 
         <div className={`mobileNav flex flex-col ${menuOpen === true ? 'mobileNavOpen' : 'mobileNavClosed'}`}>
@@ -138,8 +141,9 @@ const Footer = () => {
       <p className="absolute bottom-1 ml-5 text-sm md:text-md font-subheader font-semibold">© 2021 Neural Smart Technologies</p>
       <button 
         onClick={footerMenuOpen === true ? () => setFooterMenuOpen(false) : () => setFooterMenuOpen(true)}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-gray-100"
+        className="flex flex-row items-center absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-gray-100"
       >
+        <h2 className="text-2xl font-bold mr-2">Menu</h2>
       <BiCaretUpCircle 
         className={`text-4xl text-gray-900 hover:text-gray-800 transition-all duration-300 ${footerMenuOpen === true ? 'transform rotate-180': ''}`}
       />
@@ -156,28 +160,28 @@ const Footer = () => {
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/"
+              to="/products"
               className="menuLink footerLink"
             >
               <MdCode className="mr-4"/>Products
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/products"
+              to="/our-work"
               className="menuLink footerLink"
             >
               <MdOutlineAppRegistration className="mr-4"/>Our Work
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/about-us"
+              to="/insights-blog"
               className="menuLink footerLink"
             >
               <MdOutlineInsights className="mr-4" />Insights
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/insights-blog"
+              to="/about-us"
               className="menuLink footerLink"
             >
               <MdOutlinePerson className="mr-4" />About Us

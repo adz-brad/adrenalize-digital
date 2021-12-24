@@ -160,7 +160,7 @@ const Services = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col p-1 my-6">
+        <div className="flex flex-col p-1 md:p-4 my-6">
           <h1 className="text-3xl font-subheader font-bold">
             The perfect fit.
           </h1>
