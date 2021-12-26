@@ -256,16 +256,16 @@ const WebApplications = () => {
               <h2 className="font-content font-bold text-xs">Shopify</h2>
               </div>
               <div className="flex flex-col items-center">
-              <SiWoo className="ecommerceIcon wooCommerceIcon" />
-              <h2 className="font-content font-bold text-xs">WooCommerce</h2>
-              </div>
-              <div className="flex flex-col items-center">
               <SiBigcommerce className="ecommerceIcon bigCommerceIcon" />
-              <h2 className="font-content font-bold text-xs">BigCommerce</h2>
+              <h2 className="font-content font-bold text-xs transform scale-95">BigCommerce</h2>
               </div>
               <div className="flex flex-col items-center">
               <SiMagento className="ecommerceIcon magentoIcon" />
               <h2 className="font-content font-bold text-xs">Magento</h2>
+              </div>
+              <div className="flex flex-col items-center">
+              <SiWoo className="ecommerceIcon wooCommerceIcon" />
+              <h2 className="font-content font-bold text-xs transform scale-95">WooCommerce</h2>
               </div>
             </div>
             <p className="m-1 text-sm md:text-base">
@@ -747,12 +747,24 @@ const HybridAppSuites = () => {
           </div>
           <div className="flex flex-col md:flex-row mt-4 -mx-1 md:mx-4 md:my-4 bg-white rounded-lg shadow-md">
           <div className="flex flex-col md:w-1/2 p-3 md:p-4 text-sm">
-            <h2 className="m-1 font-subheader font-semibold text-2xl md:text-3xl">
+            <h2 className="m-1 font-subheader font-semibold text-xl md:text-2xl">
             The Ultimate In Flexibility
             </h2>
-            <p className="m-1 md:text-base">
+            <p className="m-1 text-sm">
             We're a society that's constantly on the go and that's not likely to change in the future, in fact clients should only expect to need more powerful and improved tools that allow them the flexibility to complete tasks and manage their businesses from anywhere, anytime.
             </p>
+            <h2 className="mt-2 mb-1 mx-1 font-subheader font-semibold text-xl md:text-2xl">
+            Offline Capability
+            </h2>
+            <p className="m-1 text-sm">
+              Our proprietary <strong>edge-to-cloud data sync</strong> technology means you can get things done without stressing about losing data by locally storing work and asynchronously uploading it to your cloud server whenever connectivity is restored. 
+            </p>
+            <button
+            className="flex flex-row items-center text-lg px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-6 mb-4 mx-auto md:mr-auto md:ml-1"
+          >
+            Learn More
+            <BiCaretRightCircle className="ml-3 text-2xl" />
+          </button>
             </div>
             {/* FaWindows, FaLinux, FaApple, MdOutlineAndroid, MdOutlineSmartphone, MdOutlineLaptop, BiTransfer, BiData*/}
             <div className="flex flex-col -mx-2 -mb-2 mt-6 md:m-0 md:w-1/2 bg-gray-900 text-gray-100 rounded-lg md:rounded-none md:rounded-r-lg shadow-lg p-3">
@@ -778,10 +790,18 @@ const HybridAppSuites = () => {
                     </div>
                   </div>
               </div>
-              <p className="m-2 md:m-4 text-sm md:text-base">
+              <p className="m-2 md:m-4 text-sm font-semibold">
               Neural hybrid app suites allow for an easy usage transition between platforms - the functionality and interface you have on a Windows laptop will be the same as what you have on an iPad - making it simple for users to perform tasks regardless of what platform they're required to use.
             </p>
             </div>
+          </div>
+          <div className="flex flex-col m-1 md:p-4 md:my-3 text-sm">
+            <h2 className="m-1 font-subheader font-semibold text-2xl md:text-3xl">
+              It's What We Do
+            </h2>
+            <p className="m-1 md:text-base">
+            Neural Hybrid App Suites are the flagship of our business model - we've invested heavily in the utilization of modern technology stacks to develop apps that flex between mobile and desktop because we wholeheartedly believe that improved business capabilities are a significant contribution in creating a better world. Our app suites provide clients with a robust suite of powerful tools to aid them in improving their businesses by reducing operational costs and increasing productivity.
+            </p>
           </div>
         </div>
       </>

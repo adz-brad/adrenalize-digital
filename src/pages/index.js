@@ -152,7 +152,7 @@ const Index = () => {
               </div>
               <p className="text-base text-gray-900">
                 Designed and built to be distributed across all modern macOS,
-                Windows and Linux operating systems, our desktop applications
+                Windows and Linux operating systems, our desktop applications combine the flexibility of mobile design with the power of desktop.
               </p>
               <Link 
                 to="/products#desktop-apps"

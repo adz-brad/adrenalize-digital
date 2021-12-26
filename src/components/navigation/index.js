@@ -97,7 +97,7 @@ const Navbar = () => {
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="/#contact"
+              to="#contact"
               className="menuLink"
             >
               <MdOutlineMessage className="mr-4" />Contact
@@ -188,7 +188,7 @@ const Footer = () => {
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/#contact"
+              to="#contact"
               className="menuLink footerLink"
             >
               <MdOutlineMessage className="mr-4" />Contact

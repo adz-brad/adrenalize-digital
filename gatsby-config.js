@@ -66,6 +66,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
-    // `gatsby-plugin-preact`
+    `gatsby-plugin-preact`
   ],
 }
