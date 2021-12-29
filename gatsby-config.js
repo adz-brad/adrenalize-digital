@@ -19,7 +19,7 @@ module.exports = {
         start_url: `/`,
         display: `standalone`,
         cache_busting_mode: "none",
-        icon: `src/assets/images/ad-logo.png`,
+        icon: `src/assets/images/adLogoLight.png`,
         include_favicon: true,
         icon_options: {
           purpose: `any maskable`,
