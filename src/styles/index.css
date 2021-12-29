@@ -10,8 +10,8 @@
     }
 
     @font-face {
-        font-family: Vezla;
-        src: url('../assets/fonts/Vezla.ttf');
+        font-family: TypoGraphica;
+        src: url('../assets/fonts/typographica-webfont.woff') format('woff');
     }
 
     @font-face {
@@ -30,12 +30,12 @@ body, .font-content{
     font-family: Montserrat; 
 }
 
-h1,h2,.font-headers {
-    font-family: Vezla;
+h1, h2, h3, h4, h5, .font-headers{
+    font-family: Rajdhani;
 }
 
-h3,h4,h5,.font-subheader{
-    font-family: Rajdhani;
+.font-title{
+    font-family: TypoGraphica;
 }
 
 /* --- Navigation --- */
@@ -89,7 +89,7 @@ h3,h4,h5,.font-subheader{
 }
 
 .menuLink{
-    @apply flex flex-row items-center text-gray-100 font-subheader text-3xl font-bold my-2;
+    @apply font-headers font-bold flex flex-row items-center text-gray-100 text-3xl my-2;
 }
 
 .menuLink svg{
@@ -114,7 +114,11 @@ h3,h4,h5,.font-subheader{
 }
 
 .subHeader{
-    @apply lowercase font-subheader text-sm md:text-xl font-extrabold tracking-wider;
+    @apply lowercase text-sm md:text-xl font-extrabold tracking-wider;
+}
+
+button{
+    @apply font-headers;
 }
 
 /* --- Hero --- */
@@ -166,7 +170,7 @@ div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > p
 }
 
 .tab h1{
-    @apply font-subheader font-bold text-2xl md:text-3xl;
+    @apply font-bold text-2xl md:text-3xl;
 }
 
 .tab:hover h1{
@@ -190,7 +194,7 @@ div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > p
 }
 
 .tabNumber{
-    @apply flex flex-row items-center justify-center rounded-full h-8 w-8 font-bold font-subheader text-xl mr-4 shadow-inner;
+    @apply flex flex-row items-center justify-center rounded-full h-8 w-8 font-bold text-xl mr-4 shadow-inner;
 }
 
 .tabNumberActive{
@@ -319,7 +323,7 @@ textarea.contactMessage{
 }
 
 .servicesTabHeader{
-    @apply font-medium font-subheader text-xl md:text-3xl font-semibold text-gray-100;
+    @apply font-medium text-xl md:text-3xl font-semibold text-gray-100;
 }
 
 .servicesTabIcon{
@@ -369,7 +373,7 @@ textarea.contactMessage{
 }
 
 .productFitListItemNumber span{
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-100 font-semibold font-subheader;
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-100 font-semibold;
 }
 
 .productFitListItemText{
@@ -427,7 +431,7 @@ textarea.contactMessage{
   }
   
   .custom-toast {
-    @apply font-subheader font-bold shadow-lg rounded-md text-white text-lg min-h-0 pl-2 pr-4 cursor-pointer !important;
+    @apply font-bold shadow-lg rounded-md text-white text-lg min-h-0 pl-2 pr-4 cursor-pointer !important;
   }
   
   .red-toast {

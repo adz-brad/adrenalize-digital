@@ -792,10 +792,10 @@ const HybridAppSuites = () => {
               </div>
               <p className="m-2 md:m-4 text-sm font-semibold">
               Adrenalize hybrid app suites allow for an easy usage transition between platforms - the functionality and interface you have on a Windows laptop will be the same as what you have on an iPad - making it simple for users to perform tasks regardless of what platform they're required to use.
-            </p>
+              </p>
             </div>
           </div>
-          <div className="flex flex-col m-1 md:p-4 md:my-3 text-sm">
+          <div className="flex flex-col m-1 md:p-4 my-3 text-sm">
             <h2 className="m-1 font-subheader font-semibold text-2xl md:text-3xl">
               It's What We Do
             </h2>

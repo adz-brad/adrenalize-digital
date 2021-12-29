@@ -52,9 +52,9 @@ const Index = () => {
 
       <Seo
         pageTitle="Home"
-        pageDescription="Neural Smart Technologies - Creating intelligent digital products for intelligent businesses."
-        pageKeywords="Neural, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
-        pageUrl="https://www.neuralsmart.ca"
+        pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
+        pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
+        pageUrl="https://www.adrenalizedigital.ca"
       />
 
       <div

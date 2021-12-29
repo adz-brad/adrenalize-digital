@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from 'gatsby'
+import { StaticImage } from "gatsby-plugin-image"
 import { disableScroll, enableScroll } from "../../hooks"
 import { BiCaretUpCircle } from 'react-icons/bi'
 import { RiFacebookCircleFill, RiInstagramFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri'
@@ -21,13 +22,17 @@ const Navbar = () => {
       <div className="navbarBg "/>
       <Link 
         to="/"
-        className="flex flex-col ml-4 mr-auto">
-        <h1 className="header text-gray-100">
-          Neural
-        </h1>
-        <h2 className="subHeader text-blue-500">
-          Smart Technologies
-        </h2>
+        className="flex flex-row items-center ml-2 mr-auto">
+          <StaticImage 
+            src="../../assets/images/adLogoLight.png"
+            placeholder="none"
+            alt="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
+            className="w-16 md:w-24 my-auto"
+          />
+          <div className="flex flex-col ml-1">
+            <h1 className="font-title text-2xl md:text-3xl text-primary-600 leading-none ">Adrenalize</h1>
+            <h1 className="font-title text-xl md:text-2xl text-gray-100 leading-none">Digital</h1>
+          </div>
       </Link>
 
         <button
@@ -69,10 +74,10 @@ const Navbar = () => {
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="/products"
+              to="/services"
               className="menuLink"
             >
-              <MdCode className="mr-4"/>Products
+              <MdCode className="mr-4"/>Services
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
@@ -97,7 +102,7 @@ const Navbar = () => {
             </Link>
             <Link 
             onClick={() => setMenuOpen(false)}
-              to="#contact"
+              to="/contact-us"
               className="menuLink"
             >
               <MdOutlineMessage className="mr-4" />Contact
@@ -138,7 +143,7 @@ const Footer = () => {
         <RiTwitterFill className="socialIcon" />
         <RiLinkedinFill className="socialIcon" />
       </div>
-      <p className="absolute bottom-1 ml-5 text-sm md:text-md font-subheader font-semibold">© 2021 Neural Smart Technologies</p>
+      <p className="absolute bottom-1 ml-5 text-sm md:text-md font-subheader font-semibold">© 2022 Adrenalize Digital</p>
       <button 
         onClick={footerMenuOpen === true ? () => setFooterMenuOpen(false) : () => setFooterMenuOpen(true)}
         className="flex flex-row items-center absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-gray-100"
@@ -160,10 +165,10 @@ const Footer = () => {
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="/products"
+              to="/services"
               className="menuLink footerLink"
             >
-              <MdCode className="mr-4"/>Products
+              <MdCode className="mr-4"/>Services
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
@@ -188,7 +193,7 @@ const Footer = () => {
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
-              to="#contact"
+              to="/contact-us"
               className="menuLink footerLink"
             >
               <MdOutlineMessage className="mr-4" />Contact

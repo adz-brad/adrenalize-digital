@@ -5,16 +5,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { Helmet } from 'react-helmet';
 
-const onServiceWorkerUpdateReady = () => {
-    const answer = window.confirm(
-      `This application has been updated. ` +
-        `Reload to display the latest version?`
-    )
-    if (answer === true) {
-      window.location.reload()
-    }
-  }
-
   const wrapPageElement = ({ element, props }) => {
     
     return (
@@ -24,10 +14,10 @@ const onServiceWorkerUpdateReady = () => {
               {`{
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Neural Smart Technologies",
+  "name": "Adrenalize Digital",
   "image": "",
-  "@id": "https://www.neuralsmart.ca/about-us",
-  "url": "https://www.neuralsmart.ca",
+  "@id": "https://www.adrenalizedigital.ca/about-us",
+  "url": "https://www.adrenalizedigital.ca",
   "telephone": "",
   "address": {
     "@type": "PostalAddress",
@@ -61,4 +51,4 @@ const onServiceWorkerUpdateReady = () => {
   }
 
 
-export { wrapPageElement, onServiceWorkerUpdateReady }
+export { wrapPageElement }
