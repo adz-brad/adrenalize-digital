@@ -536,6 +536,10 @@ textarea.contactMessage{
     @apply text-blue-700 leading-none -mt-2;
 }
 
+ul.numberedList{
+    @apply my-2;
+}
+
 li.numberedListItem{
     @apply flex flex-row items-center mt-2 mb-4;
 }
