@@ -514,3 +514,40 @@ textarea.contactMessage{
     visibility: hidden;
 }
 
+/* --- Blog Posts --- */
+
+.blogPostBody h1{
+    @apply text-2xl md:text-3xl font-bold;
+}
+
+.blogPostBody h2{
+    @apply text-xl md:text-2xl font-bold;
+}
+
+.blogPostBody h3{
+    @apply text-lg md:text-xl font-bold;
+}
+
+.blogPostBody h4{
+    @apply text-base md:text-lg font-bold;
+}
+
+.blogPostBody .subheader{
+    @apply text-blue-700 leading-none -mt-2;
+}
+
+li.numberedListItem{
+    @apply flex flex-row items-center mt-2 mb-4;
+}
+
+div.numberedListItemNumber{
+    @apply relative bg-gray-900 rounded-full w-6 h-6 shadow-md px-3 pb-1 pt-3;
+}
+
+div.numberedListItemNumber span{
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-100 font-semibold;
+}
+
+p.numberedListItemText{
+    @apply text-sm md:text-base ml-2 leading-tight font-semibold;
+}
