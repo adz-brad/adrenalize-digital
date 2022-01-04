@@ -17,3 +17,6 @@ package-lock.json
 # gatsby files
 .cache/
 public
+
+# graphCMS
+graphcms-fragments

@@ -1,47 +1,9 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { FeaturedCard, BlogCard } from '../../components/blog'
-import { ContactForm } from '../../components/contact'
+import { FeaturedCard, BlogCard } from '../components/blog'
+import { ContactForm } from '../components/contact'
 
-const Insights = () => {
-
-    const posts = useStaticQuery(graphql`
-    {
-        featuredPost: allGraphCmsBlogPost(filter: {featured: {eq: true}}) {
-            nodes {
-              image {
-                gatsbyImageData(quality: 100)
-              }
-              slug
-              title
-              excerpt
-              publishedAt
-              tags {
-                title
-              }
-            }
-          },
-          blogPosts: allGraphCmsBlogPost(
-            limit: 4
-            sort: {order: DESC, fields: publishedAt}
-            filter: {featured: {eq: false}}
-          ) {
-            nodes {
-              image {
-                gatsbyImageData(quality: 100)
-              }
-              slug
-              title
-              excerpt
-              publishedAt
-              tags {
-                title
-              }
-            }
-          },
-    }
-`)
-
+const BlogIndex = ({ pageContext: posts }) => {
+    console.log(posts)
     return(
         <div className="md:w-full md:max-w-screen-lg md:mx-auto">
             <div className="flex flex-col p-3 mt-2 mx-2">
@@ -62,7 +24,7 @@ const Insights = () => {
                 <h1 className="text-2xl md:text-3xl font-bold mb-8 border-b-2 border-blue-700">
                     Featured Post
                 </h1>
-                {posts.featuredPost.nodes.map((post) => {
+                {posts.featuredPost.map((post) => {
                     return(
                     <FeaturedCard 
                         title={post.title}
@@ -76,9 +38,9 @@ const Insights = () => {
             </div>
             <h1 className="text-2xl md:text-3xl font-bold m-4 border-b-2 border-blue-700">Most Recent Posts</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-3 m-1">
-                {posts.blogPosts.nodes.map((post) => {
+                {posts.recentPosts.map((post) => {
                     return(
-                        <BlogCard 
+                    <BlogCard 
                     title={post.title}
                     published={post.publishedAt}
                     excerpt={post.excerpt}
@@ -104,4 +66,4 @@ const Insights = () => {
     )
 }
 
-export default Insights
+export default BlogIndex
