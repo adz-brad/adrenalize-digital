@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { RiLightbulbFlashLine, RiShieldStarLine, RiFlowChart, RiBuildingLine } from 'react-icons/ri'
 import { BiCaretRight } from "react-icons/bi"
@@ -111,12 +112,13 @@ const Tabs = () => {
                 <div className="flex flex-col">
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
                 <h4 className="text-base md:text-xl ml-1">How User Experience Affects Your Bottom Line</h4>
-                <button
+                <Link
+                to="/insights-blog/posts/how-user-experience-affects-your-bottom-line"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
                 Read More
                 <BiCaretRight className="ml-1 text-lg md:text-xltext-xl text-blue-500" />
-              </button>
+              </Link>
               </div>
               </div>
               </div>
@@ -141,12 +143,13 @@ const Tabs = () => {
                 <div className="flex flex-col">
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
                 <h4 className="text-base md:text-xl ml-1">Benefits of Decoupled Architecure for Digital Products</h4>
-                <button
+                <Link
+                to="/insights-blog/posts/benefits-of-decoupled-architecture-for-digital-products"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
                 Read More
                 <BiCaretRight className="ml-1 text-lg md:text-xltext-xl text-blue-500" />
-              </button>
+              </Link>
               </div>
               </div>
               </div>
@@ -171,12 +174,13 @@ const Tabs = () => {
                 <div className="flex flex-col">
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
                 <h4 className="text-base md:text-xl ml-1">Save A Fortune By Building For The Future</h4>
-                <button
+                <Link
+                to="/insights-blog/posts/beyond-scalability-save-a-fortune-by-building-for-the-future"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
                 Read More
                 <BiCaretRight className="ml-1 text-lg md:text-xltext-xl text-blue-500" />
-              </button>
+              </Link>
               </div>
               </div>
               </div>
@@ -201,12 +205,13 @@ const Tabs = () => {
                 <div className="flex flex-col">
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
                 <h4 className="text-base md:text-xl ml-1">Leveraging Modern Development To Increase Revenue</h4>
-                <button
+                <Link
+                to="/insights-blog/posts/leveraging-modern-development-to-increase-revenue"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
                 Read More
                 <BiCaretRight className="ml-1 text-lg md:text-xl text-blue-500" />
-              </button>
+              </Link>
               </div>
               </div>
               </div>
