@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Adrenalize Digital`,
@@ -26,6 +28,20 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-mdx',
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
+    {
+      resolve: 'gatsby-source-graphcms',
+      options: {
+        endpoint: process.env.GRAPHCMS_ENDPOINT,
+        token: process.env.GRAPHCMS_TOKEN,
+        buildMarkdownNodes: true,
+        downloadLocalImages: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,10 +50,6 @@ module.exports = {
         ignore: [`**/\.*`],
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-preact`
   ],
 }

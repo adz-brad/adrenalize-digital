@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: {
     enabled: true,
-    content: ['./src/**/*.js'],
+    content: ['./src/**/*.js','./src/styles/index.css'],
   },
   corePlugins: {
    fontFamily: false,

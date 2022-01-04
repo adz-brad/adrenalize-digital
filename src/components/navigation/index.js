@@ -30,8 +30,8 @@ const Navbar = () => {
             className="w-16 md:w-24 my-auto"
           />
           <div className="flex flex-col ml-1">
-            <h1 className="font-title text-2xl md:text-3xl text-primary-600 leading-none ">Adrenalize</h1>
-            <h1 className="font-title text-xl md:text-2xl text-gray-100 leading-none">Digital</h1>
+            <h1 className="font-title text-2xl md:text-3xl text-primary-600 leading-none -mb-1 md:-mb-2">Adrenalize</h1>
+            <h1 className="font-title text-xl md:text-2xl text-gray-100 leading-none md:-mt-1">Digital</h1>
           </div>
       </Link>
 

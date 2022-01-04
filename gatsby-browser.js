@@ -4,6 +4,7 @@ import Layout from './src/components/layout'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { Helmet } from 'react-helmet';
+import { MDXProvider } from '@mdx-js/react'
 
   const wrapPageElement = ({ element, props }) => {
     
@@ -50,5 +51,9 @@ import { Helmet } from 'react-helmet';
     )
   }
 
+  const wrapRootElement = ({ element }) => {
+    return <MDXProvider>{element}</MDXProvider>
+  }
 
-export { wrapPageElement }
+
+export { wrapPageElement, wrapRootElement }

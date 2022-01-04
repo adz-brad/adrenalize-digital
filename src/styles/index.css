@@ -401,16 +401,26 @@ textarea.contactMessage{
 }
 
 .faqContent{
-    @apply text-sm my-2;
+    @apply text-sm md:text-lg my-2;
 }
 
 .faqContent p{
-    @apply my-2;
+    @apply md:leading-tight my-2;
 }
 
 .bgDark{
     @apply bg-blue-600 mr-1;
 }
+
+ /* --- Portfolio --- */
+
+ .portfolioCard{
+     @apply flex flex-col p-3 rounded-md shadow-lg bg-gray-100 cursor-pointer;
+ }
+
+ .portfolioTag{
+     @apply bg-blue-600 hover:bg-blue-700 rounded-full shadow-md text-gray-100 font-headers text-xs font-semibold px-2 py-1 mr-1 mt-1;
+ }
 
   /* --- Components --- */
 

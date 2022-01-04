@@ -71,7 +71,7 @@ const Index = () => {
         <StaticImage
           src="../assets/images/nstHeroImage.jpg"
           alt="Visually stunning, highly performant web, mobile and desktop applications"
-          placeholder="blurred"
+          placeholder="none"
           className="featuredImage md:w-1/2 mr-4 rounded-r-xl xl:rounded-xl shadow-md my-4"
         />
         <div className="flex flex-col w-full md:w-1/3 p-4 mx-auto">
@@ -116,7 +116,7 @@ const Index = () => {
                 business capabilities beyond average.
               </p>
               <Link 
-                to="/products#websites-web-applications"
+                to="/services#websites-web-applications"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
               >
                 Learn More
@@ -136,7 +136,7 @@ const Index = () => {
                 enterprise grade applications.
               </p>
               <Link 
-                to="/products#mobile-apps"
+                to="/services#mobile-apps"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
               >
                 Learn More
@@ -155,7 +155,7 @@ const Index = () => {
                 Windows and Linux operating systems, our desktop applications combine the flexibility of mobile design with the power of desktop.
               </p>
               <Link 
-                to="/products#desktop-apps"
+                to="/services#desktop-apps"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
@@ -174,7 +174,7 @@ const Index = () => {
                 organizational productivity.
               </p>
               <Link 
-                to="/products#hybrid-app-suites"
+                to="/services#hybrid-app-suites"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
               >
                 Learn More
@@ -186,7 +186,7 @@ const Index = () => {
         <StaticImage
           src="../assets/images/featureImage1.jpg"
           alt="Build with the best - we build a full range of applications from web to mobile and desktop."
-          placeholder="blurred"
+          placeholder="none"
           className="featureImage1 featuredImage ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4 md:my-auto md:transform md:translate-y-3 hidden md:flex"
         />
       </div>

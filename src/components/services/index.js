@@ -8,7 +8,7 @@ import {
   RiShieldStarLine,
   RiBuildingLine,
 } from "react-icons/ri"
-import { MdOutlineSync, MdOutlineArrowRightAlt, MdOutlineAndroid, MdSpeed, MdOutlineShoppingCart, MdOutlineDashboardCustomize, MdOutlineCloud, MdTrendingUp, MdOutlineSentimentVerySatisfied, MdOutlineLaptopMac, MdOutlinePhoneAndroid } from "react-icons/md"
+import { MdOutlineArrowRightAlt, MdOutlineAndroid, MdSpeed, MdOutlineShoppingCart, MdOutlineDashboardCustomize, MdOutlineCloud, MdTrendingUp, MdOutlineSentimentVerySatisfied, MdOutlineLaptopMac, MdOutlinePhoneAndroid } from "react-icons/md"
 import { animateScroll as scroll } from "react-scroll"
 import { Helmet } from 'react-helmet'
 
@@ -65,7 +65,7 @@ const Faq = ({ data, idPrefix }) => {
                           <div className="flex flex-row items-center h-8 w-8">
                             <BiCaretRightCircle className={`text-3xl transform transition-all duration-100 filter drop-shadow-md ${expanded === index ? 'text-blue-500' : 'rotate-90'}`} />
                           </div>
-                          <h3 className="font-content text-base md:text-xl font-semibold ml-2">{data.question}</h3> 
+                          <h3 className="font-content text-base md:text-xl ml-2">{data.question}</h3> 
                         </div>
                         <div className={`faqContent  ${expanded === index ? 'visible' : 'hidden'}`}>
                           {data.answer}
@@ -720,13 +720,6 @@ const DesktopApplications = () => {
 }
 
 const HybridAppSuites = () => {
-
-  const scrollTo = props => {
-    scroll.scrollTo(document.getElementById(props).offsetTop, {
-      duration: 200,
-      smooth: true,
-    })
-  }
   
     return (
       <>
@@ -767,7 +760,7 @@ const HybridAppSuites = () => {
           </button>
             </div>
             {/* FaWindows, FaLinux, FaApple, MdOutlineAndroid, MdOutlineSmartphone, MdOutlineLaptop, BiTransfer, BiData*/}
-            <div className="flex flex-col -mx-2 -mb-2 mt-6 md:m-0 md:w-1/2 bg-gray-900 text-gray-100 rounded-lg md:rounded-none md:rounded-r-lg shadow-lg p-3">
+            <div className="flex flex-col -mx-1 -mb-2 mt-6 md:m-0 md:w-1/2 bg-gray-900 text-gray-100 rounded-lg md:rounded-none md:rounded-r-lg shadow-lg p-3">
               <h1 className="mx-auto font-subheader text-2xl md:text-3xl font-semibold my-4">Cross-platform Functionality</h1>
               <div className="flex flex-row items-center justify-center mb-4">
                 <div className="flex flex-col justify-center ml-4">
@@ -792,10 +785,10 @@ const HybridAppSuites = () => {
               </div>
               <p className="m-2 md:m-4 text-sm font-semibold">
               Adrenalize hybrid app suites allow for an easy usage transition between platforms - the functionality and interface you have on a Windows laptop will be the same as what you have on an iPad - making it simple for users to perform tasks regardless of what platform they're required to use.
-            </p>
+              </p>
             </div>
           </div>
-          <div className="flex flex-col m-1 md:p-4 md:my-3 text-sm">
+          <div className="flex flex-col m-1 md:p-4 my-5 text-sm">
             <h2 className="m-1 font-subheader font-semibold text-2xl md:text-3xl">
               It's What We Do
             </h2>
