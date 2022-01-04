@@ -49,7 +49,7 @@ const BlogPost = ({ pageContext: { post } }) => {
                     className="h-80 rounded-t-lg"
                     alt={post.title}
                 />
-                <p className="text-cs md:text-sm italic text-gray-800 border-b border-blue-600 py-2">{post.excerpt}</p>
+                <p className="text-cs md:text-sm italic text-gray-800 border-b border-blue-600 py-2 leading-5">{post.excerpt}</p>
             </div>
             <div className="blogPostBody my-2">
                 <SRLWrapper options={options}>

@@ -105,19 +105,19 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 py-2 px-1 max-w-screen-xl mx-auto">
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
-                <MdWeb className="text-4xl text-gray-900" />
+                <MdWeb className="text-5xl text-gray-900" />
                 <h2 className="text-3xl font-subheader font-semibold text-gray-900 ml-2">
                   Web Projects
                 </h2>
               </div>
-              <p className="text-base text-gray-900">
+              <p className="text-base text-gray-900 leading-6 mb-2">
                 From marketing to e-commerce, we build top of the line websites
                 and progressive web applications to help you extend your
                 business capabilities beyond average.
               </p>
               <Link 
                 to="/services#websites-web-applications"
-                className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
+                className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
@@ -125,19 +125,19 @@ const Index = () => {
             </div>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
-                <MdPhoneAndroid className="text-4xl text-gray-900 -ml-1" />
+                <MdPhoneAndroid className="text-5xl text-gray-900 -ml-1" />
                 <h2 className="text-3xl font-subheader font-semibold text-gray-900 ml-2">
                   Mobile Apps
                 </h2>
               </div>
-              <p className="text-base text-gray-900">
+              <p className="text-base text-gray-900 leading-6 mb-2">
                 Build your mobile app leveraging the same modern frameworks
                 powering Spotify, Airbnb, Pinterest, Uber Eats and other
                 enterprise grade applications.
               </p>
               <Link 
                 to="/services#mobile-apps"
-                className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
+                className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
@@ -145,37 +145,37 @@ const Index = () => {
             </div>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
-                <MdLaptopMac className="text-4xl text-gray-900" />
+                <MdLaptopMac className="text-5xl text-gray-900" />
                 <h2 className="text-3xl font-subheader font-semibold text-gray-900 ml-2">
                   Desktop Apps
                 </h2>
               </div>
-              <p className="text-base text-gray-900">
+              <p className="text-base text-gray-900 leading-6 mb-2">
                 Designed and built to be distributed across all modern macOS,
                 Windows and Linux operating systems, our desktop applications combine the flexibility of mobile design with the power of desktop.
               </p>
               <Link 
                 to="/services#desktop-apps"
-                className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700">
+                className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700">
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </Link>
             </div>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
-                <BiCodeBlock className="text-4xl text-gray-900" />
+                <BiCodeBlock className="text-5xl text-gray-900" />
                 <h2 className="text-3xl font-subheader font-semibold text-gray-900 ml-2">
                   Hybrid Suites
                 </h2>
               </div>
-              <p className="text-base text-gray-900">
+              <p className="text-base text-gray-900 leading-6 mb-2">
                 Our flagship - custom developed application suites designed to
                 unify multiple devices, platforms and operations to boost
                 organizational productivity.
               </p>
               <Link 
                 to="/services#hybrid-app-suites"
-                className="flex flex-row items-center mr-auto text-lg font-semibold mt-2 cursor-pointer text-blue-700"
+                className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />

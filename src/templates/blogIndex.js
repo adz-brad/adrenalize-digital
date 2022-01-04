@@ -21,7 +21,7 @@ const BlogIndex = ({ pageContext: posts }) => {
                 </p>
             </div>
             <div className="flex flex-col p-2 md:mx-2">
-                <h1 className="text-2xl md:text-3xl font-bold mb-8 border-b-2 border-blue-700">
+                <h1 className="text-2xl md:text-3xl font-bold mb-8 mx-2 border-b-2 border-blue-700">
                     Featured Post
                 </h1>
                 {posts.featuredPost.map((post) => {
@@ -55,7 +55,7 @@ const BlogIndex = ({ pageContext: posts }) => {
                     Interested In Writing For Us?
                 </h1>
                 <h2 className="text-lg md:text-xl font-semibold text-blue-600 leading-5 -mt-1">
-                    We have opportunities for guest blog features
+                    Opportunities for guest blog features
                 </h2>
                 <p className="text-sm md:text-base my-2">
                     Just fill in the contact form below, select "Guest Blog Feature" and we'll send you an information package on just how our affiliate blogger program works.
