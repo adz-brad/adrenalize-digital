@@ -202,8 +202,7 @@ const Index = () => {
             just as much as it does for you, which is why we work hand in hand
             with you through the entire design / build process to ensure you get
             a world-class product while your users get a world-class experience.
-            Click on any one of our 4 design phases to learn more about how we
-            work.
+            Our inclusive 4 phase project includes:
           </p>
         </div>
         <div className="flex flex-col items-center md:w-1/3 my-6 md:my-auto">
@@ -261,7 +260,7 @@ const Index = () => {
                 line to get the ball rolling on your next project!
               </p>
             </div>
-            <button className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mb-3 md:mb-1 mt-auto mx-auto">
+            <button disabled className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mb-3 md:mb-1 mt-auto mx-auto">
               Project Discovery
               <BiCaretRightCircle className="ml-3 text-2xl" />
             </button>
