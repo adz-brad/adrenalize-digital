@@ -231,7 +231,7 @@ const Tabs = () => {
             <div className="flex flex-col m-2">
                 <h3 className="leading-none text-gray-100 font-bold text-lg md:text-2xl ml-1">Does that peak your curiosity?</h3>
                 <p className="text-sm md:text-base ml-1 text-gray-100">Click the button below to read more about how important page speeds really are!</p>
-                <<Link
+                <Link
                 to="/insights-blog/posts/how-important-are-page-load-speeds-for-user-conversions"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-800 hover:text-gray-100 hover:shadow-lg mt-4 mb-2"
               >
