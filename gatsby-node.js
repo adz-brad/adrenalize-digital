@@ -32,6 +32,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           }
         }
         image {
+              url
               gatsbyImageData(quality: 100)
         }
       }
@@ -65,6 +66,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           }
         }
         image {
+              url
               gatsbyImageData(quality: 100)
         }
       }
@@ -94,6 +96,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           }
         }
         image {
+              url
               gatsbyImageData(quality: 100)
         }
       }

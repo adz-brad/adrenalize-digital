@@ -516,42 +516,52 @@ textarea.contactMessage{
 
 /* --- Blog Posts --- */
 
+.blogPostBody{
+    @apply md:mx-2;
+}
+
 .blogPostBody h1{
-    @apply text-2xl md:text-3xl font-bold;
+    @apply text-2xl md:text-3xl font-bold mt-6 mb-4 border-b border-blue-500 leading-5 pb-1;
 }
 
 .blogPostBody h2{
-    @apply text-xl md:text-2xl font-bold;
+    @apply text-xl md:text-2xl font-bold my-2;
 }
 
 .blogPostBody h3{
-    @apply text-lg md:text-xl font-bold;
+    @apply text-lg md:text-xl font-bold my-1;
 }
 
 .blogPostBody h4{
     @apply text-base md:text-lg font-bold;
 }
 
+.blogPostBody p{
+    @apply text-sm md:text-base my-1;
+}
+
 .blogPostBody .subheader{
     @apply text-blue-700 leading-none -mt-2;
 }
 
-ul.numberedList{
-    @apply my-2;
+.blogPostBody ul{
+    @apply text-sm md:text-base list-disc pl-4 pr-2 md:pl-6 my-4;
 }
 
-li.numberedListItem{
-    @apply flex flex-row items-center mt-2 mb-4;
+.blogPostBody li{
+    @apply mb-1;
 }
 
-div.numberedListItemNumber{
-    @apply relative bg-gray-900 rounded-full w-6 h-6 shadow-md px-3 pb-1 pt-3;
+.blogPostBody img{
+    @apply my-6 shadow-md rounded-lg cursor-pointer hover:shadow-lg;
 }
 
-div.numberedListItemNumber span{
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-100 font-semibold;
+.blogPostBody a{
+    @apply text-blue-500 hover:text-blue-600 hover:font-semibold;
 }
 
-p.numberedListItemText{
-    @apply text-sm md:text-base ml-2 leading-tight font-semibold;
+/* --- Social Sharing --- */
+
+.socialSharingButton{
+    @apply text-2xl hover:text-blue-500 mr-1 transform hover:scale-105 cursor-pointer;
 }
