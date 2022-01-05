@@ -54,7 +54,7 @@ const BlogPost = ({ pageContext: { post } }) => {
             <div className="blogPostBody my-2">
                 <MDXRenderer>
                     <SRLWrapper options={options}>
-                        {post.content.markdownNode.childMdx.body}
+                        {post.content.markdownNode?.childMdx.body}
                     </SRLWrapper>
                 </MDXRenderer>
             </div>
