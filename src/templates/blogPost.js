@@ -52,11 +52,11 @@ const BlogPost = ({ pageContext: { post } }) => {
                 <p className="text-xs md:text-sm italic text-gray-800 border-b border-blue-600 py-2 mx-1 leading-5">{post.excerpt}</p>
             </div>
             <div className="blogPostBody my-2">
+                <SRLWrapper options={options}>
                 <MDXRenderer>
-                    <SRLWrapper options={options}>
                         {post.content.markdownNode?.childMdx.body}
-                    </SRLWrapper>
                 </MDXRenderer>
+                </SRLWrapper>
             </div>
             <div className="border-t border-blue-700 p-2 flex flex-row items-center">
                 <MdShare className="text-blue-600 text-4xl mt-1 mr-3"/>
