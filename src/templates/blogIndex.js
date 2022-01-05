@@ -50,7 +50,7 @@ const BlogIndex = ({ pageContext: posts }) => {
                     )
                 })}
             </div>
-            <div className="flex flex-col p-3 m-2 md:m-4">
+            <div className="flex flex-col p-3 mx-2 my-4">
                 <h1 className="text-2xl md:text-3xl md:text-4xl font-bold -mb-1">
                     Interested In Writing For Us?
                 </h1>
