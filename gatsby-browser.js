@@ -37,7 +37,9 @@ const wrapPageElement = ({ element, props }) => {
         </script>
       </Helmet>
       <SimpleReactLightbox>
+      <MDXProvider>
       {element}
+      </MDXProvider>
       </SimpleReactLightbox>
       <ToastContainer
         position="bottom-right"
@@ -53,8 +55,4 @@ const wrapPageElement = ({ element, props }) => {
   )
 }
 
-const wrapRootElement = ({ element }) => {
-  return <MDXProvider>{element}</MDXProvider>
-}
-
-export { wrapPageElement, wrapRootElement }
+export { wrapPageElement }
