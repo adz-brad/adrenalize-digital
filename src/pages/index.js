@@ -45,7 +45,12 @@ const Index = () => {
     }
   }, [windowWidth, windowHeight])
 
-
+  const scrollTo = (props) => {
+    scroll.scrollTo(document.getElementById(props).offsetTop - 50, {
+      duration: 200,
+      smooth: true,
+    })
+  }
 
   return (
     <div id="indexWrapper">
@@ -90,7 +95,9 @@ const Index = () => {
           <h3 className="font-semibold text-xl md:text-2xl mx-auto md:mx-0">
             Are you ready to push limits with us?
           </h3>
-          <button className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-6 mb-2 md:my-auto mx-auto md:mx-0 md:mr-auto">
+          <button 
+          onClick={()=> scrollTo('products')}
+          className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-6 mb-2 md:my-auto mx-auto md:mx-0 md:mr-auto">
             Find out more
             <BiCaretRightCircle className="ml-3 text-2xl" />
           </button>

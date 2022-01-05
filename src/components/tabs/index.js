@@ -10,7 +10,7 @@ const Tabs = () => {
     const [ activeTab, setActiveTab ] = useState("Intuitive")
 
     return(
-        <div className="flex flex-col max-w-screen-xl mx-auto my-8">
+        <div id="products" className="flex flex-col max-w-screen-xl mx-auto my-8">
         <div className="flex flex-col md:flex-row items-center p-2 bg-gray-900 rounded-t-md">
           <h2 className="text-gray-100 font-subheader font-bold text-3xl md:text-4xl mx-auto my-2">
             Our Products are

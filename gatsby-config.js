@@ -35,19 +35,17 @@ module.exports = {
     `gatsby-plugin-postcss`,
     'gatsby-plugin-sitemap',
     {
-      resolve: `gatsby-plugin-gdpr-cookies`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        googleAnalytics: {
-          trackingId: 'G-Q281EPYW66', 
-          cookieName: 'gatsby-gdpr-google-analytics', 
-          anonymize: true,
-          allowAdFeatures: false 
-        },
-        hotjar: {
-          hjid: '2771124',
-          hjsv: '6',
-          cookieName: 'gatsby-gdpr-hotjar', // default
-        },
+        trackingId: process.env.GOOGLE_TRACKING_ID,
+        head: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: process.env.HOTJAR_ID,
+        sv: process.env.HOTJAR_SNIPPET_VERSION,
       },
     },
     {
