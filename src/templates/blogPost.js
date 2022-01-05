@@ -100,7 +100,7 @@ const BlogPost = ({ data, pageContext: { post } }) => {
             <div className="blogPostBody mt-2 mb-6">
                 <SRLWrapper options={options}>
                 <MDXRenderer>
-                        {data.graphCmsBlogPost.content.markdownNode?.childMdx.body}
+                        {post.content.markdownNode?.childMdx.body}
                 </MDXRenderer>
                 </SRLWrapper>
             </div>
@@ -117,20 +117,5 @@ const BlogPost = ({ data, pageContext: { post } }) => {
       </>
     )
 }
-
-export const pageQuery = graphql`
-  query PostQuery($remoteId: ID!) {
-    graphCmsBlogPost(remoteId: { eq: $remoteId }) {
-      content {
-        markdownNode {
-          childMdx {
-            body
-          }
-        }
-      }
-    }
-  }
-`
-
 
 export default BlogPost
