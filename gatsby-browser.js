@@ -46,11 +46,11 @@ const wrapPageElement = ({ element, props }) => {
 const wrapRootElement = ({ element }) => {
   return (
     <>
-    <SimpleReactLightbox>
       <MDXProvider>
-        {element}
+        <SimpleReactLightbox>
+          {element}
+        </SimpleReactLightbox>
       </MDXProvider>
-    </SimpleReactLightbox>
     <ToastContainer
     position="bottom-right"
     autoClose={5000}
