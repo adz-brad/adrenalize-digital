@@ -10,6 +10,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     ) {
       nodes {
         id
+        remoteId
         title
         slug
         excerpt
@@ -44,6 +45,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     ) {
       nodes {
         id
+        remoteId
         title
         slug
         excerpt
@@ -74,6 +76,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     allPosts: allGraphCmsBlogPost {
       nodes {
         id
+        remoteId
         title
         slug
         excerpt
