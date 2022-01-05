@@ -33,6 +33,31 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
+    'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'G-Q281EPYW66', 
+          cookieName: 'gatsby-gdpr-google-analytics', 
+          anonymize: true,
+          allowAdFeatures: false 
+        },
+        hotjar: {
+          hjid: '2771124',
+          hjsv: '6',
+          cookieName: 'gatsby-gdpr-hotjar', // default
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.adrenalizedigital.ca',
+        sitemap: 'https://www.adrenalizedigital.ca/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      },
+    },
     {
       resolve: 'gatsby-source-graphcms',
       options: {

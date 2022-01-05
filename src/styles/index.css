@@ -419,7 +419,7 @@ textarea.contactMessage{
  }
 
  .portfolioTag{
-     @apply bg-blue-600 hover:bg-blue-700 rounded-full shadow-md text-gray-100 font-headers text-xs font-semibold px-2 py-1 mr-1 mt-1;
+     @apply bg-blue-600 hover:bg-blue-700 rounded-full shadow-md text-gray-100 font-headers text-xs font-semibold px-2 py-1 mr-1 mt-1 cursor-pointer;
  }
 
   /* --- Components --- */

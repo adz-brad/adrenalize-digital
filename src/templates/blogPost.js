@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { SRLWrapper } from "simple-react-lightbox";
@@ -6,8 +7,10 @@ import { SocialSharing } from '../components/social'
 import { window } from 'browser-monads'
 import { MdShare } from 'react-icons/md'
 import { ContactForm } from '../components/contact'
+import { Seo } from '../components/seo'
+import { Helmet } from 'react-helmet'
 
-const BlogPost = ({ pageContext: { post } }) => {
+const BlogPost = ({ data, pageContext: { post } }) => {
 
     const options = {
         settings: {
@@ -28,8 +31,46 @@ const BlogPost = ({ pageContext: { post } }) => {
     const publishDate = new Date(post.publishedAt)
     const [month, day, year] = [publishDate.toLocaleString('default', { month: 'long' }), publishDate.getDate(), publishDate.getFullYear()];
     
+    const tags = post.tags?.map((tag) => tag.title)
 
     return(
+      <>
+      <Helmet>
+        <script type="application/ld+json">
+            {`{
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "${window.location.href}"
+            },
+            "headline": "${post.title}",
+            "description": "${post.exerpt}",
+            "image": "${post.image.url}",  
+            "author": {
+                "@type": "Person",
+                "name": "${post.author.name}",
+                "url": "${post.author.link}"
+            },  
+            "publisher": {
+                "@type": "Organization",
+                "name": "Adrenalize Digital",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+                }
+            },
+            "datePublished": "${publishDate}",
+            }`}
+        </script>
+      </Helmet>
+        <Seo
+            pageTitle={post.title}
+            pageDescription={post.excerpt}
+            pageKeywords={`Adrenalize, Digital, Web, App, Application, Mobile, Design, Development, ${tags?.join()}`}
+            pageUrl={window.location.href}
+            pageImage={post.image.url}
+        />
         <div className="md:w-full md:max-w-screen-lg md:mx-auto">
             <div className="flex flex-col my-2 md:my-4 p-3">
             <h1 className="text-2xl md:text-3xl font-bold my-2 border-b border-blue-600">{post.title}</h1>
@@ -43,7 +84,7 @@ const BlogPost = ({ pageContext: { post } }) => {
                     <SocialSharing page={sharingData}/>
                 </div>
             </div>
-            <div className="flex flex-col my-4">
+            <div className="flex flex-col mt-4 mb-2">
                 <GatsbyImage 
                     image={getImage(post.image)}
                     className="h-80 rounded-t-lg"
@@ -51,10 +92,15 @@ const BlogPost = ({ pageContext: { post } }) => {
                 />
                 <p className="text-xs md:text-sm italic text-gray-800 border-b border-blue-600 py-2 mx-1 leading-5">{post.excerpt}</p>
             </div>
-            <div className="blogPostBody my-2">
+            <div className="flex flex-row items-center flex-wrap mx-1 mb-2">
+                {tags?.map((tag) => {
+                    return <span className="portfolioTag">{tag}</span>
+                })}
+            </div>
+            <div className="blogPostBody mt-2 mb-6">
                 <SRLWrapper options={options}>
                 <MDXRenderer>
-                        {post.content.markdownNode?.childMdx.body}
+                        {data.graphCmsBlogPost.content.markdownNode?.childMdx.body}
                 </MDXRenderer>
                 </SRLWrapper>
             </div>
@@ -68,8 +114,23 @@ const BlogPost = ({ pageContext: { post } }) => {
             </div>
             <ContactForm className="md:w-full md:max-w-screen-lg md:mx-auto"/>
         </div>
+      </>
     )
 }
+
+export const pageQuery = graphql`
+  query PostQuery($remoteId: ID!) {
+    graphCmsBlogPost(remoteId: { eq: $remoteId }) {
+      content {
+        markdownNode {
+          childMdx {
+            body
+          }
+        }
+      }
+    }
+  }
+`
 
 
 export default BlogPost

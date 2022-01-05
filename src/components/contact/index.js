@@ -160,7 +160,8 @@ const ContactForm = ({ className }) => {
                 </option>
                 <option>Schedule a new project consultation</option>
                 <option>Updating an existing external project</option>
-                <option>Services for an existing Neural project</option>
+                <option>Services for an existing Adrenalize project</option>
+                <option>Guest Blog Feature</option>
                 <option>General inquiry</option>
               </select>
             </div>

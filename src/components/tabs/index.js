@@ -173,9 +173,9 @@ const Tabs = () => {
         />
                 <div className="flex flex-col">
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
-                <h4 className="text-base md:text-xl ml-1">Save A Fortune By Building For The Future</h4>
+                <h4 className="text-base md:text-xl ml-1">Monolith to Microservices: Scalable Application Architectures</h4>
                 <Link
-                to="/insights-blog/posts/beyond-scalability-save-a-fortune-by-building-for-the-future"
+                to="/insights-blog/posts/monolith-to-microservices-scalable-application-architectures"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
                 Read More

@@ -3,6 +3,7 @@ import { BiCaretDownCircle } from "react-icons/bi"
 import { ContactForm } from "../components/contact"
 import { animateScroll as scroll } from "react-scroll"
 import { WebApplications, MobileApplications, DesktopApplications, HybridAppSuites } from '../components/services'
+import { Seo } from '../components/seo'
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null)
@@ -34,6 +35,13 @@ const Services = () => {
 
   return (
     <>
+      <Seo
+        pageTitle="Services"
+        pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
+        pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
+        pageUrl="https://www.adrenalizedigital.ca/services"
+        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+      />
       <div className="flex flex-col p-2 my-2 max-w-screen-lg mx-auto">
         <div className="p-1">
           <h1 className="font-subheader text-3xl font-bold">

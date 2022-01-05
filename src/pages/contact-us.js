@@ -1,9 +1,19 @@
 import React from 'react'
 import { ContactForm } from '../components/contact'
+import { Seo } from '../components/seo'
 
 const Contact = () => {
 
     return(
+    <>
+      <Seo
+        pageTitle="Contact Us"
+        pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
+        pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
+        pageUrl="https://www.adrenalizedigital.ca/contact-us"
+        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+      />
+
         <div className="md:w-full md:max-w-screen-lg md:p-3 md:mx-auto">
           <div className="contactCopy w-full flex flex-col justify-center bg-gray-100 md:mt-5 rounded-t-lg md:rounded-t-lg p-5">
             <h1 className="font-subheader text-gray-900 font-semibold text-3xl md:text-4xl mx-auto mt-3 md:mt-1">
@@ -21,6 +31,7 @@ const Contact = () => {
             </div>
             <ContactForm className="md:w-full md:max-w-screen-lg md:mx-auto md:rounded-t-none md:rounded-b-lg" />
         </div>
+      </>
     )
 }
 

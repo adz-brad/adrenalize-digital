@@ -1,9 +1,18 @@
 import React from 'react'
 import { ContactForm } from '../components/contact'
 import { FaPlusCircle } from 'react-icons/fa'
+import { Seo } from '../components/seo'
 
 const Portfolio = () => {
     return(
+        <>
+      <Seo
+        pageTitle="Our Work"
+        pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
+        pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
+        pageUrl="https://www.adrenalizedigital.ca/our-work"
+        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+      />
         <div className="md:w-full md:max-w-screen-lg md:mx-auto">
             <div className="flex flex-col p-3 mt-2 mx-2">
                 <h1 className="text-3xl md:text-4xl font-bold -mb-1">
@@ -130,6 +139,7 @@ const Portfolio = () => {
                 <p className="text-sm md:text-base mx-4 mb-4">We're always ready for the next project. Drop us a line today to see how we can help you knock you goals out of the park!</p>
                 <ContactForm className="md:w-full md:max-w-screen-lg md:mx-auto mb-2"/>
         </div>
+        </>
     )
 }
 export default Portfolio;

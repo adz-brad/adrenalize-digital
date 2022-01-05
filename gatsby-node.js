@@ -36,6 +36,9 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
               url
               gatsbyImageData(quality: 100)
         }
+        tags{
+          title
+        }
       }
     },
     recentPosts: allGraphCmsBlogPost(
@@ -71,6 +74,9 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
               url
               gatsbyImageData(quality: 100)
         }
+        tags{
+          title
+        }
       }
     },
     allPosts: allGraphCmsBlogPost {
@@ -102,6 +108,9 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
               url
               gatsbyImageData(quality: 100)
         }
+        tags{
+          title
+        }
       }
     }
   }
@@ -113,6 +122,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           context: {
             id: post.id,
             post,
+            remoteId: post.remoteId
           },
           path: `/insights-blog/posts/${post.slug}`,
         })

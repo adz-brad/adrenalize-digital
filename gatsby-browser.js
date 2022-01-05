@@ -6,20 +6,6 @@ import "react-toastify/dist/ReactToastify.min.css"
 import { Helmet } from "react-helmet"
 import { MDXProvider } from "@mdx-js/react"
 import SimpleReactLightbox from "simple-react-lightbox"
-import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client'
-import fetch from 'isomorphic-fetch'
-
-const apolloClient = new ApolloClient ({
-  link: new HttpLink({
-    uri: process.env.GATSBY_GRAPHCMS_ENDPOINT,
-    headers: {
-      Authorization: `Bearer ${process.env.GATSBY_GRAPHCMS_TOKEN}`,
-    },
-    fetch,
-  }),
-  cache: new InMemoryCache(),
-  connectToDevTools: true,
-});
 
 const wrapPageElement = ({ element, props }) => {
   return (
@@ -57,7 +43,7 @@ const wrapPageElement = ({ element, props }) => {
 
 const wrapRootElement = ({ element }) => {
   return (
-    <ApolloProvider client={apolloClient}>
+    <>
       <MDXProvider>
         <SimpleReactLightbox>
           {element}
@@ -73,7 +59,7 @@ const wrapRootElement = ({ element }) => {
       pauseOnFocusLoss
       pauseOnHover
     />
-  </ApolloProvider>
+  </>
   )
 }
 

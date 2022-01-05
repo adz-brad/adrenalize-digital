@@ -47,7 +47,7 @@ const Faq = ({ data, idPrefix }) => {
                       "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "${data.jsonAnswer}",
-                      },`
+                      }`
                   )})}
                   ]
                 }
@@ -90,7 +90,7 @@ const WebApplications = () => {
         {
             question: `I need a website... What is a web application?`,
             answer: <><p>You may have noticed we commonly refer to web projects as applications rather than websites, this is done with the intent of demonstrating our shift away from traditional development models.</p><p>In the simplest terms, we don't believe that most "websites" leverage the capabilities of the web to their full extent, which is unfortunate for both users and businesses relying on user interaction, so rather than being grouped together with the average, we stand apart and showcase our talent in building "native application" style sites that function more like the apps on your desktop computer or mobile device, as these are the tools that most users interact with most commonly.</p></>,
-            jsonAnswer: `<p>You may have noticed we commonly refer to web projects as applications rather than websites, this is done with the intent of demonstrating our shift away from traditional development models.</p><p>In the simplest terms, we don't believe that most "websites" leverage the capabilities of the web to their full extent, which is unfortunate for both users and businesses relying on user interaction, so rather than being grouped together with the average, we stand apart and showcase our talent in building "native application" style sites that function more like the apps on your desktop computer or mobile device, as these are the tools that most users interact with most commonly.</p>`
+            jsonAnswer: `<p>You may have noticed we commonly refer to web projects as applications rather than websites, this is done with the intent of demonstrating our shift away from traditional development models.</p><p>In the simplest terms, we don't believe that most websites leverage the capabilities of the web to their full extent, which is unfortunate for both users and businesses relying on user interaction, so rather than being grouped together with the average, we stand apart and showcase our talent in building "native application" style sites that function more like the apps on your desktop computer or mobile device, as these are the tools that most users interact with most commonly.</p>`
         },
           {
             question: `Do you build your web apps to be mobile responsive?`,

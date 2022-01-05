@@ -55,6 +55,7 @@ const Index = () => {
         pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
         pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
         pageUrl="https://www.adrenalizedigital.ca"
+        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
       />
 
       <div

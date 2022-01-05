@@ -1,10 +1,19 @@
 import React from 'react'
 import { FeaturedCard, BlogCard } from '../components/blog'
 import { ContactForm } from '../components/contact'
+import { Seo } from '../components/seo'
 
 const BlogIndex = ({ pageContext: posts }) => {
 
     return(
+        <>
+      <Seo
+        pageTitle="Insights Blog"
+        pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
+        pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
+        pageUrl="https://www.adrenalizedigital.ca/insights-blog"
+        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+      />
         <div className="md:w-full md:max-w-screen-lg md:mx-auto">
             <div className="flex flex-col p-3 mt-2 mx-2">
                 <h1 className="text-3xl md:text-4xl font-bold -mb-1">
@@ -32,6 +41,7 @@ const BlogIndex = ({ pageContext: posts }) => {
                         excerpt={post.excerpt}
                         image={post.image}
                         link={`/insights-blog/posts/${post.slug}`}
+                        tags={post.tags?.map((tag) => tag.title)}
                     />
                     )
                 })}
@@ -46,6 +56,7 @@ const BlogIndex = ({ pageContext: posts }) => {
                     excerpt={post.excerpt}
                     image={post.image}
                     link={`/insights-blog/posts/${post.slug}`}
+                    tags={post.tags?.map((tag) => tag.title)}
                 />
                     )
                 })}
@@ -63,6 +74,7 @@ const BlogIndex = ({ pageContext: posts }) => {
             </div>
             <ContactForm className="md:w-full md:max-w-screen-lg md:mx-auto mb-2"/>
         </div>
+        </>
     )
 }
 

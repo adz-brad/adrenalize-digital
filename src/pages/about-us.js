@@ -4,9 +4,18 @@ import { IoLogoElectron } from 'react-icons/io5'
 import { HiOutlineLightBulb } from 'react-icons/hi'
 import { FaHandshake, FaFistRaised } from 'react-icons/fa'
 import { ContactForm } from '../components/contact'
+import { Seo } from '../components/seo'
 
 const About = () => {
     return(
+        <>
+      <Seo
+        pageTitle="About Us"
+        pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
+        pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
+        pageUrl="https://www.adrenalizedigital.ca/about-us"
+        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+      />
         <div className="md:w-full md:max-w-screen-lg md:mx-auto">
             <div className="flex flex-col p-3 mt-2 mx-2">
                 <h1 className="text-3xl font-bold -mb-1">
@@ -133,6 +142,7 @@ const About = () => {
                 </h1>
                 <ContactForm className="md:w-full md:max-w-screen-lg md:mx-auto mb-2"/>
         </div>
+        </>
     )
 }
 export default About;
