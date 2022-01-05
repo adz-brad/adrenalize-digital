@@ -36,23 +36,33 @@ const wrapPageElement = ({ element, props }) => {
 }`}
         </script>
       </Helmet>
-      <SimpleReactLightbox>
-      <MDXProvider>
+      
       {element}
-      </MDXProvider>
-      </SimpleReactLightbox>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={true}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        pauseOnHover
-      />
+
     </Layout>
   )
 }
 
-export { wrapPageElement }
+const wrapRootElement = ({ element }) => {
+  return (
+    <>
+    <SimpleReactLightbox>
+      <MDXProvider>
+        {element}
+      </MDXProvider>
+    </SimpleReactLightbox>
+    <ToastContainer
+    position="bottom-right"
+    autoClose={5000}
+    hideProgressBar={true}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    pauseOnHover
+  />
+  </>
+  )
+}
+
+export { wrapPageElement, wrapRootElement }
