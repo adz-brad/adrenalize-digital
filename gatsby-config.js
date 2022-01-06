@@ -55,7 +55,24 @@ module.exports = {
       options: {
         host: 'https://www.adrenalizedigital.ca',
         sitemap: 'https://www.adrenalizedigital.ca/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
+        policy: [
+          {
+            userAgent: "Twitterbot",
+            disallow: '',
+          },
+          {
+            userAgent: "Facebookbot",
+            disallow: '',
+          },
+          {
+            userAgent: "facebookexternalhit",
+            disallow: '',
+          },
+          { 
+            userAgent: '*', 
+            allow: '/' 
+          }
+        ]
       },
     },
     {
