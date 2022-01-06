@@ -415,12 +415,25 @@ textarea.contactMessage{
  /* --- Portfolio --- */
 
  .portfolioCard{
-     @apply flex flex-col p-3 rounded-md shadow-lg bg-gray-100 cursor-pointer;
+     @apply flex flex-col p-3 rounded-md shadow-lg bg-gray-100;
  }
 
  .portfolioTag{
      @apply bg-blue-600 hover:bg-blue-700 rounded-full shadow-md text-gray-100 font-headers text-xs font-semibold px-2 py-1 mr-1 mt-1 cursor-pointer;
  }
+
+ .portfolioGallery > div {
+     @apply flex flex-row items-center w-full -mx-1;
+ }
+
+ .portfolioGalleryImage{
+    @apply cursor-pointer;
+ }
+
+ .portfolioGalleryImage:hover{
+    transform: scale(1.025);
+    transition: ease 0.3s;
+}
 
   /* --- Components --- */
 

@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+const version = '1.0.0'
+
 module.exports = {
   siteMetadata: {
     title: `Adrenalize Digital`,

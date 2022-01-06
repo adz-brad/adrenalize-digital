@@ -2,8 +2,30 @@ import React from 'react'
 import { ContactForm } from '../components/contact'
 import { FaPlusCircle } from 'react-icons/fa'
 import { Seo } from '../components/seo'
+import { SRLWrapper } from "simple-react-lightbox";
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-const Portfolio = () => {
+const Portfolio = ({ data }) => {
+    
+    const options = {
+        settings: {
+          usingPreact: true,
+          disablePanzoom: true,
+        },
+        buttons: {
+            showAutoplayButton: false,
+            showDownloadButton: false,
+            showThumbnailsButton: false,
+            showFullscreenButton: true,
+            showNextButton: true,
+            showPrevButton: true,
+        },
+        caption: {
+            showCaption: false
+          }
+      }
+
     return(
         <>
       <Seo
@@ -36,9 +58,20 @@ const Portfolio = () => {
                         <span className="font-bold mr-2 text-sm">Industry</span>
                         <span className="text-sm">Restaurant Equipment Supplier</span>
                     </div>
-                    <div className="flex flex-row items-center">
-                        <span className="font-bold mr-2 text-sm">Gallery</span>
-                        <span className="text-sm">Coming Soon</span>
+                    <div className="flex flex-col">
+                        <span className="font-bold mt-1 mr-2 text-sm">Gallery</span>
+                        <div className="portfolioGallery">
+                            <SRLWrapper options={options}>
+                                {data.netstaurant.nodes.map((node) => {
+                                return(
+                                    <GatsbyImage 
+                                    image={getImage(node.childImageSharp.gatsbyImageData)}
+                                    className="rounded-md h-24 shadow-md m-1 portfolioGalleryImage"
+                                    alt="Netstaurant Screenshot"
+                                />
+                                )})}
+                            </SRLWrapper>
+                        </div>
                     </div>
                     <div className="flex flex-col my-1">
                         <span className="font-bold mr-2 text-sm">Description</span>
@@ -69,9 +102,20 @@ const Portfolio = () => {
                         <span className="font-bold mr-2 text-sm">Industry</span>
                         <span className="text-sm">Personal Services / Esthetics</span>
                     </div>
-                    <div className="flex flex-row items-center">
-                        <span className="font-bold mr-2 text-sm">Gallery</span>
-                        <span className="text-sm">Coming Soon</span>
+                    <div className="flex flex-col">
+                        <span className="font-bold mt-1 mr-2 text-sm">Gallery</span>
+                        <div className="portfolioGallery">
+                            <SRLWrapper options={options}>
+                                {data.eob.nodes.map((node) => {
+                                return(
+                                    <GatsbyImage 
+                                    image={getImage(node.childImageSharp.gatsbyImageData)}
+                                    className="rounded-md h-24 shadow-md m-1 portfolioGalleryImage"
+                                    alt="Essence of Beauty Screenshot"
+                                />
+                                )})}
+                            </SRLWrapper>
+                        </div>
                     </div>
                     <div className="flex flex-col my-1">
                         <span className="font-bold mr-2 text-sm">Description</span>
@@ -101,9 +145,20 @@ const Portfolio = () => {
                         <span className="font-bold mr-2 text-sm">Industry</span>
                         <span className="text-sm">Live Music Venue / Restaurant</span>
                     </div>
-                    <div className="flex flex-row items-center">
-                        <span className="font-bold mr-2 text-sm">Gallery</span>
-                        <span className="text-sm">Coming Soon</span>
+                    <div className="flex flex-col">
+                        <span className="font-bold mt-1 mr-2 text-sm">Gallery</span>
+                        <div className="portfolioGallery">
+                            <SRLWrapper options={options}>
+                                {data.jax.nodes.map((node) => {
+                                return(
+                                    <GatsbyImage 
+                                    image={getImage(node.childImageSharp.gatsbyImageData)}
+                                    className="rounded-md h-24 shadow-md m-1 portfolioGalleryImage"
+                                    alt="JAX Screenshot"
+                                />
+                                )})}
+                            </SRLWrapper>
+                        </div>
                     </div>
                     <div className="flex flex-col my-1">
                         <span className="font-bold mr-2 text-sm">Description</span>
@@ -128,8 +183,93 @@ const Portfolio = () => {
                     </div>
                 </div>
                 <div className="portfolioCard">
+                <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">CravePOS</h2>
+                    <div className="flex flex-row items-center">
+                        <span className="font-bold mr-2 text-sm">Type</span>
+                        <span className="text-sm">Cross-Platform Application</span>
+                    </div>
+                    <div className="flex flex-row items-center">
+                        <span className="font-bold mr-2 text-sm">Industry</span>
+                        <span className="text-sm">Restaurant Management</span>
+                    </div>
+                    <div className="flex flex-col">
+                        <span className="font-bold mt-1 mr-2 text-sm">Gallery</span>
+                        <div className="portfolioGallery">
+                            <SRLWrapper options={options}>
+                                {data.crave.nodes.map((node) => {
+                                return(
+                                    <GatsbyImage 
+                                    image={getImage(node.childImageSharp.gatsbyImageData)}
+                                    className="rounded-md h-24 shadow-md m-1 portfolioGalleryImage"
+                                    alt="Crave Screenshot"
+                                />
+                                )})}
+                            </SRLWrapper>
+                        </div>
+                    </div>
+                    <div className="flex flex-col my-1">
+                        <span className="font-bold mr-2 text-sm">Description</span>
+                        <span className="text-sm">The Crave point-of-sale system is being developed as one feature in the Crave Restaurant Management Suite. A React Native application that is enabled for use on all devices included desktop, the POS connects to local virtual server that is synchronized with the business cloud database via Adrenalize edge-to-cloud data sync technology, enabling it to continue functioning without network connectivity and subsequently updating the database without conflict once the network is restored. Key features include an automated inventory management and business metrics updated live to the CraveRMS management app, allowing management to view live data from their venue from anywhere in the world.</span>
+                    </div>
+                    <div className="flex flex-row items-center flex-wrap mt-auto py-2">
+                        <span className="portfolioTag">
+                            Cross-Platform
+                        </span>
+                        <span className="portfolioTag">
+                            Hybrid App
+                        </span>
+                        <span className="portfolioTag">
+                            Application Suite
+                        </span>
+                    </div>
+                </div>
+                <div className="portfolioCard">
+                <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">myCrypto Canada</h2>
+                    <div className="flex flex-row items-center">
+                        <span className="font-bold mr-2 text-sm">Type</span>
+                        <span className="text-sm">Web Application</span>
+                    </div>
+                    <div className="flex flex-row items-center">
+                        <span className="font-bold mr-2 text-sm">Industry</span>
+                        <span className="text-sm">Finance / Education</span>
+                    </div>
+                    <div className="flex flex-col">
+                        <span className="font-bold mt-1 mr-2 text-sm">Gallery</span>
+                        <div className="portfolioGallery">
+                            <SRLWrapper options={options}>
+                                {data.mycrypto.nodes.map((node) => {
+                                return(
+                                    <GatsbyImage 
+                                    image={getImage(node.childImageSharp.gatsbyImageData)}
+                                    className="rounded-md h-24 shadow-md m-1 portfolioGalleryImage"
+                                    alt="myCrypto Canada Screenshot"
+                                />
+                                )})}
+                            </SRLWrapper>
+                        </div>
+                    </div>
+                    <div className="flex flex-col my-1">
+                        <span className="font-bold mr-2 text-sm">Description</span>
+                        <span className="text-sm">The myCrypto Canada web app is designed to provide users with live updated cryptocurrency data via 3rd party REST API. The blog is designed for social sharing to promote social media marketing capability while the educational resources are linked with Canadian cryptocurrency affiliates for monetization.</span>
+                    </div>
+                    <div className="flex flex-row items-center flex-wrap mt-auto py-2">
+                        <span className="portfolioTag">
+                            Web
+                        </span>
+                        <span className="portfolioTag">
+                            Headless CMS
+                        </span>
+                        <span className="portfolioTag">
+                            Affiliate Marketing
+                        </span>
+                        <span className="portfolioTag">
+                            Blog
+                        </span>
+                    </div>
+                </div>
+                <div className="portfolioCard">
                 <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">Your Name Here</h2>
-                <FaPlusCircle className="mx-auto my-8 md:m-auto text-7xl text-green-500 transform hover:scale-105"/>
+                <FaPlusCircle className="mx-auto my-8 md:m-auto text-7xl text-green-500 transform hover:scale-105 cursor-pointer"/>
             </div>
             </div>
 
@@ -142,4 +282,60 @@ const Portfolio = () => {
         </>
     )
 }
+
+export const pageQuery = graphql`
+    {
+        jax: allFile(
+            filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, relativeDirectory: {eq: "portfolio/jax"}}
+          ) {
+            nodes {
+              id
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          },
+          eob: allFile(
+            filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, relativeDirectory: {eq: "portfolio/eob"}}
+          ) {
+            nodes {
+              id
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          },
+          mycrypto: allFile(
+            filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, relativeDirectory: {eq: "portfolio/mycrypto"}}
+          ) {
+            nodes {
+              id
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          },
+          netstaurant: allFile(
+            filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, relativeDirectory: {eq: "portfolio/netstauraunt"}}
+          ) {
+            nodes {
+              id
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          },
+          crave: allFile(
+            filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, relativeDirectory: {eq: "portfolio/crave"}}
+          ) {
+            nodes {
+              id
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+    }
+`
+
 export default Portfolio;
