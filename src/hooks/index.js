@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useEffect, useState } from 'react'
 import { window, document } from 'browser-monads'
 
 const isBrowser = typeof window !== "undefined"
@@ -52,7 +52,6 @@ try {
 var wheelOpt = supportsPassive ? { passive: false } : false;
 var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
-// call this to Disable
 function disableScroll() {
   window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
   window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
@@ -60,7 +59,6 @@ function disableScroll() {
   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-// call this to Enable
 function enableScroll() {
   window.removeEventListener('DOMMouseScroll', preventDefault, false);
   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
@@ -68,4 +66,21 @@ function enableScroll() {
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-export { useWindowHeight, useWindowWidth, disableScroll, enableScroll, isBrowser }
+const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = event => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener('mousedown', listener);
+    return () => {
+      document.removeEventListener('mousedown', listener);
+    };
+  },
+  [ref, handler],
+  );
+};
+
+export { useWindowHeight, useWindowWidth, disableScroll, enableScroll, isBrowser, useOnClickOutside }

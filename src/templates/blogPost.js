@@ -9,11 +9,20 @@ import { ContactForm } from '../components/contact'
 import { Seo } from '../components/seo'
 import { Helmet } from 'react-helmet'
 
-const BlogPost = ({ data, pageContext: { post } }) => {
+const BlogPost = ({ pageContext: { post } }) => {
 
     const options = {
         settings: {
-          usingPreact: true
+          usingPreact: true,
+          disablePanzoom: true,
+        },
+        buttons: {
+            showAutoplayButton: false,
+            showDownloadButton: false,
+            showThumbnailsButton: false,
+            showFullscreenButton: true,
+            showNextButton: true,
+            showPrevButton: true,
         },
         caption: {
             showCaption: false

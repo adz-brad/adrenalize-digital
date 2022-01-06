@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { SelectCountry } from "../ui"
 import { BiCaretRightCircle } from "react-icons/bi"
 import { MdThumbUp, MdThumbDown } from 'react-icons/md'
+import { ImSpinner } from 'react-icons/im'
 import update from 'immutability-helper';
 import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
@@ -72,6 +73,8 @@ const ContactForm = ({ className }) => {
       });
   };
 
+  const [ sending, setSending ] = useState(false)
+
   const submitContact = async () => {
     if(contactData.name === null){
       messageFailed('Name')
@@ -98,8 +101,10 @@ const ContactForm = ({ className }) => {
       setFieldMissing('Message')
     }
     else{
+      setSending(true)
       await emailjs.send('service_neuralSMTP', 'template_neuralContact', contactData, 'user_FlIabMfG4VBtqOJI64DiZ')
       .then(function(response) {
+        setSending(false);
          console.log('Message Sent.', response.status, response.text);
          messageSent()
          setContactData(update(contactData, { 
@@ -110,6 +115,7 @@ const ContactForm = ({ className }) => {
           message: { $set: null },
         }));
       }, function(error) {
+        setSending(false);
         console.log('Error sending message.', error);
          messageFailed(`Something went wrong.`)
       });   
@@ -176,8 +182,18 @@ const ContactForm = ({ className }) => {
             </div>
             <button className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-subheader rounded-lg shadow-md my-5 mx-auto"
             onClick={() => submitContact()}>
-              Submit
-              <BiCaretRightCircle className="ml-3 text-2xl" />
+              {sending === false ?
+                <>
+                  Submit
+                  <BiCaretRightCircle className="ml-3 text-2xl" />
+                </>  
+              :
+                <>
+                  Sending
+                  <ImSpinner className="ml-3 text-2xl spin" />
+                </>
+              }
+              
             </button>
           </div>
     )

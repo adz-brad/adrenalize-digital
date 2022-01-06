@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, .font-headers{
 }
 
 .font-title{
-    font-family: TypoGraphica;
+    font-family: TypoGraphica!important;
 }
 
 /* --- Navigation --- */
@@ -441,7 +441,7 @@ textarea.contactMessage{
   }
   
   .custom-toast {
-    @apply font-bold shadow-lg rounded-md text-white text-lg min-h-0 pl-2 pr-4 cursor-pointer !important;
+    @apply font-bold shadow-lg rounded-md text-white text-lg min-h-0 pl-2 pr-4 cursor-pointer font-headers !important;
   }
   
   .red-toast {
@@ -457,6 +457,22 @@ textarea.contactMessage{
   }
 
 /* --- Effects --- */
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.spin{
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
 
 @keyframes pulse {
 	0% {

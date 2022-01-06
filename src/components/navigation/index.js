@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { Link } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
-import { disableScroll, enableScroll } from "../../hooks"
+import { disableScroll, enableScroll, useOnClickOutside } from "../../hooks"
 import { BiCaretUpCircle } from 'react-icons/bi'
 import { RiFacebookCircleFill, RiInstagramFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri'
 import { MdOutlineHomeWork, MdOutlineAppRegistration, MdOutlineInsights, MdCode, MdOutlinePerson, MdOutlineMessage,  MdOutlineLogin, } from 'react-icons/md'
@@ -16,6 +16,9 @@ const Navbar = () => {
   else{
     enableScroll();
   }
+
+  const node = useRef(); 
+	useOnClickOutside(node, () => setMenuOpen(false));
 
   return (
     <div className="navbar">
@@ -63,7 +66,7 @@ const Navbar = () => {
           </div>
         </button>
 
-        <div className={`mobileNav flex flex-col ${menuOpen === true ? 'mobileNavOpen' : 'mobileNavClosed'}`}>
+        <div ref={node} className={`mobileNav flex flex-col ${menuOpen === true ? 'mobileNavOpen' : 'mobileNavClosed'}`}>
           <div className="flex flex-col ml-4 mt-4">
             <Link 
               onClick={() => setMenuOpen(false)}
@@ -112,11 +115,19 @@ const Navbar = () => {
             <MdOutlineLogin className="mr-4" />User Portal
           </div>
           <div className="flex flex-row items-center mt-auto mb-4 ml-4">
-          <RiFacebookCircleFill className="socialIcon socialMenuIcon" />
-          <RiInstagramFill className="socialIcon socialMenuIcon" />
-          <RiTwitterFill className="socialIcon socialMenuIcon" />
-          <RiLinkedinFill className="socialIcon socialMenuIcon" />
-        </div>
+            <a href="https://www.facebook.com/adrenalizedigital" target="_blank" rel="noopener noreferrer">
+              <RiFacebookCircleFill className="socialIcon socialMenuIcon" />
+            </a>
+            <a href="https://www.instagram.com/adrenalize.digital/" target="_blank" rel="noopener noreferrer">
+              <RiInstagramFill className="socialIcon socialMenuIcon" />
+            </a>
+            <a href="https://twitter.com/AdrenalizeDS" target="_blank" rel="noopener noreferrer">
+              <RiTwitterFill className="socialIcon socialMenuIcon" />
+            </a>
+            <a href="https://www.linkedin.com/company/adrenalize-digital/" target="_blank" rel="noopener noreferrer">
+              <RiLinkedinFill className="socialIcon socialMenuIcon" />
+            </a>
+          </div>
         </div>
 
     </div>
@@ -134,14 +145,26 @@ const Footer = () => {
     enableScroll();
   }
 
+  const node = useRef(); 
+	useOnClickOutside(node, () => setFooterMenuOpen(false));
+
+
   return(
     <>
     <footer className="footer relative h-20 bg-gray-100">
       <div className="flex flex-row items-center ml-4 z-30 bg-gray-100">
-        <RiFacebookCircleFill className="socialIcon" />
-        <RiInstagramFill className="socialIcon" />
-        <RiTwitterFill className="socialIcon" />
-        <RiLinkedinFill className="socialIcon" />
+      <a href="https://www.facebook.com/adrenalizedigital" target="_blank" rel="noopener noreferrer">
+            <RiFacebookCircleFill className="socialIcon" />
+          </a>
+          <a href="https://www.instagram.com/adrenalize.digital/" target="_blank" rel="noopener noreferrer">
+            <RiInstagramFill className="socialIcon" />
+          </a>
+          <a href="https://twitter.com/AdrenalizeDS" target="_blank" rel="noopener noreferrer">
+            <RiTwitterFill className="socialIcon" />
+          </a>
+          <a href="https://www.linkedin.com/company/adrenalize-digital/" target="_blank" rel="noopener noreferrer">
+            <RiLinkedinFill className="socialIcon" />
+          </a>
       </div>
       <p className="absolute bottom-1 ml-5 text-sm md:text-md font-subheader font-semibold">© 2022 Adrenalize Digital</p>
       <button 
@@ -154,7 +177,7 @@ const Footer = () => {
       />
       </button>
     </footer>
-    <div className={`footerNav ${footerMenuOpen === true ? 'footerNavOpen' : 'footerNavClosed'}`}>
+    <div ref={node} className={`footerNav ${footerMenuOpen === true ? 'footerNavOpen' : 'footerNavClosed'}`}>
       <div className="flex flex-col ml-4 mt-4 md:flex-row md:items-center">
             <Link 
               onClick={() => setFooterMenuOpen(false)}
