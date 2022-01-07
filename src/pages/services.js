@@ -58,6 +58,7 @@ const Services = () => {
         </div>
         <div id="websites-web-applications" className="servicesTab">
           <button
+            aria-label="Websites and Web Applications"
             className={`servicesTabButton ${
               activeService === "websites-web-applications"
                 ? "rounded-t-md"
@@ -88,6 +89,7 @@ const Services = () => {
         </div>
         <div id="mobile-apps" className="servicesTab">
           <button
+            aria-label="Mobile Applications"
             className={`servicesTabButton ${
               activeService === "mobile-apps" ? "rounded-t-md" : "rounded-md"
             }`}
@@ -114,6 +116,7 @@ const Services = () => {
         </div>
         <div id="desktop-apps" className="servicesTab">
           <button
+            aria-label="Desktop Applications"
             className={`servicesTabButton ${
               activeService === "desktop-apps" ? "rounded-t-md" : "rounded-md"
             }`}
@@ -140,6 +143,7 @@ const Services = () => {
         </div>
         <div id="hybrid-app-suites" className="servicesTab">
           <button
+            aria-label="Hybrid Application Suites"
             className={`servicesTabButton ${
               activeService === "hybrid-app-suites"
                 ? "rounded-t-md"

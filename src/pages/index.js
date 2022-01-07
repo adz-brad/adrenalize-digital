@@ -96,6 +96,7 @@ const Index = () => {
             Are you ready to push limits with us?
           </h3>
           <button 
+          aria-label="Find Out More"
           onClick={()=> scrollTo('products')}
           className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-6 mb-2 md:my-auto mx-auto md:mx-0 md:mr-auto">
             Find out more
@@ -124,6 +125,7 @@ const Index = () => {
                 business capabilities beyond average.
               </p>
               <Link 
+              aria-label="Websites and Web Applications"
                 to="/services#websites-web-applications"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
@@ -144,6 +146,7 @@ const Index = () => {
                 enterprise grade applications.
               </p>
               <Link 
+              aria-label="Mobile Apps"
                 to="/services#mobile-apps"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
@@ -163,6 +166,7 @@ const Index = () => {
                 Windows and Linux operating systems, our desktop applications combine the flexibility of mobile design with the power of desktop.
               </p>
               <Link 
+              aria-label="Desktop Apps"
                 to="/services#desktop-apps"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700">
                 Learn More
@@ -182,6 +186,7 @@ const Index = () => {
                 organizational productivity.
               </p>
               <Link 
+              aria-label="Hybrid App Suites"
                 to="/services#hybrid-app-suites"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
@@ -268,7 +273,7 @@ const Index = () => {
                 line to get the ball rolling on your next project!
               </p>
             </div>
-            <button disabled className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mb-3 md:mb-1 mt-auto mx-auto">
+            <button aria-label="Project Discovery" disabled className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mb-3 md:mb-1 mt-auto mx-auto">
               Project Discovery
               <BiCaretRightCircle className="ml-3 text-2xl" />
             </button>

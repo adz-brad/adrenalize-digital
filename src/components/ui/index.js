@@ -6,6 +6,7 @@ const Popover = ({ children, close }) => {
     <div className="fixed h-screen w-screen top-0 left-0 bg-gray-900 bg-opacity-90 z-20">
       <div className="popover">
         <button
+          aria-label="Close Popover"
           onClick={close}
           className="absolute top-2 right-2 text-red-600 text-3xl"
         >
@@ -20,6 +21,8 @@ const Popover = ({ children, close }) => {
 const SelectCountry = ({ onChange, className, value }) => {
   return(
     <select 
+      name="Select Your Country"
+      aria-label="Select Your Country"
       className={className}
       value={value}
       onChange={onChange} 

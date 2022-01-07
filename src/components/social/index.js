@@ -12,7 +12,7 @@ import { MdEmail } from 'react-icons/md'
 import { FaFacebook, FaLinkedinIn, FaTwitter, FaPinterest, FaRedditAlien, FaWhatsapp } from 'react-icons/fa'
 
 const SocialSharing = ({ page }) => {
-  console.log(page)
+
   return (
     <div className="flex flex-row items-center">
       <FacebookShareButton

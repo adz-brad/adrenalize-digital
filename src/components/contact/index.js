@@ -133,6 +133,8 @@ const ContactForm = ({ className }) => {
             <div className="flex flex-col w-full md:w-3/4">
               <h3 className="text-lg font-semibold">Your Name</h3>
               <input
+                name="Name"
+                aria-label="Name"
                 className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Name' ? 'outline-red' : ''}`}
                 type="text"
                 value={contactData.name || ''}
@@ -142,6 +144,8 @@ const ContactForm = ({ className }) => {
             <div className="flex flex-col w-full md:w-3/4">
               <h3 className="text-lg font-semibold">Email Address</h3>
               <input
+                name="Email"
+                aria-label="Email"
                 className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Email' ? 'outline-red' : ''}`}
                 type="text"
                 value={contactData.email || ''}
@@ -158,7 +162,10 @@ const ContactForm = ({ className }) => {
             </div>
             <div className="flex flex-col w-full md:w-3/4">
               <h3 className="text-lg font-semibold">How can we help?</h3>
-              <select className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Type' ? 'outline-red' : ''}`}
+              <select 
+              name="How Can We Help?"
+              aria-label="How Can We Help?"
+              className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Type' ? 'outline-red' : ''}`}
               value={contactData.type || ''}
               onChange={(e) => handleContactType(e.target.value)}>
                 <option value="" selected disabled hidden>
@@ -174,13 +181,17 @@ const ContactForm = ({ className }) => {
             <div className="flex flex-col w-full md:w-3/4">
               <h3 className="text-lg font-semibold">Message</h3>
               <textarea
+                name="Message"
+                aria-label="Message"
                 rows="5"
                 className={`contactMessage focus:outline-blue w-full p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Message' ? 'outline-red' : ''}`}
                 value={contactData.message || ''}
                 onChange={(e) => handleContactMessage(e.target.value)}
               />
             </div>
-            <button className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-subheader rounded-lg shadow-md my-5 mx-auto"
+            <button 
+            aria-label="Submit"
+            className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-subheader rounded-lg shadow-md my-5 mx-auto"
             onClick={() => submitContact()}>
               {sending === false ?
                 <>

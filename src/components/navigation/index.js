@@ -23,6 +23,7 @@ const Navbar = () => {
       <div className="navbarBg "/>
       <Link 
         to="/"
+        aria-label="Adrenalize Digital Home"
         className="flex flex-row items-center ml-2 mr-auto">
           <StaticImage 
             src="../../assets/images/adLogoLight.png"
@@ -37,6 +38,7 @@ const Navbar = () => {
       </Link>
 
         <button
+          aria-label="Navigation Menu Button"
           onClick={() => setMenuOpen(menuOpen === true ? false : true)}
           className={`relative flex flex-row items-center ml-auto cursor-pointer ${menuOpen === true? 'mr-2' : 'mr-4'}`}
         >
@@ -64,45 +66,51 @@ const Navbar = () => {
           </div>
         </button>
 
-        <div  className={`mobileNav flex flex-col ${menuOpen === true ? 'mobileNavOpen' : 'mobileNavClosed'}`}>
+        <div className={`mobileNav flex flex-col ${menuOpen === true ? 'mobileNavOpen' : 'mobileNavClosed'}`}>
           <div className="flex flex-col ml-4 mt-4">
             <Link 
               onClick={() => setMenuOpen(false)}
               to="/"
+              aria-label="Adrenalize Digital Home"
               className="menuLink"
             >
               <MdOutlineHomeWork className="mr-4" />Home
             </Link>
             <Link 
-            onClick={() => setMenuOpen(false)}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Adrenalize Digital Services"
               to="/services"
               className="menuLink"
             >
               <MdCode className="mr-4"/>Services
             </Link>
             <Link 
-            onClick={() => setMenuOpen(false)}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Adrenalize Digital Portfolio"
               to="/our-work"
               className="menuLink"
             >
               <MdOutlineAppRegistration className="mr-4"/>Our Work
             </Link>
             <Link 
-            onClick={() => setMenuOpen(false)}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Adrenalize Digital Blog"
               to="/insights-blog"
               className="menuLink"
             >
               <MdOutlineInsights className="mr-4" />Insights
             </Link>
             <Link 
-            onClick={() => setMenuOpen(false)}
+              onClick={() => setMenuOpen(false)}
+              aria-label="About Adrenalize Digital"
               to="/about-us"
               className="menuLink"
             >
               <MdOutlinePerson className="mr-4" />About Us
             </Link>
             <Link 
-            onClick={() => setMenuOpen(false)}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Contact Adrenalize Digital"
               to="/contact-us"
               className="menuLink"
             >
@@ -113,16 +121,16 @@ const Navbar = () => {
             <MdOutlineLogin className="mr-4" />User Portal
           </div>
           <div className="flex flex-row items-center mt-auto mb-4 ml-4">
-            <a href="https://www.facebook.com/adrenalizedigital" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/adrenalizedigital" aria-label="Adrenalize Digital Facebook" target="_blank" rel="noopener noreferrer">
               <RiFacebookCircleFill className="socialIcon socialMenuIcon" />
             </a>
-            <a href="https://www.instagram.com/adrenalize.digital/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/adrenalize.digital/" aria-label="Adrenalize Digital Instagram" target="_blank" rel="noopener noreferrer">
               <RiInstagramFill className="socialIcon socialMenuIcon" />
             </a>
-            <a href="https://twitter.com/AdrenalizeDS" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/AdrenalizeDS" aria-label="Adrenalize Digital Twitter" target="_blank" rel="noopener noreferrer">
               <RiTwitterFill className="socialIcon socialMenuIcon" />
             </a>
-            <a href="https://www.linkedin.com/company/adrenalize-digital/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/adrenalize-digital/" aria-label="Adrenalize Digital LinkedIn" target="_blank" rel="noopener noreferrer">
               <RiLinkedinFill className="socialIcon socialMenuIcon" />
             </a>
           </div>
@@ -148,22 +156,23 @@ const Footer = () => {
     <>
     <footer className="footer relative h-20 bg-gray-100">
       <div className="flex flex-row items-center ml-4 z-30 bg-gray-100">
-      <a href="https://www.facebook.com/adrenalizedigital" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/adrenalizedigital" aria-label="Adrenalize Digital Facebook" target="_blank" rel="noopener noreferrer">
             <RiFacebookCircleFill className="socialIcon" />
           </a>
-          <a href="https://www.instagram.com/adrenalize.digital/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/adrenalize.digital/" aria-label="Adrenalize Digital Instagram" target="_blank" rel="noopener noreferrer">
             <RiInstagramFill className="socialIcon" />
           </a>
-          <a href="https://twitter.com/AdrenalizeDS" target="_blank" rel="noopener noreferrer">
+          <a href="https://twitter.com/AdrenalizeDS" aria-label="Adrenalize Digital Twitter" target="_blank" rel="noopener noreferrer">
             <RiTwitterFill className="socialIcon" />
           </a>
-          <a href="https://www.linkedin.com/company/adrenalize-digital/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/company/adrenalize-digital/" aria-label="Adrenalize Digital LinkedIn" target="_blank" rel="noopener noreferrer">
             <RiLinkedinFill className="socialIcon" />
           </a>
       </div>
       <p className="absolute bottom-1 ml-5 text-sm md:text-md font-subheader font-semibold">© 2022 Adrenalize Digital</p>
       <button 
         onClick={footerMenuOpen === true ? () => setFooterMenuOpen(false) : () => setFooterMenuOpen(true)}
+        aria-label="Adrenalize Digital Navigation Menu"
         className="flex flex-row items-center absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-gray-100"
       >
         <h2 className="text-2xl font-bold mr-2">Menu</h2>
@@ -176,6 +185,7 @@ const Footer = () => {
       <div className="flex flex-col ml-4 mt-4 md:flex-row md:items-center">
             <Link 
               onClick={() => setFooterMenuOpen(false)}
+              aria-label="Adrenalize Digital Home"
               to="/"
               className="menuLink footerLink"
             >
@@ -183,6 +193,7 @@ const Footer = () => {
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
+            aria-label="Adrenalize Digital Services"
               to="/services"
               className="menuLink footerLink"
             >
@@ -190,6 +201,7 @@ const Footer = () => {
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
+              aria-label="Adrenalize Digital Portfolio"
               to="/our-work"
               className="menuLink footerLink"
             >
@@ -197,20 +209,23 @@ const Footer = () => {
             </Link>
             <Link 
             onClick={() => setFooterMenuOpen(false)}
+              aria-label="Adrenalize Digital Blog"
               to="/insights-blog"
               className="menuLink footerLink"
             >
               <MdOutlineInsights className="mr-4" />Insights
             </Link>
             <Link 
-            onClick={() => setFooterMenuOpen(false)}
+              onClick={() => setFooterMenuOpen(false)}
+              aria-label="About Adrenalize Digital"
               to="/about-us"
               className="menuLink footerLink"
             >
               <MdOutlinePerson className="mr-4" />About Us
             </Link>
             <Link 
-            onClick={() => setFooterMenuOpen(false)}
+              onClick={() => setFooterMenuOpen(false)}
+              aria-label="Contact Adrenalize Digital"
               to="/contact-us"
               className="menuLink footerLink"
             >

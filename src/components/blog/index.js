@@ -26,6 +26,7 @@ const FeaturedCard = ({ image, published, link, title, excerpt, tags }) => {
             </div>
             <Link 
                 to={link}
+                aria-label={title}
                 className="flex flex-row items-center mr-auto text-base md:text-lg font-semibold cursor-pointer rounded-md shadow-md bg-gray-100 text-gray-900 px-3 py-2 hover:bg-gray-200 hover:shadow-lg m-4"
               >
                 Read More
@@ -58,6 +59,7 @@ const BlogCard = ({ image, published, link, title, excerpt, tags }) => {
             </div>
             <Link 
                 to={link}
+                aria-label={title}
                 className="flex flex-row items-center mr-auto text-base md:text-lg font-semibold cursor-pointer rounded-md shadow-md bg-gray-900 text-gray-100 px-3 py-2 hover:bg-gray-800 hover:shadow-lg m-2"
               >
                 Read More

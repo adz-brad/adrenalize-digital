@@ -57,6 +57,7 @@ const Faq = ({ data, idPrefix }) => {
             {data.map((data, index) => {
                 return(
                       <button 
+                      aria-label={data.question}
                       id={`${idPrefix}-${index}`}
                       className="text-left p-2 md:p-4 bg-gray-100 rounded-md shadow-md m-2 md:mx-0 overflow-hidden"
                       onClick={() => openTab({index, idPrefix})}
@@ -214,6 +215,7 @@ const WebApplications = () => {
             ready, get in touch with us today.{" "}
           </p>
           <button
+          aria-label="Contact Us"
             onClick={() => scrollTo("contact")}
             className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md my-4 mx-auto md:mr-auto md:ml-0"
           >
@@ -361,6 +363,7 @@ const WebApplications = () => {
             </p>
             </div>
             <button
+            aria-label="Contact Us"
             onClick={() => scrollTo("contact")}
             className="flex flex-row items-center text-xl px-4 py-2 hover:bg-blue-700 bg-blue-600 text-gray-100 font-bold font-subheader rounded-lg shadow-md my-4 mx-auto"
           >
@@ -381,6 +384,7 @@ const WebApplications = () => {
                 Still have questions?
               </h2>
               <button
+              aria-label="Contact Us"
             onClick={() => scrollTo("contact")}
             className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-4 mb-6 md:mb-4 mx-auto"
           >
@@ -419,12 +423,12 @@ const MobileApplications = () => {
 },
 {
   question: `Can I run my mobile app on desktop?`,
-  answer: <p>We develop both our mobile and desktop applications using the same codebase - just with a slightly different execution, meaning you can have the convenience of your Adrenalize mobile app right on your Windows, Mac or Linux OS desktop! It's not as easy as 1, 2, 3 - you can't just develop a mobile app and install it on your PC, that would be a dream come true, wouldn't it? Fortunately, Adrenalize Hybrid App Suites make that dream come true. So if you want to build an app that runs on any platform, check out <a href="#hybrid-app-suites">Adrenalize Hybrid App Suites!</a></p>,
+  answer: <p>We develop both our mobile and desktop applications using the same codebase - just with a slightly different execution, meaning you can have the convenience of your Adrenalize mobile app right on your Windows, Mac or Linux OS desktop! It's not as easy as 1, 2, 3 - you can't just develop a mobile app and install it on your PC, that would be a dream come true, wouldn't it? Fortunately, Adrenalize Hybrid App Suites make that dream come true. So if you want to build an app that runs on any platform, check out <a href="#hybrid-app-suites" aria-label="Hybrid App Suites">Adrenalize Hybrid App Suites!</a></p>,
   jsonAnswer:`<p>We develop both our mobile and desktop applications using the same codebase - just with a slightly different execution, meaning you can have the convenience of your Adrenalize mobile app right on your Windows, Mac or Linux OS desktop! It's not as easy as 1, 2, 3 - you can't just develop a mobile app and install it on your PC, that would be a dream come true, wouldn't it? Fortunately, Adrenalize Hybrid App Suites make that dream come true. So if you want to build an app that runs on any platform, check out <a href="https://www.adrenalizedigital.ca/products#hybrid-app-suites">Adrenalize Hybrid App Suites!</a></p>`
 },
 {
   question: `Will my mobile application work offline?`,
-  answer: <p>Our proprietary edge-to-cloud data sync functionality can be integrated into any Adrenalize application, whether mobile or desktop, to ensure you can keep working during periods of limited or no connectivity without having to worry about losing your data. <a href="#edge-to-cloud">Read more about edge-to-cloud-data sync.</a></p>,
+  answer: <p>Our proprietary edge-to-cloud data sync functionality can be integrated into any Adrenalize application, whether mobile or desktop, to ensure you can keep working during periods of limited or no connectivity without having to worry about losing your data. <a href="#edge-to-cloud" aria-label="Edge To Cloud Data Sync">Read more about edge-to-cloud-data sync.</a></p>,
   jsonAnswer:`<p>Our proprietary edge-to-cloud data sync functionality can be integrated into any Adrenalize application, whether mobile or desktop, to ensure you can keep working during periods of limited or no connectivity without having to worry about losing your data. <a href="https://www.adrenalizedigital.ca/product#edge-to-cloud">Read more about edge-to-cloud-data sync.</a></p>`
 },
   ]
@@ -556,6 +560,7 @@ const MobileApplications = () => {
                 Still have questions?
               </h2>
               <button
+              aria-label="Contact Us"
             onClick={() => scrollTo("contact")}
             className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-4 mb-6 md:mb-4 mx-auto"
           >
@@ -584,12 +589,12 @@ const DesktopApplications = () => {
     },
     {
       question: `Can I run my desktop app on mobile?`,
-      answer: <p>We develop both our mobile and desktop applications using the same codebase - just with a slightly different execution, meaning you can have the convenience of your Adrenalize mobile app right on your Windows, Mac or Linux OS desktop! It's not as easy as 1, 2, 3 - you can't just develop a mobile app and install it on your PC, that would be a dream come true, wouldn't it? Fortunately, Adrenalize Hybrid App Suites make that dream come true. So if you want to build an app that runs on any platform, <a href="#hybrid-app-suites">check out Adrenalize Hybrid App Suites!</a></p>,
+      answer: <p>We develop both our mobile and desktop applications using the same codebase - just with a slightly different execution, meaning you can have the convenience of your Adrenalize mobile app right on your Windows, Mac or Linux OS desktop! It's not as easy as 1, 2, 3 - you can't just develop a mobile app and install it on your PC, that would be a dream come true, wouldn't it? Fortunately, Adrenalize Hybrid App Suites make that dream come true. So if you want to build an app that runs on any platform, <a href="#hybrid-app-suites" aria-label="Hybrid App Suites">check out Adrenalize Hybrid App Suites!</a></p>,
       jsonAnswer:`<p>We develop both our mobile and desktop applications using the same codebase - just with a slightly different execution, meaning you can have the convenience of your Adrenalize mobile app right on your Windows, Mac or Linux OS desktop! It's not as easy as 1, 2, 3 - you can't just develop a mobile app and install it on your PC, that would be a dream come true, wouldn't it? Fortunately, Adrenalize Hybrid App Suites make that dream come true. So if you want to build an app that runs on any platform, <a href="https://www.adrenalizedigital.ca/prducts#hybrid-app-suites">check out Adrenalize Hybrid App Suites!</a></p>`
   },
   {
     question: `Will my desktop application work offline?`,
-    answer: <p>Absolutely. Our proprietary edge-to-cloud data sync functionality can be integrated into any Adrenalize application, whether mobile or desktop, to ensure you can keep working during periods of limited or no connectivity without having to worry about losing your data. Read more about our <a href="#edge-to-cloud-data-sync">edge-to-cloud data sync technology here.</a></p>,
+    answer: <p>Absolutely. Our proprietary edge-to-cloud data sync functionality can be integrated into any Adrenalize application, whether mobile or desktop, to ensure you can keep working during periods of limited or no connectivity without having to worry about losing your data. Read more about our <a href="#edge-to-cloud-data-sync" aria-label="Edge To Cloud Data Sync">edge-to-cloud data sync technology here.</a></p>,
     jsonAnswer:`<p>Absolutely. Our proprietary edge-to-cloud data sync functionality can be integrated into any Adrenalize application, whether mobile or desktop, to ensure you can keep working during periods of limited or no connectivity without having to worry about losing your data. Read more about our <a href="https://www.adrenalizedigital.ca/products#edge-to-cloud-data-sync">edge-to-cloud data sync technology here.</a></p>`
 }
   ]
@@ -708,6 +713,7 @@ const DesktopApplications = () => {
                 Still have questions?
               </h2>
               <button
+              aria-label="Contact Us"
             onClick={() => scrollTo("contact")}
             className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-4 mb-6 md:mb-4 mx-auto"
           >
@@ -753,6 +759,7 @@ const HybridAppSuites = () => {
               Our proprietary <strong>edge-to-cloud data sync</strong> technology means you can get things done without stressing about losing data by locally storing work and asynchronously uploading it to your cloud server whenever connectivity is restored. 
             </p>
             <button
+            aria-label="Learn More"
             className="flex flex-row items-center text-lg px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-6 mb-4 mx-auto md:mr-auto md:ml-1"
           >
             Learn More
