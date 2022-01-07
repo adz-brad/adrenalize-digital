@@ -20,24 +20,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-csp`,
-      options: {
-        disableOnDev: true,
-        reportOnly: false, 
-        mergeDefaultDirectives: true,
-        directives: {
-          "script-src": "'self' www.google-analytics.com",
-          "style-src": "'self' 'unsafe-inline'",
-          "img-src": "'self' data: www.google-analytics.com",
-          "script-src": "http://static.hotjar.com https://static.hotjar.com https://script.hotjar.com 'unsafe-inline'",
-          "img-src": "https://script.hotjar.com http://script.hotjar.com",
-          "connect-src": "http://*.hotjar.com:* https://*.hotjar.com:* https://vc.hotjar.io:* https://surveystats.hotjar.io wss://*.hotjar.com",
-          "frame-src": "https://vars.hotjar.com",
-          "font-src": "http://script.hotjar.com https://script.hotjar.com",
-        }
-      }
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Adrenalize Digital",
@@ -55,6 +37,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-sw',
     'gatsby-plugin-mdx',
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
