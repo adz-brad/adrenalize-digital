@@ -35,7 +35,7 @@ const wrapPageElement = ({ element, props }) => {
             ] 
           }`}
         </script>
-        <meta http-equiv="Content-Security-Policy" content="script-src 'none'"></meta>
+        
       </Helmet>
       {element}
     </Layout>

@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const version = '1.0.2'
+const version = '1.0.1'
 
 module.exports = {
   siteMetadata: {
@@ -37,6 +37,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-sw`,
     'gatsby-plugin-mdx',
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
