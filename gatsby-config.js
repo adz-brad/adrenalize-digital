@@ -37,7 +37,14 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+         workboxConfig: {
+            globPatterns: ['**/*.{js,jpg,png,html,css}']
+         }
+      }
+   },
     'gatsby-plugin-mdx',
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
