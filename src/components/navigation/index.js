@@ -17,8 +17,6 @@ const Navbar = () => {
     enableScroll();
   }
 
-  const node = useRef(); 
-	useOnClickOutside(node, () => setMenuOpen(false));
 
   return (
     <div className="navbar">
@@ -66,7 +64,7 @@ const Navbar = () => {
           </div>
         </button>
 
-        <div ref={node} className={`mobileNav flex flex-col ${menuOpen === true ? 'mobileNavOpen' : 'mobileNavClosed'}`}>
+        <div  className={`mobileNav flex flex-col ${menuOpen === true ? 'mobileNavOpen' : 'mobileNavClosed'}`}>
           <div className="flex flex-col ml-4 mt-4">
             <Link 
               onClick={() => setMenuOpen(false)}
@@ -145,9 +143,6 @@ const Footer = () => {
     enableScroll();
   }
 
-  const node = useRef(); 
-	useOnClickOutside(node, () => setFooterMenuOpen(false));
-
 
   return(
     <>
@@ -177,7 +172,7 @@ const Footer = () => {
       />
       </button>
     </footer>
-    <div ref={node} className={`footerNav ${footerMenuOpen === true ? 'footerNavOpen' : 'footerNavClosed'}`}>
+    <div className={`footerNav ${footerMenuOpen === true ? 'footerNavOpen' : 'footerNavClosed'}`}>
       <div className="flex flex-col ml-4 mt-4 md:flex-row md:items-center">
             <Link 
               onClick={() => setFooterMenuOpen(false)}
