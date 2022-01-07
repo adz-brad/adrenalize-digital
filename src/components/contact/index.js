@@ -131,7 +131,7 @@ const ContactForm = ({ className }) => {
               Let's get in touch!
             </h1>
             <div className="flex flex-col w-full md:w-3/4">
-              <h3 className="text-lg font-semibold">Your Name</h3>
+              <h2 className="text-lg font-semibold">Your Name</h2>
               <input
                 name="Name"
                 aria-label="Name"
@@ -142,7 +142,7 @@ const ContactForm = ({ className }) => {
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
-              <h3 className="text-lg font-semibold">Email Address</h3>
+              <h2 className="text-lg font-semibold">Email Address</h2>
               <input
                 name="Email"
                 aria-label="Email"
@@ -153,7 +153,7 @@ const ContactForm = ({ className }) => {
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
-              <h3 className="text-lg font-semibold">Where are you located?</h3>
+              <h2 className="text-lg font-semibold">Where are you located?</h2>
               <SelectCountry
                 className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Location' ? 'outline-red' : ''}`}
                 value={contactData.location || ''}
@@ -161,7 +161,7 @@ const ContactForm = ({ className }) => {
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
-              <h3 className="text-lg font-semibold">How can we help?</h3>
+              <h2 className="text-lg font-semibold">How can we help?</h2>
               <select 
               name="How Can We Help?"
               aria-label="How Can We Help?"
@@ -179,7 +179,7 @@ const ContactForm = ({ className }) => {
               </select>
             </div>
             <div className="flex flex-col w-full md:w-3/4">
-              <h3 className="text-lg font-semibold">Message</h3>
+              <h2 className="text-lg font-semibold">Message</h2>
               <textarea
                 name="Message"
                 aria-label="Message"

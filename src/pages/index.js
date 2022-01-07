@@ -92,9 +92,9 @@ const Index = () => {
             why we apply the latest in development technology to create products
             that push the limits of how our clients define success.
           </p>
-          <h3 className="font-semibold text-xl md:text-2xl mx-auto md:mx-0">
+          <h2 className="font-semibold text-xl md:text-2xl mx-auto md:mx-0">
             Are you ready to push limits with us?
-          </h3>
+          </h2>
           <button 
           aria-label="Find Out More"
           onClick={()=> scrollTo('products')}

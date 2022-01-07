@@ -117,7 +117,7 @@ const Tabs = () => {
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
                 <h4 className="text-base md:text-xl ml-1">How User Experience Affects Your Bottom Line</h4>
                 <Link
-                aria-label="Read More"
+                aria-label="How User Experience Affects Your Bottom Line"
                 to="/insights-blog/posts/how-user-experience-affects-your-bottom-line"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
@@ -149,7 +149,7 @@ const Tabs = () => {
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
                 <h4 className="text-base md:text-xl ml-1">Benefits of Decoupled Architecure for Digital Products</h4>
                 <Link
-                aria-label="Read More"
+                aria-label="Benefits of Decoupled Architecure for Digital Products"
                 to="/insights-blog/posts/benefits-of-decoupled-architecture-for-digital-products"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
@@ -181,7 +181,7 @@ const Tabs = () => {
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
                 <h4 className="text-base md:text-xl ml-1">Monolith to Microservices: Scalable Application Architectures</h4>
                 <Link
-                aria-label="Read More"
+                aria-label="Monolith to Microservices: Scalable Application Architectures"
                 to="/insights-blog/posts/monolith-to-microservices-scalable-application-architectures"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
@@ -213,7 +213,7 @@ const Tabs = () => {
                 <h3 className="leading-none font-bold text-lg md:text-2xl ml-1">Case Study</h3>
                 <h4 className="text-base md:text-xl ml-1">Leveraging Modern Development To Increase Revenue</h4>
                 <Link
-                aria-label="Read More"
+                aria-label="Leveraging Modern Development To Increase Revenue"
                 to="/insights-blog/posts/leveraging-modern-development-to-increase-revenue"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-900 hover:text-gray-100 hover:shadow-lg"
               >
@@ -240,7 +240,7 @@ const Tabs = () => {
                 <h3 className="leading-none text-gray-100 font-bold text-lg md:text-2xl ml-1">Does that peak your curiosity?</h3>
                 <p className="text-sm md:text-base ml-1 text-gray-100">Click the button below to read more about how important page speeds really are!</p>
                 <Link
-                aria-label="Read More"
+                aria-label="How Important Are Page Load Speeds For User Conversions?"
                 to="/insights-blog/posts/how-important-are-page-load-speeds-for-user-conversions"
                 className="flex flex-row items-center mr-auto text-sm md:text-base font-semibold mt-2 cursor-pointer text-blue-700 px-4 py-2 bg-gray-100 rounded-lg shadow-md hover:bg-gray-800 hover:text-gray-100 hover:shadow-lg mt-4 mb-2"
               >
