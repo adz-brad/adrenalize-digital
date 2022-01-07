@@ -36,6 +36,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     'gatsby-plugin-sitemap',
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -56,22 +57,6 @@ module.exports = {
         host: 'https://www.adrenalizedigital.ca',
         sitemap: 'https://www.adrenalizedigital.ca/sitemap.xml',
         policy: [
-          {
-            userAgent: "Twitterbot",
-            disallow: '',
-          },
-          {
-            userAgent: "FacebookBot",
-            disallow: '',
-          },
-          {
-            userAgent: "facebookexternalhit",
-            disallow: '',
-          },
-          {
-            userAgent: "LinkedInBot",
-            disallow: '',
-          },
           { 
             userAgent: '*', 
             allow: '/' 
