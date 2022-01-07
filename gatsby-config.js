@@ -37,7 +37,7 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-sw`,
+    `gatsby-plugin-offline`,
     'gatsby-plugin-mdx',
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,

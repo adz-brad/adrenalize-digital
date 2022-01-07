@@ -7,6 +7,16 @@ import { Helmet } from "react-helmet"
 import { MDXProvider } from "@mdx-js/react"
 import SimpleReactLightbox from "simple-react-lightbox"
 
+const onServiceWorkerUpdateReady = () => {
+  const answer = window.confirm(
+    `This application has been updated. ` +
+      `Reload to display the latest version?`
+  )
+  if (answer === true) {
+    window.location.reload()
+  }
+}
+
 const wrapPageElement = ({ element, props }) => {
   return (
     <Layout {...props}>
@@ -64,4 +74,4 @@ const wrapRootElement = ({ element }) => {
   )
 }
 
-export { wrapPageElement, wrapRootElement }
+export { wrapPageElement, wrapRootElement, onServiceWorkerUpdateReady }
