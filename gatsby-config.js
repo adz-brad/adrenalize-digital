@@ -61,11 +61,15 @@ module.exports = {
             disallow: '',
           },
           {
-            userAgent: "Facebookbot",
+            userAgent: "FacebookBot",
             disallow: '',
           },
           {
             userAgent: "facebookexternalhit",
+            disallow: '',
+          },
+          {
+            userAgent: "LinkedInBot",
             disallow: '',
           },
           { 
