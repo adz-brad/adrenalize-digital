@@ -415,7 +415,7 @@ textarea.contactMessage{
  /* --- Portfolio --- */
 
  .portfolioCard{
-     @apply flex flex-col p-3 rounded-md shadow-lg bg-gray-100;
+     @apply flex flex-col p-3 rounded-md shadow-lg bg-gray-100 h-full;
  }
 
  .portfolioTag{

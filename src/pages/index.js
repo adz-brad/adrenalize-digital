@@ -113,7 +113,7 @@ const Index = () => {
             </h1>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 py-2 px-1 max-w-screen-xl mx-auto">
-          <LazyLoad>
+          <LazyLoad offset={100}>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdWeb className="text-5xl text-gray-900" />
@@ -135,8 +135,8 @@ const Index = () => {
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </Link>
             </div>
-            </LazyLoad>
-            <LazyLoad>
+            </LazyLoad >
+            <LazyLoad offset={100}>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdPhoneAndroid className="text-5xl text-gray-900 -ml-1" />
@@ -159,7 +159,7 @@ const Index = () => {
               </Link>
             </div>
             </LazyLoad>
-            <LazyLoad>
+            <LazyLoad offset={100}>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdLaptopMac className="text-5xl text-gray-900" />
@@ -180,7 +180,7 @@ const Index = () => {
               </Link>
             </div>
             </LazyLoad>
-            <LazyLoad>
+            <LazyLoad offset={100}>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <BiCodeBlock className="text-5xl text-gray-900" />
@@ -205,17 +205,19 @@ const Index = () => {
             </LazyLoad>
           </div>
         </div>
+        <LazyLoad offset={100}>
         <StaticImage
           src="../assets/images/featureImage1.jpg"
           alt="Build with the best - we build a full range of applications from web to mobile and desktop."
           placeholder="none"
           className="featureImage1 featuredImage ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4 md:my-auto md:transform md:translate-y-3 hidden md:flex"
         />
+        </LazyLoad>
       </div>
-      <LazyLoad>
+      <LazyLoad offset={100}>
       <Tabs/>
       </LazyLoad>
-      <LazyLoad>
+      <LazyLoad offset={100}>
       <div className="flex flex-col md:flex-row items-center max-w-screen-xl mx-auto p-4 my-8">
         <div className="md:w-2/3">
           <h2 className="font-subheader font-semibold text-3xl md:text-3xl mb-4">

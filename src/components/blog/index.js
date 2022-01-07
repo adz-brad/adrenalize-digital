@@ -44,8 +44,8 @@ const BlogCard = ({ image, published, link, title, excerpt, tags }) => {
   const [month, day, year] = [publishDate.toLocaleString('default', { month: 'long' }), publishDate.getDate(), publishDate.getFullYear()];
   
     return(
-      <LazyLoad>
-        <div className="flex flex-col rounded-lg shadow-lg bg-gray-100 mb-4 md:my-2">
+      <LazyLoad offset={100}>
+        <div className="flex flex-col rounded-lg shadow-lg bg-gray-100 mb-4 md:my-2 h-full">
             <GatsbyImage 
                     image={getImage(image)}
                     className="h-52 rounded-t-lg w-full"

@@ -128,7 +128,7 @@ const ContactForm = ({ className }) => {
             id="contact"
             className={`w-full md:w-2/3 flex flex-col justify-center items-center bg-gray-900 text-gray-100 rounded-b-lg rounded-lg p-5 ${className}`}
           >
-            <LazyLoad>
+            <LazyLoad offset={100}>
             <h1 className="font-subheader text-4xl font-semibold my-6 leading-none">
               Let's get in touch!
             </h1>
