@@ -3,6 +3,7 @@ import { FeaturedCard, BlogCard } from '../components/blog'
 import { ContactForm } from '../components/contact'
 import { Seo } from '../components/seo'
 
+
 const BlogIndex = ({ pageContext: posts }) => {
 
     return(
@@ -40,7 +41,7 @@ const BlogIndex = ({ pageContext: posts }) => {
                         published={post.publishedAt}
                         excerpt={post.excerpt}
                         image={post.image}
-                        link={`/insights-blog/posts/${post.slug}`}
+                        link={`/insights-blog/posts/${post.slug}/`}
                         tags={post.tags?.map((tag) => tag.title)}
                     />
                     )
@@ -55,7 +56,7 @@ const BlogIndex = ({ pageContext: posts }) => {
                     published={post.publishedAt}
                     excerpt={post.excerpt}
                     image={post.image}
-                    link={`/insights-blog/posts/${post.slug}`}
+                    link={`/insights-blog/posts/${post.slug}/`}
                     tags={post.tags?.map((tag) => tag.title)}
                 />
                     )

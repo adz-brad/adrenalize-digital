@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { Link } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
-import { disableScroll, enableScroll, useOnClickOutside } from "../../hooks"
+import { disableScroll, enableScroll } from "../../hooks"
 import { BiCaretUpCircle } from 'react-icons/bi'
 import { RiFacebookCircleFill, RiInstagramFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri'
 import { MdOutlineHomeWork, MdOutlineAppRegistration, MdOutlineInsights, MdCode, MdOutlinePerson, MdOutlineMessage,  MdOutlineLogin, } from 'react-icons/md'
+import LazyLoad from "react-lazyload"
 
 const Navbar = () => {
 
@@ -79,7 +80,7 @@ const Navbar = () => {
             <Link 
               onClick={() => setMenuOpen(false)}
               aria-label="Adrenalize Digital Services"
-              to="/services"
+              to="/services/"
               className="menuLink"
             >
               <MdCode className="mr-4"/>Services
@@ -87,7 +88,7 @@ const Navbar = () => {
             <Link 
               onClick={() => setMenuOpen(false)}
               aria-label="Adrenalize Digital Portfolio"
-              to="/our-work"
+              to="/our-work/"
               className="menuLink"
             >
               <MdOutlineAppRegistration className="mr-4"/>Our Work
@@ -95,7 +96,7 @@ const Navbar = () => {
             <Link 
               onClick={() => setMenuOpen(false)}
               aria-label="Adrenalize Digital Blog"
-              to="/insights-blog"
+              to="/insights-blog/"
               className="menuLink"
             >
               <MdOutlineInsights className="mr-4" />Insights
@@ -103,7 +104,7 @@ const Navbar = () => {
             <Link 
               onClick={() => setMenuOpen(false)}
               aria-label="About Adrenalize Digital"
-              to="/about-us"
+              to="/about-us/"
               className="menuLink"
             >
               <MdOutlinePerson className="mr-4" />About Us
@@ -111,7 +112,7 @@ const Navbar = () => {
             <Link 
               onClick={() => setMenuOpen(false)}
               aria-label="Contact Adrenalize Digital"
-              to="/contact-us"
+              to="/contact-us/"
               className="menuLink"
             >
               <MdOutlineMessage className="mr-4" />Contact
@@ -121,13 +122,13 @@ const Navbar = () => {
             <MdOutlineLogin className="mr-4" />User Portal
           </div>
           <div className="flex flex-row items-center mt-auto mb-4 ml-4">
-            <a href="https://www.facebook.com/adrenalizedigital" aria-label="Adrenalize Digital Facebook" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/adrenalizedigital/" aria-label="Adrenalize Digital Facebook" target="_blank" rel="noopener noreferrer">
               <RiFacebookCircleFill className="socialIcon socialMenuIcon" />
             </a>
             <a href="https://www.instagram.com/adrenalize.digital/" aria-label="Adrenalize Digital Instagram" target="_blank" rel="noopener noreferrer">
               <RiInstagramFill className="socialIcon socialMenuIcon" />
             </a>
-            <a href="https://twitter.com/AdrenalizeDS" aria-label="Adrenalize Digital Twitter" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/AdrenalizeDS/" aria-label="Adrenalize Digital Twitter" target="_blank" rel="noopener noreferrer">
               <RiTwitterFill className="socialIcon socialMenuIcon" />
             </a>
             <a href="https://www.linkedin.com/company/adrenalize-digital/" aria-label="Adrenalize Digital LinkedIn" target="_blank" rel="noopener noreferrer">
@@ -155,14 +156,15 @@ const Footer = () => {
   return(
     <>
     <footer className="footer relative h-20 bg-gray-100">
+    <LazyLoad>
       <div className="flex flex-row items-center ml-4 z-30 bg-gray-100">
-      <a href="https://www.facebook.com/adrenalizedigital" aria-label="Adrenalize Digital Facebook" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/adrenalizedigital/" aria-label="Adrenalize Digital Facebook" target="_blank" rel="noopener noreferrer">
             <RiFacebookCircleFill className="socialIcon" />
           </a>
           <a href="https://www.instagram.com/adrenalize.digital/" aria-label="Adrenalize Digital Instagram" target="_blank" rel="noopener noreferrer">
             <RiInstagramFill className="socialIcon" />
           </a>
-          <a href="https://twitter.com/AdrenalizeDS" aria-label="Adrenalize Digital Twitter" target="_blank" rel="noopener noreferrer">
+          <a href="https://twitter.com/AdrenalizeDS/" aria-label="Adrenalize Digital Twitter" target="_blank" rel="noopener noreferrer">
             <RiTwitterFill className="socialIcon" />
           </a>
           <a href="https://www.linkedin.com/company/adrenalize-digital/" aria-label="Adrenalize Digital LinkedIn" target="_blank" rel="noopener noreferrer">
@@ -180,6 +182,7 @@ const Footer = () => {
         className={`text-4xl text-gray-900 hover:text-gray-800 transition-all duration-300 ${footerMenuOpen === true ? 'transform rotate-180': ''}`}
       />
       </button>
+      </LazyLoad>
     </footer>
     <div className={`footerNav ${footerMenuOpen === true ? 'footerNavOpen' : 'footerNavClosed'}`}>
       <div className="flex flex-col ml-4 mt-4 md:flex-row md:items-center">
@@ -194,7 +197,7 @@ const Footer = () => {
             <Link 
             onClick={() => setFooterMenuOpen(false)}
             aria-label="Adrenalize Digital Services"
-              to="/services"
+              to="/services/"
               className="menuLink footerLink"
             >
               <MdCode className="mr-4"/>Services
@@ -202,7 +205,7 @@ const Footer = () => {
             <Link 
             onClick={() => setFooterMenuOpen(false)}
               aria-label="Adrenalize Digital Portfolio"
-              to="/our-work"
+              to="/our-work/"
               className="menuLink footerLink"
             >
               <MdOutlineAppRegistration className="mr-4"/>Our Work
@@ -210,7 +213,7 @@ const Footer = () => {
             <Link 
             onClick={() => setFooterMenuOpen(false)}
               aria-label="Adrenalize Digital Blog"
-              to="/insights-blog"
+              to="/insights-blog/"
               className="menuLink footerLink"
             >
               <MdOutlineInsights className="mr-4" />Insights
@@ -218,7 +221,7 @@ const Footer = () => {
             <Link 
               onClick={() => setFooterMenuOpen(false)}
               aria-label="About Adrenalize Digital"
-              to="/about-us"
+              to="/about-us/"
               className="menuLink footerLink"
             >
               <MdOutlinePerson className="mr-4" />About Us
@@ -226,7 +229,7 @@ const Footer = () => {
             <Link 
               onClick={() => setFooterMenuOpen(false)}
               aria-label="Contact Adrenalize Digital"
-              to="/contact-us"
+              to="/contact-us/"
               className="menuLink footerLink"
             >
               <MdOutlineMessage className="mr-4" />Contact

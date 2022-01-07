@@ -2,6 +2,7 @@ import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import { BiCaretRight } from 'react-icons/bi'
+import LazyLoad from 'react-lazyload';
 
 const FeaturedCard = ({ image, published, link, title, excerpt, tags }) => {
   
@@ -43,6 +44,7 @@ const BlogCard = ({ image, published, link, title, excerpt, tags }) => {
   const [month, day, year] = [publishDate.toLocaleString('default', { month: 'long' }), publishDate.getDate(), publishDate.getFullYear()];
   
     return(
+      <LazyLoad>
         <div className="flex flex-col rounded-lg shadow-lg bg-gray-100 mb-4 md:my-2">
             <GatsbyImage 
                     image={getImage(image)}
@@ -66,6 +68,7 @@ const BlogCard = ({ image, published, link, title, excerpt, tags }) => {
                 <BiCaretRight className="ml-2 text-xl text-blue-500" />
               </Link>
         </div>
+      </LazyLoad>
     )
 }
 

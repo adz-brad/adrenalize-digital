@@ -4,6 +4,7 @@ import { ContactForm } from "../components/contact"
 import { animateScroll as scroll } from "react-scroll"
 import { WebApplications, MobileApplications, DesktopApplications, HybridAppSuites } from '../components/services'
 import { Seo } from '../components/seo'
+import LazyLoad from "react-lazyload"
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null)
@@ -24,7 +25,8 @@ const Services = () => {
 
   useEffect(() => {
     if (window.location.hash.length !== 0) {
-      openTab(`${window.location.hash.split("#")[1]}`)
+      console.log(window.location.hash)
+      openTab(`${window.location.hash.split("#")[1].replace(/\/+$/, '')}`)
     }
     else{
             scroll.scrollToTop({
@@ -83,7 +85,9 @@ const Services = () => {
             }`}
           >
             <div className="servicesTabContent">
+            <LazyLoad>
             <WebApplications />
+            </LazyLoad>
             </div>
             </div>
         </div>
@@ -110,7 +114,9 @@ const Services = () => {
             }`}
           >
             <div className="servicesTabContent">
+            <LazyLoad>
               <MobileApplications/>
+              </LazyLoad>
             </div>
           </div>
         </div>
@@ -137,7 +143,9 @@ const Services = () => {
             }`}
           >
             <div className="servicesTabContent">
+            <LazyLoad>
               <DesktopApplications/>
+              </LazyLoad>
             </div>
           </div>
         </div>
@@ -168,7 +176,9 @@ const Services = () => {
             }`}
           >
             <div className="servicesTabContent">
+            <LazyLoad>
               <HybridAppSuites/>
+              </LazyLoad>
             </div>
           </div>
         </div>

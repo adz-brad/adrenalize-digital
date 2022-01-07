@@ -19,6 +19,7 @@ import { Seo } from '../components/seo'
 import { Tabs } from '../components/tabs'
 import { ContactForm } from '../components/contact'
 import { animateScroll as scroll } from "react-scroll";
+import LazyLoad from "react-lazyload"
 
 const Index = () => {
 
@@ -112,6 +113,7 @@ const Index = () => {
             </h1>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 py-2 px-1 max-w-screen-xl mx-auto">
+          <LazyLoad>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdWeb className="text-5xl text-gray-900" />
@@ -126,13 +128,15 @@ const Index = () => {
               </p>
               <Link 
               aria-label="Websites and Web Applications"
-                to="/services#websites-web-applications"
+                to="/services#websites-web-applications/"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </Link>
             </div>
+            </LazyLoad>
+            <LazyLoad>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdPhoneAndroid className="text-5xl text-gray-900 -ml-1" />
@@ -147,13 +151,15 @@ const Index = () => {
               </p>
               <Link 
               aria-label="Mobile Apps"
-                to="/services#mobile-apps"
+                to="/services#mobile-apps/"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </Link>
             </div>
+            </LazyLoad>
+            <LazyLoad>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <MdLaptopMac className="text-5xl text-gray-900" />
@@ -167,12 +173,14 @@ const Index = () => {
               </p>
               <Link 
               aria-label="Desktop Apps"
-                to="/services#desktop-apps"
+                to="/services#desktop-apps/"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700">
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </Link>
             </div>
+            </LazyLoad>
+            <LazyLoad>
             <div className="projectsGrid flex flex-col mt-1 p-4 hover:shadow-md rounded-lg">
               <div className="flex flex-row items-center mb-2">
                 <BiCodeBlock className="text-5xl text-gray-900" />
@@ -187,13 +195,14 @@ const Index = () => {
               </p>
               <Link 
               aria-label="Hybrid App Suites"
-                to="/services#hybrid-app-suites"
+                to="/services#hybrid-app-suites/"
                 className="flex flex-row items-center mr-auto text-lg font-semibold mt-auto cursor-pointer text-blue-700"
               >
                 Learn More
                 <BiCaretRight className="ml-1 text-xl text-gray-700" />
               </Link>
             </div>
+            </LazyLoad>
           </div>
         </div>
         <StaticImage
@@ -203,8 +212,10 @@ const Index = () => {
           className="featureImage1 featuredImage ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4 md:my-auto md:transform md:translate-y-3 hidden md:flex"
         />
       </div>
+      <LazyLoad>
       <Tabs/>
-
+      </LazyLoad>
+      <LazyLoad>
       <div className="flex flex-col md:flex-row items-center max-w-screen-xl mx-auto p-4 my-8">
         <div className="md:w-2/3">
           <h2 className="font-subheader font-semibold text-3xl md:text-3xl mb-4">
@@ -247,7 +258,7 @@ const Index = () => {
           </ul>
         </div>
       </div>
-
+      </LazyLoad>
       <div
         id="footer"
         className="relative flex flex-col md:flex-row max-w-screen-xl mx-auto"
@@ -278,6 +289,7 @@ const Index = () => {
               <BiCaretRightCircle className="ml-3 text-2xl" />
             </button>
           </div>
+          
           <ContactForm/>
         </div>
         <div

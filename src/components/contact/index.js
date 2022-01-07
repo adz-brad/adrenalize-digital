@@ -6,6 +6,7 @@ import { ImSpinner } from 'react-icons/im'
 import update from 'immutability-helper';
 import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
+import LazyLoad from "react-lazyload"
 
 const ContactForm = ({ className }) => {
 
@@ -127,6 +128,7 @@ const ContactForm = ({ className }) => {
             id="contact"
             className={`w-full md:w-2/3 flex flex-col justify-center items-center bg-gray-900 text-gray-100 rounded-b-lg rounded-lg p-5 ${className}`}
           >
+            <LazyLoad>
             <h1 className="font-subheader text-4xl font-semibold my-6 leading-none">
               Let's get in touch!
             </h1>
@@ -206,6 +208,7 @@ const ContactForm = ({ className }) => {
               }
               
             </button>
+            </LazyLoad>
           </div>
     )
 }

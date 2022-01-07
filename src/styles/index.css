@@ -6,7 +6,7 @@
 
     @font-face {
         font-family: Montserrat;
-        src: url('../assets/fonts/Montserrat-Regular.ttf');
+        src: url('../assets/fonts/montserrat-regular-webfont.woff');
     }
 
     @font-face {
@@ -16,7 +16,7 @@
 
     @font-face {
         font-family: Rajdhani;
-        src: url('../assets/fonts/Rajdhani-Regular.ttf');
+        src: url('../assets/fonts/rajdhani-regular-webfont.woff');
     }
 
 }
@@ -593,4 +593,8 @@ textarea.contactMessage{
 
 .socialSharingButton{
     @apply text-2xl hover:text-blue-500 mr-1 transform hover:scale-105 cursor-pointer;
+}
+
+#contact > .lazyload-wrapper{
+    @apply w-full flex flex-col items-center;
 }

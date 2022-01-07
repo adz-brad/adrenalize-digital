@@ -5,6 +5,7 @@ import { Seo } from '../components/seo'
 import { SRLWrapper } from "simple-react-lightbox";
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import LazyLoad from 'react-lazyload';
 
 const Portfolio = ({ data }) => {
     
@@ -48,6 +49,7 @@ const Portfolio = ({ data }) => {
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-2 mx-2 my-2">
+            <LazyLoad>
                 <div className="portfolioCard">
                     <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">Netstaurant</h2>
                     <div className="flex flex-row items-center">
@@ -92,6 +94,8 @@ const Portfolio = ({ data }) => {
                         </span>
                     </div>
                 </div>
+                </LazyLoad>
+                <LazyLoad>
                 <div className="portfolioCard">
                 <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">Essence Of Beauty</h2>
                     <div className="flex flex-row items-center">
@@ -135,6 +139,8 @@ const Portfolio = ({ data }) => {
                         </span>
                     </div>
                 </div>
+                </LazyLoad>
+                <LazyLoad>
                 <div className="portfolioCard">
                 <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">JAX Bucerias</h2>
                     <div className="flex flex-row items-center">
@@ -182,6 +188,8 @@ const Portfolio = ({ data }) => {
                         </span>
                     </div>
                 </div>
+                </LazyLoad>
+                <LazyLoad>
                 <div className="portfolioCard">
                 <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">CravePOS</h2>
                     <div className="flex flex-row items-center">
@@ -223,6 +231,8 @@ const Portfolio = ({ data }) => {
                         </span>
                     </div>
                 </div>
+                </LazyLoad>
+                <LazyLoad>
                 <div className="portfolioCard">
                 <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">myCrypto Canada</h2>
                     <div className="flex flex-row items-center">
@@ -267,10 +277,13 @@ const Portfolio = ({ data }) => {
                         </span>
                     </div>
                 </div>
+                </LazyLoad>
+                <LazyLoad>
                 <div className="portfolioCard">
                 <h2 className="text-2xl font-bold border-b border-blue-600 mb-2">Your Name Here</h2>
                 <FaPlusCircle className="mx-auto my-8 md:m-auto text-7xl text-green-500 transform hover:scale-105 cursor-pointer"/>
             </div>
+            </LazyLoad>
             </div>
 
             <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center mt-8">
@@ -279,6 +292,7 @@ const Portfolio = ({ data }) => {
                 <p className="text-sm md:text-base mx-4 mb-4">We're always ready for the next project. Drop us a line today to see how we can help you knock you goals out of the park!</p>
                 <ContactForm className="md:w-full md:max-w-screen-lg md:mx-auto mb-2"/>
         </div>
+        
         </>
     )
 }
