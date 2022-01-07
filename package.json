@@ -20,7 +20,7 @@
     "emailjs-com": "^3.2.0",
     "gatsby": "^4.3.0",
     "gatsby-background-image": "^1.5.3",
-    "gatsby-plugin-google-analytics": "^4.4.0",
+    "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-hotjar": "^1.1.1",
     "gatsby-plugin-image": "^2.3.0",
     "gatsby-plugin-manifest": "^4.3.0",

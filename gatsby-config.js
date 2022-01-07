@@ -13,6 +13,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-gtag`, 
+      options: {
+        trackingId: process.env.GOOGLE_TRACKING_ID,
+        head: true
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Adrenalize Digital",
@@ -37,13 +44,6 @@ module.exports = {
     `gatsby-plugin-postcss`,
     'gatsby-plugin-sitemap',
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_TRACKING_ID,
-        head: true,
-      },
-    },
     {
       resolve: `gatsby-plugin-hotjar`,
       options: {
