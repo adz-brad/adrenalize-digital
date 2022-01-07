@@ -23,28 +23,20 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Adrenalize Digital",
-        short_name: `adrenalize`,
+        short_name: `Adrenalize Digital`,
         background_color: `#0F172A`,
         lang: `en`,
         theme_color: `#0F172A`,
         start_url: `/`,
         display: `standalone`,
         cache_busting_mode: "none",
-        icon: `src/assets/images/adLogoLight.png`,
+        icon: `src/assets/images/AD-avatar.png`,
         include_favicon: true,
         icon_options: {
           purpose: `any maskable`,
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-         workboxConfig: {
-            globPatterns: ['**/*.{js,jpg,png,html,css}']
-         }
-      }
-   },
     'gatsby-plugin-mdx',
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
