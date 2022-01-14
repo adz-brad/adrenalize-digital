@@ -58,11 +58,11 @@ const BlogCard = ({ image, published, link, title, excerpt, tags }) => {
                     return <span className="portfolioTag">{tag}</span>
                 })}
             </div>
-            <LazyLoad offset={100}>
+            <LazyLoad className="mr-auto" offset={100}>
               <Link 
                   to={link}
                   aria-label={title}
-                  className="flex flex-row items-center mr-auto text-base md:text-lg font-semibold cursor-pointer rounded-md shadow-md bg-gray-900 text-gray-100 px-3 py-2 hover:bg-gray-800 hover:shadow-lg m-2"
+                  className="flex flex-row items-center text-base md:text-lg font-semibold cursor-pointer rounded-md shadow-md bg-gray-900 text-gray-100 px-3 py-2 hover:bg-gray-800 hover:shadow-lg m-2"
                 >
                   Read More
                   <BiCaretRight className="ml-2 text-xl text-blue-500" />
