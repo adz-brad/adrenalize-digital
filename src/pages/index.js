@@ -88,10 +88,10 @@ const Index = () => {
           <h1 className="font-subheader text-4xl md:text-5xl font-bold text-gray-900">
             Highly performant.
           </h1>
-          <p className="pt-4 font-medium text-lg md:text-xl leading-snug mt-auto">
+          <p className="pt-4 font-medium text-lg md:text-xl leading-snug mt-auto mb-1">
             Top businesses thrive on data-driven smart technologies.
           </p>
-          <p className="pb-4 font-medium text-lg md:text-xl leading-snug mb-auto">
+          <p className="pb-4 font-medium text-lg md:text-xl leading-snug mb-auto mt-1">
           We apply the latest in development technology to create products that push the limits of how you define success.
           </p>
           <h2 className="font-semibold text-xl md:text-2xl mx-auto md:mx-0">
@@ -218,7 +218,7 @@ const Index = () => {
           src="../assets/images/featureImage1.jpg"
           alt="Build with the best - we build a full range of applications from web to mobile and desktop."
           placeholder="none"
-          className="featureImage1 featuredImage ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4 md:my-auto md:transform md:translate-y-3 hidden md:flex"
+          className="featureImage1 featuredImage ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4 md:my-auto md:transform md:translate-y-3"
         />
 
       </div>

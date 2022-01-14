@@ -19,11 +19,14 @@ const Portfolio = ({ data }) => {
             showDownloadButton: false,
             showThumbnailsButton: false,
             showFullscreenButton: true,
-            showNextButton: true,
-            showPrevButton: true,
+            showNextButton: false,
+            showPrevButton: false,
         },
         caption: {
             showCaption: false
+          },
+          thumbnails: {
+            showThumbnails: false,
           }
       }
 
