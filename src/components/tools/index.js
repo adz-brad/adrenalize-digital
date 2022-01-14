@@ -273,7 +273,7 @@ const ProjectDiscovery = () => {
 
 
     return(
-        <div className="hidden m-2">
+        <div className="m-2">
 
             <h1 className="text-2xl md:text-3xl font-semibold border-b border-blue-500 pb-1">
                 Project Discovery
