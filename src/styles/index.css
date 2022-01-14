@@ -149,14 +149,7 @@ div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > p
 }
 
 .featureImage1{
-    display:none;
-}
-
-@media only screen and (min-width: 768px) {
-    .featureImage1{
-        max-height:570px;
-        display:flex;
-    }
+    max-height:570px;
 }
 
 #indexWrapper > div > div > div > div:hover > button {

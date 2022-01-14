@@ -29,7 +29,7 @@ const Index = () => {
 
   let windowWidth = useWindowWidth()
   let windowHeight = useWindowHeight()
-
+  console.log(windowWidth)
   const [heroBgDimensions, setHeroBgDimensions] = useState({
     height: 0,
     width: 0,
@@ -213,14 +213,14 @@ const Index = () => {
             
           </div>
         </div>
-
+        {windowWidth >= 768 ?
         <StaticImage
           src="../assets/images/featureImage1.jpg"
           alt="Build with the best - we build a full range of applications from web to mobile and desktop."
           placeholder="none"
           className="featureImage1 featuredImage ml-4 rounded-l-xl xl:rounded-xl shadow-md my-4 md:my-auto md:transform md:translate-y-3"
-        />
-
+        /> 
+        : null }
       </div>
       
       <Tabs/>
