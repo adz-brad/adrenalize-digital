@@ -46,30 +46,30 @@ const BlogPost = ({ pageContext: { post } }) => {
       <Helmet>
         <script type="application/ld+json">
             {`{
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "${window.location.href}"
-            },
-            "headline": "${post.title}",
-            "description": "${post.exerpt}",
-            "image": "${post.image.url}",  
-            "author": {
-                "@type": "Person",
-                "name": "${post.author.name}",
-                "url": "${post.author.link}"
-            },  
-            "publisher": {
-                "@type": "Organization",
-                "name": "Adrenalize Digital",
-                "logo": {
-                "@type": "ImageObject",
-                "url": "https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
-                }
-            },
-            "datePublished": "${publishDate}",
-            }`}
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "${window.location.href}"
+                },
+                "headline": "${post.title}",
+                "description": "${post.exerpt}",
+                "image": "${post.image.url}",  
+                "author": {
+                    "@type": "Person",
+                    "name": "${post.author.name}",
+                    "url": "${post.author.link}"
+                },  
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Adrenalize Digital",
+                    "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+                    }
+                },
+                "datePublished": "${publishDate}",
+                }`}
         </script>
       </Helmet>
         <Seo

@@ -1,18 +1,69 @@
-import React from "react"
+import React, { useRef, useState, useEffect } from "react"
 import { RiCloseCircleLine } from "react-icons/ri"
+import { useWindowHeight, useWindowWidth } from "../../hooks"
+import { BsFillQuestionCircleFill } from 'react-icons/bs'
+import { useOnClickOutside } from "../../hooks"
 
-const Popover = ({ children, close }) => {
-  return (
-    <div className="fixed h-screen w-screen top-0 left-0 bg-gray-900 bg-opacity-90 z-20">
-      <div className="popover">
-        <button
-          aria-label="Close Popover"
-          onClick={close}
-          className="absolute top-2 right-2 text-red-600 text-3xl"
+const Tooltip = ({ text }) => {
+
+  const [ tooltipOpen, setTooltipOpen ] = useState(false)
+  const node = useRef()
+  useOnClickOutside(node, () => setTooltipOpen(false));
+
+  return(
+    <>
+    <button aria-label="Open Tooltip" onClick={() => setTooltipOpen(true)} className="ml-auto mr-2 cursor-pointer text-gray-100 hover:text-blue-400">
+      <BsFillQuestionCircleFill className="text-lg" />
+    </button>
+    {tooltipOpen === true ?
+        <div ref={node} className="tooltip">
+          <button
+          aria-label="Close Tooltip"
+          onClick={() => setTooltipOpen(false)}
+          className="absolute top-1 right-1 text-red-600 text-xl"
         >
-          <RiCloseCircleLine className="" />
+          <RiCloseCircleLine />
+        </button>
+          <p className="m-2 font-semibold text-xs text-gray-900">{text}</p>
+        </div>
+        : null } 
+    </>
+  )
+}
+
+const Popover = ({ children, close, title, open, className }) => {
+
+  let windowWidth = useWindowWidth()
+  let windowHeight = useWindowHeight()
+
+  const [ popupDimensions, setPopupDimensions ] = useState({
+    height: 0,
+    width: 0,
+  })
+
+  useEffect(() => {
+      setPopupDimensions({
+        height: windowHeight,
+        width: windowWidth,
+      })
+  }, [ windowWidth, windowHeight ])
+
+ 
+
+  return (
+    <div className={`fixed top-0 left-0 bg-gray-900 bg-opacity-90 z-20 ${className} ${open === false ? 'hidden' : 'visible'}`} style={{height: popupDimensions.height, width: popupDimensions.width }}>
+      <div className="popover">
+        
+        <div className="popoverBody h-full w-full p-2">
+        <button
+          aria-label={`Close ${title} Popover`}
+          onClick={close}
+          className="absolute top-2 right-2 hover:text-red-600 text-3xl"
+        >
+          <RiCloseCircleLine />
         </button>
         {children}
+        </div>
       </div>
     </div>
   )
@@ -27,7 +78,6 @@ const SelectCountry = ({ onChange, className, value }) => {
       value={value}
       onChange={onChange} 
       id="country" 
-      name="country"
     >
     <option value="" selected disabled hidden>
                   Choose your country...
@@ -282,4 +332,4 @@ const SelectCountry = ({ onChange, className, value }) => {
   )
 }
 
-export { Popover, SelectCountry }
+export { Popover, Tooltip, SelectCountry }

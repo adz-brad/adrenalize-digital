@@ -6,7 +6,6 @@ import { ImSpinner } from 'react-icons/im'
 import update from 'immutability-helper';
 import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
-import LazyLoad from "react-lazyload"
 
 const ContactForm = ({ className }) => {
 
@@ -15,34 +14,12 @@ const ContactForm = ({ className }) => {
     email: null,
     location: null,
     type: null,
-    message: null
+    message: null,
+    honeypot: null
   })
 
-  const handleContactName = (props) => {
-    setContactData(update(contactData, { name: { $set: props }}));
-    setFieldMissing(null)
-  }
-
-  const handleContactEmail = (props) => {
-    setContactData(update(contactData, { email: { $set: props }}));
-    setFieldMissing(null)
-  }
-
-
-  const handleContactLocation = (props) => {
-    setContactData(update(contactData, { location: { $set: props }}));
-    setFieldMissing(null)
-  }
-
-
-  const handleContactType = (props) => {
-    setContactData(update(contactData, { type: { $set: props }}));
-    setFieldMissing(null)
-  }
-
-
-  const handleContactMessage = (props) => {
-    setContactData(update(contactData, { message: { $set: props }}));
+  const handleInput = (props) => {
+    setContactData(update(contactData, { [props.property]: { $set: props.value }}));
     setFieldMissing(null)
   }
 
@@ -62,7 +39,7 @@ const ContactForm = ({ className }) => {
   };
 
   const messageFailed = (props) => {
-    toast(`${props} required`, {
+    toast(`${props} ${fieldMissing !== null ? 'required' : ''}`, {
         position: "bottom-right",
         autoClose: 1500,
         hideProgressBar: true,
@@ -77,30 +54,29 @@ const ContactForm = ({ className }) => {
   const [ sending, setSending ] = useState(false)
 
   const submitContact = async () => {
-    if(contactData.name === null){
-      messageFailed('Name')
-      setFieldMissing('Name')
-    }
-      
+      if(contactData.name === null){
+        messageFailed('Name')
+        setFieldMissing('Name')
+      } 
       else if(contactData.email === null){
         messageFailed('Email')
         setFieldMissing('Email')
-    }
-      
+      }    
       else if(contactData.location === null){
         messageFailed('Location')
         setFieldMissing('Location')
-      }
-      
+      }   
       else if(contactData.type === null){
         messageFailed('Type')
         setFieldMissing('Type')
-      }
-      
+      }   
       else if(contactData.message === null){
       messageFailed('Message')
       setFieldMissing('Message')
-    }
+      }
+      else if(contactData.honeypot !== null){
+        messageFailed('Sorry Pooh Bear')
+      }
     else{
       setSending(true)
       await emailjs.send('service_neuralSMTP', 'template_neuralContact', contactData, 'user_FlIabMfG4VBtqOJI64DiZ')
@@ -114,6 +90,7 @@ const ContactForm = ({ className }) => {
           location: { $set: null },
           type: { $set: null },
           message: { $set: null },
+          honeypot: { $set: null }
         }));
       }, function(error) {
         setSending(false);
@@ -124,11 +101,10 @@ const ContactForm = ({ className }) => {
   }
 
     return(
-        <div
+        <form
             id="contact"
             className={`w-full md:w-2/3 flex flex-col justify-center items-center bg-gray-900 text-gray-100 rounded-b-lg rounded-lg p-5 ${className}`}
           >
-            <LazyLoad offset={100}>
             <h1 className="font-subheader text-4xl font-semibold my-6 leading-none">
               Let's get in touch!
             </h1>
@@ -140,7 +116,15 @@ const ContactForm = ({ className }) => {
                 className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Name' ? 'outline-red' : ''}`}
                 type="text"
                 value={contactData.name || ''}
-                onChange={(e) => handleContactName(e.target.value)}
+                onChange={(e) => handleInput({property: 'name', value: e.target.value})}
+              />
+              <input
+                name="Favorite Type of Honey"
+                aria-label="Favorite Type of Honey"
+                className="hidden"
+                type="text"
+                value={contactData.honeypot || ''}
+                onChange={(e) => handleInput({property: 'honeypot', value: e.target.value})}
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
@@ -151,7 +135,7 @@ const ContactForm = ({ className }) => {
                 className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Email' ? 'outline-red' : ''}`}
                 type="text"
                 value={contactData.email || ''}
-                onChange={(e) => handleContactEmail(e.target.value)}
+                onChange={(e) => handleInput({property: 'email', value: e.target.value})}
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
@@ -159,7 +143,7 @@ const ContactForm = ({ className }) => {
               <SelectCountry
                 className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Location' ? 'outline-red' : ''}`}
                 value={contactData.location || ''}
-                onChange={(e) => handleContactLocation(e.target.value)}
+                onChange={(e) => handleInput({property: 'location', value: e.target.value})}
               />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
@@ -169,7 +153,8 @@ const ContactForm = ({ className }) => {
               aria-label="How Can We Help?"
               className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Type' ? 'outline-red' : ''}`}
               value={contactData.type || ''}
-              onChange={(e) => handleContactType(e.target.value)}>
+              onChange={(e) => handleInput({property: 'type', value: e.target.value})}
+              >
                 <option value="" selected disabled hidden>
                   Choose an option...
                 </option>
@@ -188,7 +173,7 @@ const ContactForm = ({ className }) => {
                 rows="5"
                 className={`contactMessage focus:outline-blue w-full p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Message' ? 'outline-red' : ''}`}
                 value={contactData.message || ''}
-                onChange={(e) => handleContactMessage(e.target.value)}
+                onChange={(e) => handleInput({property: 'message', value: e.target.value})}
               />
             </div>
             <button 
@@ -208,8 +193,7 @@ const ContactForm = ({ className }) => {
               }
               
             </button>
-            </LazyLoad>
-          </div>
+          </form>
     )
 }
 

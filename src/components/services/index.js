@@ -66,7 +66,7 @@ const Faq = ({ data, idPrefix }) => {
                           <div className="flex flex-row items-center h-8 w-8">
                             <BiCaretRightCircle className={`text-3xl transform transition-all duration-100 filter drop-shadow-md ${expanded === index ? 'text-blue-500' : 'rotate-90'}`} />
                           </div>
-                          <h3 className="font-content text-base md:text-xl ml-2">{data.question}</h3> 
+                          <h3 className="text-lg md:text-xl ml-2 leading-tight font-semibold">{data.question}</h3> 
                         </div>
                         <div className={`faqContent  ${expanded === index ? 'visible' : 'hidden'}`}>
                           {data.answer}
@@ -128,19 +128,12 @@ const WebApplications = () => {
               A Modern Mentality
             </h2>
             <p className="m-1 md:text-base">
-              With the ever-changing state of the web, businesses need to adapt
-              to using new technologies in order to meet new client demands and
-              stay relevant. Our web app development solutions do exactly that
-              and more, with a focus on driving new user intake, increasing
-              existing user retention and raising overall user satisfaction. The
-              end result? Improved revenue for your business!
+              Top businesses need to adapt to using new technologies in order to meet new client demands and
+              stay relevant. Our web app development solutions do that and more, with a focus on driving new user intake, increasing existing user retention and raising overall user satisfaction. The end result? Improved revenue for your business!
             </p>
             <p className="m-1 md:text-base">
-              We utilize the latest and greatest in web design concepts and
-              development methodologies to create project stacks that are unique
-              to your needs, and because we've away from traditional, "legacy"
-              architecture building models, your Adrenalize web project won't suffer
-              from common issues inherently plaguing most sites on the web.
+              Using industry leading design and development practices, we create project stacks unique
+              to your needs,and because we only use the best modern frameworks, your Adrenalize web project won't suffer from common issues plaguing most sites on the web.
             </p>
           </div>
 
@@ -205,13 +198,10 @@ const WebApplications = () => {
             Flexibility without sacrifice
           </h2>
           <p className="m-1 text-sm md:text-base">
-            That's what you get with a custom developer who truly understands
-            what optimal site performance can achieve for a business. So if
-            you're interested in getting the most bang for your buck, we're
-            ready to help.
+            You deserve the website you want, delivered on time, on budget, every time. We make that happen.
           </p>
           <p className="m-1 text-sm md:text-base">
-            You can read on to learn more about our web projects or if you're
+            Read on to learn more about our web projects or if you're
             ready, get in touch with us today.{" "}
           </p>
           <button
@@ -236,11 +226,10 @@ const WebApplications = () => {
               means?
             </p>
             <p className="m-1 text-sm md:text-base">
-              Mas dinero. Moolah. Cashflow. <strong>More Revenue.</strong>
+              <strong>Increased revenue for your business.</strong>
             </p>
             <p className="m-1 text-sm md:text-base">
-              By utilizing lightning quick content delivery networks in
-              combination with statically rendered assets, we put your products
+              We utilize lightning quick content delivery networks to put your products
               at more users fingertips in the blink of an eye.
             </p>
             <p className="m-1 md:my-auto text-base">
@@ -271,10 +260,8 @@ const WebApplications = () => {
               </div>
             </div>
             <p className="m-1 text-sm md:text-base">
-              And much, much more. We can develop custom integrations with the
-              eCommerce platform of your choice or build you youre own
-              standalone commerce platform. That's what you get with Adrenalize -{" "}
-              <strong>the flexibity to choose.</strong>
+              Integrate the eCommerce platform of your choice or build your own
+              standalone commerce platform. With Adrenalize, you gain the flexibity to choose.
             </p>
           </div>
         </div>
@@ -292,17 +279,12 @@ const WebApplications = () => {
               </h2>
             </div>
             <p className="m-1 text-sm md:text-base">
-              It's the buzzword that just won't go away in the digital marketing
-              world. And for good reason - quality SEO is vital for any
-              web-based digital content to reach it's target audience. It's the
-              cornerstone of search engine marketing and digital marketing
-              agencies typically charge an arm and a leg for "SEO optimization"
-              in your site.
+              Quality SEO is vital for any web-based digital content to reach it's target audience. It's the
+              cornerstone of search engine marketing, with digital marketing agencies typically charging a small fortune for "SEO optimization" in your site.
             </p>
             <p className="m-1 text-sm md:text-base">
-              But we're not digital marketers. We're developers with good taste,
-              so we bake industry-leading SEO practices right into each project
-              component, meaning when you build with Adrenalize, your site's already
+              We bake industry-leading SEO practices right into each project
+              component. When you build with Adrenalize, your site's already
               on the road to achieving <strong>top-notch SERP rankings right out of the box.</strong>
             </p>
           </div>
@@ -347,7 +329,7 @@ const WebApplications = () => {
               The calling card of our web applications is a fantastic user experience and we achieve this by focusing on developing components that provide a premium level of functionality for clients and users alike.
             </p>
             <p className="my-1 text-sm text-gray-100">
-              Rather than over-extending existing plugins and UI components that were designed to accomplish a laundry list of different things, we flex our development muscles to integrate site features that accomplish exactly what clients need, nothing more and nothing less. This keeps sites lean, fast and functional, resulting in an improved experience for users and business managers alike.
+              We flex our development muscles to integrate site features that accomplish exactly what clients need, nothing more and nothing less, keeping sites lean, fast and functional. THe result? An improved experience for users and business managers alike.
             </p>
             </div>
             <div className="flex flex-col md:flex-row md:items-center mt-2">
@@ -359,7 +341,7 @@ const WebApplications = () => {
             </h1>
             </div>
             <p className="my-1 text-sm text-gray-100">
-              The most wonderful thing about building digital products is the ability to create something from nothing with almost no limitations. So if you have an idea for a component you would like integrated into your site, don't hesitate to drop us a line - achieving optimal site functionality is just one contact form away.
+              If you have an idea for a component you would like integrated into your site, don't hesitate to drop us a line - achieving optimal site functionality is just one contact form away.
             </p>
             </div>
             <button
@@ -441,10 +423,10 @@ const MobileApplications = () => {
               The World At Your Fingertips
             </h2>
             <p className="m-1 md:text-base">
-            Last time we checked, most people weren't stuffing laptops into their pockets. They weren't hauling their computers into the bathroom or attaching them to the dashboards of their vehicles. Nope, these are the realms of convenience, and in that world, mobile devices reign supreme.
+              The world is revolving at a rapid pace - you have more to do and less time to do it, making ease of access a priority. In the realm of convenience, mobile devices reign supreme.
             </p>
             <p className="m-1 md:text-base">
-            Mobile apps are an extremely convenient way for users to interact with products and services, providing simple solutions to help them in their day to day lives, whether for personal or businesses usage. We build innovative, high-value applications that help our clients leverage the latest in development technology to emerge as leaders in their specific fields.
+            We build innovative, high-value mobile applications that help our clients leverage the latest in development technology to emerge as leaders in their specific fields.
             </p>
           </div>
           <div className="flex flex-col md:flex-row my-2 -mx-1 p-2 md:p-4 rounded-md shadow-md bg-white md:mx-4">
@@ -453,10 +435,10 @@ const MobileApplications = () => {
               Federated Services
             </h2>
             <p className="m-1 md:text-base">
-            A common issue plaguing many businesses is the usage of many different digital products in an attempt to bring their companies into the modern age of business operations. This is often a very misguided venture which typically isn't very cost-effective and can be extremely time consuming, with users inefficiently attempting to overextend and traverse multiple applications to achieve one goal. Enter Adrenalize Mobile Applications.
+            Are you using multiple digital products in an attempt to deliver more modern workflows to your business? Do you find yourself attempting to overextend and traverse multiple applications to achieve one goal? Thiese type of workflows can be extremely inefficient and frustrating.
             </p>
             <p className="m-1 md:text-base">
-            By building mobile apps that are designed to federate or unify multiple services into one app suite, we provide solutions that suit each clients unique needs.
+            Streamline your processes and automate workflows by building a custom app suite designed to unify multiple services into one app suite.
             </p>
             </div>
             <div className="flex flex-col -mx-2 -mb-2 mt-6 md:m-0 md:w-1/2 bg-gray-900 text-gray-100 rounded-md shadow-md p-3">
@@ -521,7 +503,7 @@ const MobileApplications = () => {
               Boost Your Brand
             </h2>
             <p className="m-1 md:text-base">
-            Having an intuitively functional, user-friendly app for customers to navigate can be a huge boost to your bottom line, helping businesses streamline marketing campaigns, manage client onboarding, and foster increased customer loyalty. By offering easy to use mobile solutions, businesses can stand out from their competition and reach a younger demographic, while increasing user engagement, retention and conversion rates.
+            Intuitively functional, user-friendly apps help customers navigate you products while helping businesses streamline marketing campaigns, manage client onboarding, and foster increased customer loyalty. By offering easy to use mobile solutions, your business can stand out from their competition, increasing overall reach, user engagement, client retention and conversion rates.
             </p>
             </div>
             <div className="flex flex-col md:w-1/2 md:pr-4">
@@ -529,7 +511,7 @@ const MobileApplications = () => {
               Transform Your Business
             </h2>
             <p className="m-1 md:text-base">
-            Adrenalize mobile applications put the power to transform your business right in your pocket, providing powerful tools for managers,  customers and employees alike. This often means:
+            Adrenalize mobile applications put the power to transform your business right in your pocket, providing powerful tools for managers,  customers and employees alike. This means:
             </p>
             <ui className="flex flex-col my-4 md:my-auto mx-auto">
               <li className="flex flex-row items-center my-2">
@@ -607,7 +589,7 @@ const DesktopApplications = () => {
             Powerful Desktop Applications
             </h2>
             <p className="m-1 md:text-base">
-            When people think of an app, they typically think mobile. We think differently. While mobile applications may be convenient, they aren't always ideal for managing or visualizing complex data. Leveraging the same powerful frameworks and technologies we use to create our top flight mobile apps, we extend mobile functionality directly to the desktop, resulting in Windows, MacOS and Linux based applications that give you the best of both worlds.
+            Leveraging the same powerful frameworks and technologies we use to create top flight mobile apps, we extend mobile functionality directly to the desktop, building Windows, MacOS and Linux based applications that give you the best of both worlds.
             </p>
           </div>
           <div className="flex flex-col md:flex-row my-2 -mx-1 p-2 md:p-4 rounded-md shadow-md bg-white md:mx-4">
@@ -616,10 +598,10 @@ const DesktopApplications = () => {
               Unified Business Solutions
             </h2>
             <p className="m-1 md:text-base">
-            A common issue plaguing many businesses is the usage of many different digital products in an attempt to bring their companies into the modern age of business operations. This is often a very misguided venture which typically isn't very cost-effective and can be extremely time consuming, with users inefficiently attempting to overextend and traverse multiple applications to achieve one goal. Enter Adrenalize Desktop Applications.
+            Are you using multiple digital products in an attempt to deliver more modern workflows to your business? Do you find yourself attempting to overextend and traverse multiple applications to achieve one goal? Thiese type of workflows can be extremely inefficient and frustrating.
             </p>
             <p className="m-1 md:text-base">
-            By building desktop apps that are designed to federate or unify multiple services into one app suite, we provide solutions that suit each clients unique needs.
+            Streamline your processes and automate workflows by building a custom app suite designed to unify multiple services into one app suite.
             </p>
             </div>
             <div className="flex flex-col -mx-2 -mb-2 mt-6 md:m-0 md:w-1/2 bg-gray-900 text-gray-100 rounded-md shadow-md p-3">
@@ -683,7 +665,7 @@ const DesktopApplications = () => {
               Transform Your Business
             </h2>
             <p className="m-1 md:text-base">
-            Adrenalize desktop applications put the power to transform your business right at your fingertips, providing powerful tools for managers,  customers and employees alike. This often means:
+            Adrenalize desktop applications put the power to transform your business right at your fingertips, providing powerful tools for managers, customers and employees alike. This means:
             </p>
             <ui className="flex flex-col md:flex-row my-4 mx-auto md:mx-0 md:my-auto">
               <li className="flex flex-row md:flex-col items-center my-2 md:mx-auto">
@@ -735,13 +717,7 @@ const HybridAppSuites = () => {
               The Best of Both Worlds
             </h2>
             <p className="m-1 md:text-base">
-              When people think of an app, they typically think mobile. We think
-              differently. While mobile applications may be convenient, they
-              aren't always ideal for managing or visualizing complex data.
-              Leveraging the same powerful frameworks and technologies we use to
-              create our top flight mobile apps, we extend mobile functionality
-              directly to the desktop, resulting in Windows, MacOS and Linux
-              based applications that give you the best of both worlds.
+              Managing web, mobile and desktop applications with the same codebase means we can extend your existing application across multile platforms. This means you're not limited by device type or accessibility. 
             </p>
           </div>
           <div className="flex flex-col md:flex-row mt-4 -mx-1 md:mx-4 md:my-4 bg-white rounded-lg shadow-md">
@@ -750,13 +726,13 @@ const HybridAppSuites = () => {
             The Ultimate In Flexibility
             </h2>
             <p className="m-1 text-sm">
-            We're a society that's constantly on the go and that's not likely to change in the future, in fact clients should only expect to need more powerful and improved tools that allow them the flexibility to complete tasks and manage their businesses from anywhere, anytime.
+            We're a society that's constantly on the go. Clients should only expect to need more powerful and improved tools that allow them the flexibility to complete tasks and manage their businesses from anywhere, anytime. We make that happen.
             </p>
             <h2 className="mt-2 mb-1 mx-1 font-subheader font-semibold text-xl md:text-2xl">
             Offline Capability
             </h2>
             <p className="m-1 text-sm">
-              Our proprietary <strong>edge-to-cloud data sync</strong> technology means you can get things done without stressing about losing data by locally storing work and asynchronously uploading it to your cloud server whenever connectivity is restored. 
+              Our <strong>edge-to-cloud data sync</strong> technology means you can get things done without stressing about losing data by locally storing work and asynchronously uploading it to your cloud server whenever connectivity is restored. 
             </p>
             <button
             aria-label="Learn More"
@@ -791,7 +767,7 @@ const HybridAppSuites = () => {
                   </div>
               </div>
               <p className="m-2 md:m-4 text-sm font-semibold">
-              Adrenalize hybrid app suites allow for an easy usage transition between platforms - the functionality and interface you have on a Windows laptop will be the same as what you have on an iPad - making it simple for users to perform tasks regardless of what platform they're required to use.
+              Our hybrid app suites allow for an easy usage transition between platforms - the functionality and interface you have on a Windows laptop will be the same as what you have on an iPad - making it simple for users to perform tasks regardless of what platform they're required to use.
               </p>
             </div>
           </div>
@@ -800,7 +776,7 @@ const HybridAppSuites = () => {
               It's What We Do
             </h2>
             <p className="m-1 md:text-base">
-            Adrenalize Hybrid App Suites are the flagship of our business model - we've invested heavily in the utilization of modern technology stacks to develop apps that flex between mobile and desktop because we wholeheartedly believe that improved business capabilities are a significant contribution in creating a better world. Our app suites provide clients with a robust suite of powerful tools to aid them in improving their businesses by reducing operational costs and increasing productivity.
+            Adrenalize Hybrid App Suites are the flagship of our business model - we've invested heavily in providing app suites that provide you with a variety of powerful tools to improve you business by reducing operational costs and increasing productivity.
             </p>
           </div>
         </div>

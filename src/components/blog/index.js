@@ -44,8 +44,7 @@ const BlogCard = ({ image, published, link, title, excerpt, tags }) => {
   const [month, day, year] = [publishDate.toLocaleString('default', { month: 'long' }), publishDate.getDate(), publishDate.getFullYear()];
   
     return(
-      <LazyLoad offset={100}>
-        <div className="flex flex-col rounded-lg shadow-lg bg-gray-100 mb-4 md:my-2 h-full">
+        <div className="flex flex-col rounded-lg shadow-lg bg-gray-100 mb-4 md:my-2">
             <GatsbyImage 
                     image={getImage(image)}
                     className="h-52 rounded-t-lg w-full"
@@ -59,16 +58,17 @@ const BlogCard = ({ image, published, link, title, excerpt, tags }) => {
                     return <span className="portfolioTag">{tag}</span>
                 })}
             </div>
-            <Link 
-                to={link}
-                aria-label={title}
-                className="flex flex-row items-center mr-auto text-base md:text-lg font-semibold cursor-pointer rounded-md shadow-md bg-gray-900 text-gray-100 px-3 py-2 hover:bg-gray-800 hover:shadow-lg m-2"
-              >
-                Read More
-                <BiCaretRight className="ml-2 text-xl text-blue-500" />
-              </Link>
+            <LazyLoad offset={100}>
+              <Link 
+                  to={link}
+                  aria-label={title}
+                  className="flex flex-row items-center mr-auto text-base md:text-lg font-semibold cursor-pointer rounded-md shadow-md bg-gray-900 text-gray-100 px-3 py-2 hover:bg-gray-800 hover:shadow-lg m-2"
+                >
+                  Read More
+                  <BiCaretRight className="ml-2 text-xl text-blue-500" />
+                </Link>
+              </LazyLoad>
         </div>
-      </LazyLoad>
     )
 }
 

@@ -4,7 +4,7 @@ import { ContactForm } from "../components/contact"
 import { animateScroll as scroll } from "react-scroll"
 import { WebApplications, MobileApplications, DesktopApplications, HybridAppSuites } from '../components/services'
 import { Seo } from '../components/seo'
-import LazyLoad from "react-lazyload"
+
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null)
@@ -50,12 +50,11 @@ const Services = () => {
             Build with the best.
           </h1>
           <p className="my-2">
-            We utilize the latest in development methodologies to provide
-            businesses with intelligently designed, highly performant
-            applications for web, mobile and desktop.
+            Your business deserves an intelligently designed, highly performant
+            application for web, mobile and desktop. We utilize the latest in development methodologies to make that happen.
           </p>
           <p className="font-semibold my-2">
-            Click the tabs below to learn more about our products.
+            Click the tabs below to learn more about how we can help you.
           </p>
         </div>
         <div id="websites-web-applications" className="servicesTab">
@@ -85,9 +84,9 @@ const Services = () => {
             }`}
           >
             <div className="servicesTabContent">
-            <LazyLoad>
+            
             <WebApplications />
-            </LazyLoad>
+
             </div>
             </div>
         </div>
@@ -114,9 +113,9 @@ const Services = () => {
             }`}
           >
             <div className="servicesTabContent">
-            <LazyLoad>
+
               <MobileApplications/>
-              </LazyLoad>
+
             </div>
           </div>
         </div>
@@ -143,9 +142,9 @@ const Services = () => {
             }`}
           >
             <div className="servicesTabContent">
-            <LazyLoad>
+
               <DesktopApplications/>
-              </LazyLoad>
+
             </div>
           </div>
         </div>
@@ -176,9 +175,9 @@ const Services = () => {
             }`}
           >
             <div className="servicesTabContent">
-            <LazyLoad>
+
               <HybridAppSuites/>
-              </LazyLoad>
+
             </div>
           </div>
         </div>
@@ -253,8 +252,7 @@ const Services = () => {
             </li>
           </ul>
           <p className="mx-1 mt-2">
-            And much, much more. No matter what your development needs, we can
-            help.
+            Growing a business is a lot of work. Let us do the heavy lifting so you can get back to doing what you love. Contact us today to find out how our pixel-perfect development expertise can help.
           </p>
         </div>
       </div>

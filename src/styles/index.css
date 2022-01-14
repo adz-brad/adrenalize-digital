@@ -149,7 +149,7 @@ div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > p
 }
 
 .featureImage1{
-    max-height:500px;
+    max-height:570px;
 }
 
 #indexWrapper > div > div > div > div:hover > button {
@@ -159,6 +159,10 @@ div:nth-child(2) > .featuredImage > picture > img, #hero > div.featuredImage > p
 
 #indexWrapper > div > div > div > div > button {
     transition: linear 0.1s;
+}
+
+.projectsGrid{
+    @apply flex flex-col my-2 mx-1 p-4 shadow-md hover:shadow-lg rounded-lg;
 }
 
 /* --- Product Tabs --- */
@@ -401,7 +405,7 @@ textarea.contactMessage{
 }
 
 .faqContent{
-    @apply text-sm md:text-lg my-2;
+    @apply font-content text-sm md:text-lg my-2;
 }
 
 .faqContent p{
@@ -438,12 +442,14 @@ textarea.contactMessage{
   /* --- Components --- */
 
 .popover{
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg z-30 bg-gray-100;
-    height:calc(100vh - 25px);
-    width:calc(100vw - 25px);
-    max-width: 992px;
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-xl rounded-lg shadow-lg z-30 bg-gray-900 border-2 border-gray-800;
+    height:calc(100% - 25px);
+    width:calc(100% - 25px);
     margin: auto;
-    overflow:auto;
+}
+
+.popoverBody{
+    overflow-y:auto;
 }
 
 /* --- Toasts --- */
@@ -598,3 +604,66 @@ textarea.contactMessage{
 #contact > .lazyload-wrapper{
     @apply w-full flex flex-col items-center;
 }
+
+/* --- Project Discovery --- */
+
+.projectDiscoveryItem{
+    @apply flex flex-row items-center mt-2 mb-4 mx-2;
+}
+
+.projectDiscoveryItemNumber{
+    @apply relative bg-blue-500 rounded-full w-6 h-6 shadow-md px-3 pb-1 pt-3 cursor-pointer;
+}
+
+.projectDiscoveryItemNumber span{
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-100 font-semibold;
+}
+
+.projectDiscoveryItemText{
+    @apply text-sm md:text-base ml-2 leading-tight font-semibold;
+}
+
+.projectDiscoveryInput{
+    @apply focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 mx-2;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    @apply bg-gray-100 hover:bg-gray-200 transform hover:scale-105 border-2 border-blue-500 cursor-pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"] {
+    border-radius: 10%;
+  }
+
+  input[type="radio"]::before, input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #0ea5e9;
+  }
+
+  input[type="checkbox"]::before {
+      border-radius: 10%;
+  }
+
+  input[type="radio"]:checked::before, input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+
+  .tooltip{
+      @apply absolute rounded-md shadow-md bg-gray-200 w-full p-2;
+  }
