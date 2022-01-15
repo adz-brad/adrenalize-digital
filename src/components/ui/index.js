@@ -3,6 +3,16 @@ import { RiCloseCircleLine } from "react-icons/ri"
 import { useWindowHeight, useWindowWidth } from "../../hooks"
 import { BsFillQuestionCircleFill } from 'react-icons/bs'
 import { useOnClickOutside } from "../../hooks"
+import { Link } from "gatsby"
+
+const Banner = ({ className, text, link, linkText }) => {
+  return(
+    <div className={`w-full flex flex-row items-center p-1 md:p-3 ${className}`}>
+      <p className="text-gray-100 text-sm font-semibold mx-auto p-2">{text}</p>
+      <Link className="whitespace-nowrap ml-auto mr-4 text-center px-3 py-1 text-red-700 font-bold font-headers bg-gray-100 hover:bg-gray-200 rounded-sm shadow-md" to={link}>{linkText}</Link>
+    </div>
+  )
+}
 
 const Tooltip = ({ text }) => {
 
@@ -12,9 +22,9 @@ const Tooltip = ({ text }) => {
 
   return(
     <>
-    <button aria-label="Open Tooltip" onClick={() => setTooltipOpen(true)} className="ml-auto mr-2 cursor-pointer text-gray-100 hover:text-blue-400">
+    <div aria-label="Open Tooltip" tabIndex="0" role="button" onClick={() => setTooltipOpen(true)} onKeyDown={() => setTooltipOpen(true)} className="ml-auto mr-2 cursor-pointer text-gray-100 hover:text-blue-400">
       <BsFillQuestionCircleFill className="text-lg" />
-    </button>
+    </div>
     {tooltipOpen === true ?
         <div ref={node} className="tooltip">
           <button
@@ -79,9 +89,7 @@ const SelectCountry = ({ onChange, className, value }) => {
       onChange={onChange} 
       id="country" 
     >
-    <option value="" selected disabled hidden>
-                  Choose your country...
-                </option>
+   <option value="Choose your country ..." disabled>Choose your country ...</option>
    <option value="Afganistan">Afghanistan</option>
    <option value="Albania">Albania</option>
    <option value="Algeria">Algeria</option>
@@ -332,4 +340,4 @@ const SelectCountry = ({ onChange, className, value }) => {
   )
 }
 
-export { Popover, Tooltip, SelectCountry }
+export { Popover, Tooltip, SelectCountry, Banner }

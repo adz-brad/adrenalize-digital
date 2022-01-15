@@ -12,8 +12,8 @@ const ContactForm = ({ className }) => {
   const [ contactData, setContactData ] = useState({
     name: null,
     email: null,
-    location: null,
-    type: null,
+    location: 'Choose your country ...',
+    type: 'Choose an option ...',
     message: null,
     honeypot: null
   })
@@ -62,11 +62,11 @@ const ContactForm = ({ className }) => {
         messageFailed('Email')
         setFieldMissing('Email')
       }    
-      else if(contactData.location === null){
+      else if(contactData.location === 'Choose your country ...'){
         messageFailed('Location')
         setFieldMissing('Location')
       }   
-      else if(contactData.type === null){
+      else if(contactData.type === 'Choose an option ...'){
         messageFailed('Type')
         setFieldMissing('Type')
       }   
@@ -87,8 +87,8 @@ const ContactForm = ({ className }) => {
          setContactData(update(contactData, { 
           name: { $set: null },
           email: { $set: null },
-          location: { $set: null },
-          type: { $set: null },
+          location: { $set: 'Choose your country ...' },
+          type: { $set: 'Choose an option ...' },
           message: { $set: null },
           honeypot: { $set: null }
         }));
@@ -155,8 +155,8 @@ const ContactForm = ({ className }) => {
               value={contactData.type || ''}
               onChange={(e) => handleInput({property: 'type', value: e.target.value})}
               >
-                <option value="" selected disabled hidden>
-                  Choose an option...
+                <option value="Choose an option ..." disabled>
+                  Choose an option ...
                 </option>
                 <option>Schedule a new project consultation</option>
                 <option>Updating an existing external project</option>

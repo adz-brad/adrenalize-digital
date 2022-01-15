@@ -120,7 +120,7 @@ const ProjectDiscovery = () => {
         contactName: null,
         contactEmail: null,
         businessName: null,
-        location: null,
+        location: 'Choose your country ...',
         industry: null,
         description: null,
         type: null,
@@ -200,7 +200,7 @@ const ProjectDiscovery = () => {
             setFieldMissing('Business Name')
             document.getElementById('Business Name').scrollIntoView();
           }
-          else if(discoveryData.location === null || discoveryData.location.length === 0){
+          else if(discoveryData.location === 'Choose your country ...' || discoveryData.location.length === 0){
             messageFailed('Location Required')
             setFieldMissing('Location')
             document.getElementById('Location').scrollIntoView();
@@ -249,7 +249,7 @@ const ProjectDiscovery = () => {
                 contactName: { $set: null },
                 contactEmail: { $set: null },
                 businessName: { $set: null },
-                location: { $set: null },
+                location: { $set: 'Choose your country ...' },
                 industry: { $set: null },
                 description: { $set: null },
                 type: { $set: null },

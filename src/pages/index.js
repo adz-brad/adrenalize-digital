@@ -29,7 +29,7 @@ const Index = () => {
 
   let windowWidth = useWindowWidth()
   let windowHeight = useWindowHeight()
-  console.log(windowWidth)
+
   const [heroBgDimensions, setHeroBgDimensions] = useState({
     height: 0,
     width: 0,
@@ -94,15 +94,15 @@ const Index = () => {
           <p className="pb-4 font-medium text-lg md:text-xl leading-snug mb-auto mt-1">
           We apply the latest in development technology to create products that push the limits of how you define success.
           </p>
-          <h2 className="font-semibold text-xl md:text-2xl mx-auto md:mx-0">
+          <h2 className="font-semibold text-xl md:text-3xl mx-auto md:mx-0">
             Are you ready to push limits?
           </h2>
           <button 
           aria-label="Build With Us"
           onClick={()=> scrollTo('products')}
-          className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-6 mb-2 md:my-auto mx-auto md:mx-0 md:mr-auto">
+          className="flex flex-row items-center text-xl md:text-2xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mt-6 mb-2 md:my-auto mx-auto md:mx-0 md:mr-auto">
             Build With Us
-            <BiCaretRightCircle className="ml-3 text-2xl" />
+            <BiCaretRightCircle className="ml-3 text-2xl md:text-3xl" />
           </button>
         </div>
       </div>
