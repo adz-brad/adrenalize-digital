@@ -59,8 +59,8 @@ h1, h2, h3, h4, h5, .font-headers{
 .mobileNav{
     @apply bg-gray-900 bg-opacity-95 rounded-r-xl shadow-md;
     position:fixed;
-    height: calc(100% - 80px);
-    top: 70px;
+    height: calc(100% - 136px);
+    top: 131px;
     width: calc(100% - 10px);
     max-width: 400px;
     transition: ease-in-out 0.3s;
@@ -74,8 +74,8 @@ h1, h2, h3, h4, h5, .font-headers{
 
     .mobileNav{
         @apply bg-opacity-100;
-        height: calc(100% - 100px);
-        top: 90px;
+        height: calc(100% - 151px);
+        top: 146px;
         max-width: 300px;
     }
 }

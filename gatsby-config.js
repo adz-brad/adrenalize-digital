@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const version = '1.0.8'
+const version = '1.0.9'
 
 module.exports = {
   siteMetadata: {
