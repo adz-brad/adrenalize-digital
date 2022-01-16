@@ -55,23 +55,23 @@ const ContactForm = ({ className }) => {
 
   const submitContact = async () => {
       if(contactData.name === null){
-        messageFailed('Name')
+        messageFailed('Name Required')
         setFieldMissing('Name')
       } 
       else if(contactData.email === null){
-        messageFailed('Email')
+        messageFailed('Email Required')
         setFieldMissing('Email')
       }    
       else if(contactData.location === 'Choose your country ...'){
-        messageFailed('Location')
+        messageFailed('Location Required')
         setFieldMissing('Location')
       }   
       else if(contactData.type === 'Choose an option ...'){
-        messageFailed('Type')
+        messageFailed('Type Required')
         setFieldMissing('Type')
       }   
       else if(contactData.message === null){
-      messageFailed('Message')
+      messageFailed('Message Required')
       setFieldMissing('Message')
       }
       else if(contactData.honeypot !== null){
@@ -176,9 +176,9 @@ const ContactForm = ({ className }) => {
                 onChange={(e) => handleInput({property: 'message', value: e.target.value})}
               />
             </div>
-            <button 
-            aria-label="Submit"
-            className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-subheader rounded-lg shadow-md my-5 mx-auto"
+            <div 
+            aria-label="Submit Contact Form" tabIndex="0" role="button"
+            className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-headers rounded-lg shadow-md my-5 mx-auto"
             onClick={() => submitContact()}>
               {sending === false ?
                 <>
@@ -192,7 +192,7 @@ const ContactForm = ({ className }) => {
                 </>
               }
               
-            </button>
+            </div>
           </form>
     )
 }
