@@ -11,7 +11,7 @@ const Contact = () => {
         pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
         pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
         pageUrl="https://www.adrenalizedigital.ca/contact-us"
-        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/facebookCover.png?raw=true"
       />
 
         <div className="md:w-full md:max-w-screen-lg md:p-3 md:mx-auto">

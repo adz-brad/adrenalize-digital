@@ -42,7 +42,7 @@ const Services = () => {
         pageDescription="Adrenalize Digital - Creating intelligent digital products for intelligent businesses."
         pageKeywords="Adrenalize, Digital, Smart, Technolgoies, Web, App, Application, Mobile, Design, Development"
         pageUrl="https://www.adrenalizedigital.ca/services"
-        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/adLogoDark.png?raw=true"
+        pageImage="https://github.com/brad-nst/adrenalize-digital/blob/main/src/assets/images/facebookCover.png?raw=true"
       />
       <div className="flex flex-col p-2 my-2 max-w-screen-lg mx-auto">
         <div className="p-1">
