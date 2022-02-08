@@ -38,7 +38,7 @@ const Seo = ({ children, pageDescription, pageTitle, pageImage, pageUrl, pageKey
 
         <meta property="og:title" content={pageTitle}/>
         <meta property="og:description" content={pageDescription}/>
-        <meta property="og:image" content={pageImage }/>
+        <meta property="og:image" content={pageImage} />
         <meta property="og:url" content={pageUrl} />
 
         {/* Twitter Meta Tags */}
