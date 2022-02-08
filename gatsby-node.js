@@ -43,7 +43,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     },
     recentPosts: allGraphCmsBlogPost(
       filter: {featured: {eq: false}}
-      limit: 4
+      limit: 10
       sort: {order: DESC, fields: publishedAt}
     ) {
       nodes {
