@@ -12,10 +12,10 @@ const FeaturedCard = ({ image, published, link, title, excerpt, tags }) => {
   return(
     <div className="flex flex-col md:flex-row rounded-lg shadow-lg bg-gray-900">
       <GatsbyImage 
-                    image={getImage(image)}
-                    className="h-52 w-full md:h-full md:w-1/2 rounded-t-lg md:rounded-t-none md:rounded-l-lg"
-                    alt={title}
-                />
+          image={getImage(image)}
+          className="w-full md:w-1/2 rounded-t-lg md:rounded-t-none md:rounded-l-lg"
+          alt={title}
+      />
       <div className="flex flex-col md:w-1/2">
       <h1 className="text-xl md:text-2xl text-gray-100 font-bold m-4 border-b border-blue-600">{title}</h1>
       <span className="text-gray-400 ml-4 leading-none -mt-2 mb-4 font-headers ml-2">{month} {day}, {year}</span>
