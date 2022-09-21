@@ -6,7 +6,6 @@ import { ImSpinner } from 'react-icons/im'
 import update from 'immutability-helper';
 import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
-import fetch from "node-fetch"
 
 const ContactForm = ({ className }) => {
 
