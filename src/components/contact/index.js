@@ -54,7 +54,7 @@ const ContactForm = ({ className }) => {
 
   const [ sending, setSending ] = useState(false)
 
-  const client = new ServerClient('POSTMARK_API_TEST')
+  const client = new ServerClient(process.env.GATSBY_POSTMARK_TOKEN)
 
   const submitPostmark = async () => {
     await client.sendEmail({
