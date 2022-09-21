@@ -6,6 +6,7 @@ import { ImSpinner } from 'react-icons/im'
 import update from 'immutability-helper';
 import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
+import { ServerClient } from "postmark"
 
 const ContactForm = ({ className }) => {
 
@@ -52,6 +53,23 @@ const ContactForm = ({ className }) => {
   };
 
   const [ sending, setSending ] = useState(false)
+
+  const client = new ServerClient('POSTMARK_API_TEST')
+
+  const submitPostmark = async () => {
+    await client.sendEmail({
+      "From": "brad@adrenalizedigital.ca",
+      "To": "brad@adrenalizedigital.ca",
+      "Subject": "Hello from Postmark",
+      "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
+      "TextBody": "Hello from Postmark!",
+      "MessageStream": "outbound"
+    }).then(function(response) {
+      console.log(response)
+    }, function(error) {
+      console.log(error)
+    })
+  }
 
   const submitContact = async () => {
       if(contactData.name === null){
@@ -179,7 +197,7 @@ const ContactForm = ({ className }) => {
             <div 
             aria-label="Submit Contact Form" tabIndex="0" role="button"
             className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-headers rounded-lg shadow-md my-5 mx-auto"
-            onClick={() => submitContact()}>
+            onClick={() => submitPostmark()}>
               {sending === false ?
                 <>
                   Submit
