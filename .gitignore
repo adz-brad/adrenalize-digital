@@ -20,3 +20,5 @@ public
 
 # graphCMS
 graphcms-fragments
+# Local Netlify folder
+.netlify

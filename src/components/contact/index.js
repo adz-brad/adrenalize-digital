@@ -6,6 +6,7 @@ import { ImSpinner } from 'react-icons/im'
 import update from 'immutability-helper';
 import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
+import fetch from "node-fetch"
 
 const ContactForm = ({ className }) => {
 
@@ -17,6 +18,31 @@ const ContactForm = ({ className }) => {
     message: null,
     honeypot: null
   })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const data = {
+      name: contactData.name,
+      email: contactData.email,
+      location: contactData.location,
+      type: contactData.type,
+      message: contactData.message,
+    }
+    const JSONdata = JSON.stringify(data)
+    const endpoint = '/.netlify/functions/sendForm'
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSONdata,
+    }
+    const response = await fetch(endpoint, options)
+    const result = await response.json()
+    if(result.message === 'OK'){
+      console.log('Message Sent')
+    }
+  }
 
   const handleInput = (props) => {
     setContactData(update(contactData, { [props.property]: { $set: props.value }}));
@@ -104,6 +130,7 @@ const ContactForm = ({ className }) => {
         <form
             id="contact"
             className={`w-full md:w-2/3 flex flex-col justify-center items-center bg-gray-900 text-gray-100 rounded-b-lg rounded-lg p-5 ${className}`}
+            onSubmit={handleSubmit}
           >
             <h1 className="font-subheader text-4xl font-semibold my-6 leading-none">
               Let's get in touch!
@@ -176,10 +203,11 @@ const ContactForm = ({ className }) => {
                 onChange={(e) => handleInput({property: 'message', value: e.target.value})}
               />
             </div>
-            <div 
-            aria-label="Submit Contact Form" tabIndex="0" role="button"
+            <button 
+            type="submit"
+            aria-label="Submit Contact Form"
             className="flex flex-row items-center text-xl px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold font-headers rounded-lg shadow-md my-5 mx-auto"
-            onClick={() => submitContact()}>
+            >
               {sending === false ?
                 <>
                   Submit
@@ -192,7 +220,7 @@ const ContactForm = ({ className }) => {
                 </>
               }
               
-            </div>
+            </button>
           </form>
     )
 }
