@@ -28,7 +28,7 @@ const ContactForm = ({ className }) => {
       message: contactData.message,
     }
     const JSONdata = JSON.stringify(data)
-    const endpoint = '/.netlify/functions/sendForm'
+    const endpoint = '/functions/sendForm'
     const options = {
       method: 'POST',
       headers: {
@@ -36,11 +36,11 @@ const ContactForm = ({ className }) => {
       },
       body: JSONdata,
     }
-    const response = await fetch(endpoint, options)
-    const result = await response.json()
-    if(result.message === 'OK'){
-      console.log('Message Sent')
-    }
+    await fetch(endpoint, options).then(res => {
+      console.log('Call Response:', res)
+    }).catch(err => {
+      console.log('Call Error:', err)
+    })
   }
 
   const handleInput = (props) => {
