@@ -28,7 +28,7 @@ const ContactForm = ({ className }) => {
       message: contactData.message,
     }
     const JSONdata = JSON.stringify(data)
-    const endpoint = '/functions/sendForm'
+    const endpoint = '/.netlify/functions/sendForm'
     const options = {
       method: 'POST',
       headers: {
