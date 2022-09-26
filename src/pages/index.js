@@ -16,8 +16,6 @@ import { Tabs } from '../components/tabs'
 import { ContactForm } from '../components/contact'
 import { animateScroll as scroll } from "react-scroll";
 import LazyLoad from "react-lazyload"
-import { Popover } from "../components/ui"
-import { ProjectDiscovery } from "../components/tools"
 
 const Index = () => {
 
@@ -50,8 +48,6 @@ const Index = () => {
       smooth: true,
     })
   }
-
-  const [ projectDiscoveryOpen, setProjectDiscoveryOpen ] = useState(false)
 
   return (
     <div id="indexWrapper">
@@ -245,22 +241,15 @@ const Index = () => {
                 To get started, click the link below to begin the Project Discovery phase. Or if you have more questions, fill out our contact form to get in touch.
               </p>
             </div>
-            <button 
-              onClick={() => setProjectDiscoveryOpen(true)}
+            <button  
+              disabled
               aria-label="Project Discovery"
               className="flex flex-row items-center text-xl px-4 py-2 bg-gray-900 hover:bg-gray-800 text-gray-100 font-bold font-subheader rounded-lg shadow-md mb-3 md:mb-1 mt-auto mx-auto"
             >
               Get Started
               <BiCaretRightCircle className="ml-3 text-2xl" />
             </button>
-            <Popover 
-              className="bg-gray-900 border-2 border-gray-800 text-gray-100"
-              close={() => setProjectDiscoveryOpen(false)} 
-              open={projectDiscoveryOpen} 
-              title="Project Discovery Tools"
-            >
-              <ProjectDiscovery/>
-            </Popover>
+
           </div>
           
           <ContactForm/>
