@@ -5,7 +5,7 @@ import { MdThumbUp, MdThumbDown } from 'react-icons/md'
 import { ImSpinner } from 'react-icons/im'
 import update from 'immutability-helper';
 import { toast } from 'react-toastify';
-import emailjs from 'emailjs-com';
+
 
 const ContactForm = ({ className }) => {
 
@@ -17,36 +17,6 @@ const ContactForm = ({ className }) => {
     message: null,
     honeypot: null
   })
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    const data = {
-      name: contactData.name,
-      email: contactData.email,
-      location: contactData.location,
-      type: contactData.type,
-      message: contactData.message,
-    }
-    const JSONdata = JSON.stringify(data)
-    const endpoint = '/.netlify/functions/sendForm'
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSONdata,
-    }
-    await fetch(endpoint, options).then(res => {
-      console.log('Call Response:', res)
-    }).catch(err => {
-      console.log('Call Error:', err)
-    })
-  }
-
-  const handleInput = (props) => {
-    setContactData(update(contactData, { [props.property]: { $set: props.value }}));
-    setFieldMissing(null)
-  }
 
   const [ fieldMissing, setFieldMissing ] = useState(null);
 
@@ -78,86 +48,122 @@ const ContactForm = ({ className }) => {
 
   const [ sending, setSending ] = useState(false)
 
-  const submitContact = async () => {
-      if(contactData.name === null){
-        messageFailed('Name Required')
-        setFieldMissing('Name')
-      } 
-      else if(contactData.email === null){
-        messageFailed('Email Required')
-        setFieldMissing('Email')
-      }    
-      else if(contactData.location === 'Choose your country ...'){
-        messageFailed('Location Required')
-        setFieldMissing('Location')
-      }   
-      else if(contactData.type === 'Choose an option ...'){
-        messageFailed('Type Required')
-        setFieldMissing('Type')
-      }   
-      else if(contactData.message === null){
-      messageFailed('Message Required')
-      setFieldMissing('Message')
-      }
-      else if(contactData.honeypot !== null){
-        messageFailed('Sorry Pooh Bear')
-      }
+  const submit = async (e) => {
+    if(contactData.name === null){
+      messageFailed('Name Required')
+      setFieldMissing('Name')
+    } 
+    else if(contactData.email === null){
+      messageFailed('Email Required')
+      setFieldMissing('Email')
+    }    
+    else if(contactData.location === 'Choose your country ...'){
+      messageFailed('Location Required')
+      setFieldMissing('Location')
+    }   
+    else if(contactData.type === 'Choose an option ...'){
+      messageFailed('Type Required')
+      setFieldMissing('Type')
+    }   
+    else if(contactData.message === null){
+    messageFailed('Message Required')
+    setFieldMissing('Message')
+    }
+    else if(contactData.honeypot !== null){
+      messageFailed('Sorry Pooh Bear')
+    }
     else{
       setSending(true)
-      await emailjs.send('service_neuralSMTP', 'template_neuralContact', contactData, 'user_FlIabMfG4VBtqOJI64DiZ')
-      .then(function(response) {
-        setSending(false);
-         console.log('Message Sent.', response.status, response.text);
-         messageSent()
-         setContactData(update(contactData, { 
-          name: { $set: null },
-          email: { $set: null },
-          location: { $set: 'Choose your country ...' },
-          type: { $set: 'Choose an option ...' },
-          message: { $set: null },
-          honeypot: { $set: null }
-        }));
-      }, function(error) {
-        setSending(false);
-        console.log('Error sending message.', error);
-         messageFailed(`Something went wrong.`)
-      });   
+      e.preventDefault()
+      const data = {
+        name: contactData.name,
+        email: contactData.email,
+        location: contactData.location,
+        type: contactData.type,
+        message: contactData.message,
+      }
+      const JSONdata = JSON.stringify(data)
+      const endpoint = '/.netlify/functions/submit'
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      body: JSONdata,
+      }
+      await fetch(endpoint, options).then(res => {
+        if(res.status === 200) {
+          setSending(false);
+          messageSent()
+          setContactData(update(contactData, { 
+            name: { $set: null },
+            email: { $set: null },
+            location: { $set: 'Choose your country ...' },
+            type: { $set: 'Choose an option ...' },
+            message: { $set: null },
+            honeypot: { $set: null }
+          }));
+        }
+        else {
+           setSending(false);
+           messageFailed(`Something went wrong.`)
+        }
+      }).catch(err => {
+        if(err) {
+          setSending(false);
+          messageFailed(`Something went wrong.`)
+        }
+      })
     }
+  }
+
+
+  const handleInput = (props) => {
+    setContactData(update(contactData, { [props.property]: { $set: props.value }}));
+    setFieldMissing(null)
   }
 
     return(
         <form
             id="contact"
             className={`w-full md:w-2/3 flex flex-col justify-center items-center bg-gray-900 text-gray-100 rounded-b-lg rounded-lg p-5 ${className}`}
-            onSubmit={handleSubmit}
+            onSubmit={submit}
           >
             <h1 className="font-subheader text-4xl font-semibold my-6 leading-none">
               Let's get in touch!
             </h1>
+            <input
+                name="name"
+                aria-label="name"
+                className="h-0 w-0 opacity-0"
+                type="text"
+                value={contactData.honeypot || ''}
+                onChange={(e) => handleInput({property: 'honeypot', value: e.target.value})}
+              />
+              <input
+                name="email"
+                aria-label="email"
+                className="h-0 w-0 opacity-0"
+                type="email"
+                value={contactData.honeypot || ''}
+                onChange={(e) => handleInput({property: 'honeypot', value: e.target.value})}
+              />
             <div className="flex flex-col w-full md:w-3/4">
               <h2 className="text-lg font-semibold">Your Name</h2>
               <input
-                name="Name"
-                aria-label="Name"
+                name="Contact Name"
+                aria-label="Contact Name"
                 className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Name' ? 'outline-red' : ''}`}
                 type="text"
                 value={contactData.name || ''}
                 onChange={(e) => handleInput({property: 'name', value: e.target.value})}
               />
-              <input
-                name="Favorite Type of Honey"
-                aria-label="Favorite Type of Honey"
-                className="hidden"
-                type="text"
-                value={contactData.honeypot || ''}
-                onChange={(e) => handleInput({property: 'honeypot', value: e.target.value})}
-              />
             </div>
             <div className="flex flex-col w-full md:w-3/4">
               <h2 className="text-lg font-semibold">Email Address</h2>
               <input
-                name="Email"
-                aria-label="Email"
+                name="Contact Email"
+                aria-label="Contact Email"
                 className={`w-full focus:outline-blue p-1 mb-3 shadow-md rounded-md text-gray-900 ${fieldMissing === 'Email' ? 'outline-red' : ''}`}
                 type="text"
                 value={contactData.email || ''}

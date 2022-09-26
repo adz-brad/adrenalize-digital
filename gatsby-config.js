@@ -81,6 +81,6 @@ module.exports = {
         ignore: [`**/\.*`],
       },
     },
-    `gatsby-plugin-preact`
+    //`gatsby-plugin-preact`
   ],
 }
